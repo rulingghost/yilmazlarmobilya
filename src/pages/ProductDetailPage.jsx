@@ -30,7 +30,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
   const whatsappUrl = siteConfig.getWhatsAppLink(product.name);
 
   return (
-    <div className="animate-fade-in container" style={{ paddingTop: '1.25rem', paddingBottom: '3rem' }}>
+    <div className="animate-fade-in container detail-page-container">
       {/* Back Button */}
       <button 
         onClick={onBack}
@@ -42,8 +42,8 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
 
       {/* Main Product Layout */}
       <div className="detail-grid">
-        {/* Left: Gallery */}
-        <div>
+        {/* Left: Gallery Column (strictly contained with min-width: 0) */}
+        <div className="detail-gallery-col">
           <div className="detail-main-image">
             <ImageWithFallback
               src={currentImage}
@@ -58,7 +58,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           </div>
 
           {images.length > 1 && (
-            <div>
+            <div className="detail-thumb-wrapper">
               <div className="detail-thumb-label">
                 Fotoğraf Galerisi ({images.length} Görsel):
               </div>
@@ -81,7 +81,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           )}
         </div>
 
-        {/* Right: Details */}
+        {/* Right: Details Column */}
         <div className="detail-info">
           {/* Category Tag */}
           <div className="detail-tags">
@@ -177,6 +177,13 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
       )}
 
       <style>{`
+        .detail-page-container {
+          padding-top: 1.25rem;
+          padding-bottom: 3rem;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+        }
         .detail-back-btn {
           display: inline-flex;
           align-items: center;
@@ -195,9 +202,18 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           grid-template-columns: 1fr 1fr;
           gap: 2.5rem;
           margin-bottom: 3.5rem;
+          width: 100%;
+          min-width: 0;
+        }
+        .detail-gallery-col {
+          min-width: 0;
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
         }
         .detail-main-image {
           width: 100%;
+          max-width: 100%;
           aspect-ratio: 4 / 3;
           border-radius: var(--radius-md);
           overflow: hidden;
@@ -219,6 +235,12 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           font-size: 0.75rem;
           font-weight: 600;
         }
+        .detail-thumb-wrapper {
+          min-width: 0;
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
         .detail-thumb-label {
           font-size: 0.82rem;
           font-weight: 700;
@@ -228,10 +250,14 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
         .detail-thumb-row {
           display: flex;
           gap: 0.6rem;
+          width: 100%;
+          max-width: 100%;
           overflow-x: auto;
+          overflow-y: hidden;
           padding-bottom: 0.5rem;
           scroll-behavior: smooth;
           -webkit-overflow-scrolling: touch;
+          box-sizing: border-box;
         }
         .detail-thumb {
           width: 75px;
@@ -251,6 +277,8 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
         .detail-info {
           display: flex;
           flex-direction: column;
+          min-width: 0;
+          width: 100%;
         }
         .detail-tags {
           display: flex;
@@ -273,6 +301,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           color: var(--text-main);
           line-height: 1.2;
           margin-bottom: 0.85rem;
+          word-break: break-word;
         }
         .detail-price-box {
           background: var(--accent-amber-light);
@@ -357,6 +386,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           color: var(--text-main);
           font-weight: 700;
           text-align: right;
+          word-break: break-word;
         }
         .detail-spec-column .detail-spec-val {
           text-align: left;
@@ -367,64 +397,82 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           border-top: 1px solid var(--border-light);
         }
 
-        /* ========= MOBILE RESPONSIVE COMPACT LAYOUT ========= */
+        /* ========= MOBILE RESPONSIVE STRICT OVERFLOW FIXES ========= */
         @media (max-width: 768px) {
           .detail-grid {
             grid-template-columns: 1fr;
-            gap: 1.25rem;
+            gap: 1.15rem;
             margin-bottom: 2rem;
+            width: 100%;
+          }
+          .detail-gallery-col {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
           }
           .detail-main-image {
             aspect-ratio: 16 / 10;
-            max-height: 250px;
+            max-height: 240px;
+            width: 100%;
+            max-width: 100%;
             border-radius: var(--radius-sm);
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.5rem;
+          }
+          .detail-thumb-wrapper {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+          }
+          .detail-thumb-row {
+            width: 100%;
+            max-width: 100%;
+            padding-bottom: 0.35rem;
+          }
+          .detail-thumb {
+            width: 52px;
+            height: 38px;
           }
           .detail-title {
-            font-size: 1.35rem;
-            margin-bottom: 0.65rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
           }
           .detail-price-value {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
           }
           .detail-price-box {
-            padding: 0.85rem;
-            margin-bottom: 1rem;
+            padding: 0.75rem 0.9rem;
+            margin-bottom: 0.85rem;
           }
           .detail-desc {
-            font-size: 0.9rem;
-            margin-bottom: 1.15rem;
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
           }
           .detail-cta-grid {
             grid-template-columns: 1fr;
-            gap: 0.6rem;
-            margin-bottom: 1.5rem;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
           }
           .detail-cta-btn {
-            padding: 0.75rem;
-            font-size: 0.9rem;
+            padding: 0.7rem;
+            font-size: 0.88rem;
           }
           .detail-specs-card {
-            padding: 0.9rem;
+            padding: 0.85rem;
           }
           .detail-specs-title {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
           }
           .detail-spec-row {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
           }
           .detail-similar-section {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
           }
           .detail-back-btn {
-            font-size: 0.82rem;
-            padding: 0.3rem 0.6rem;
-            margin-bottom: 0.85rem;
-          }
-          .detail-thumb {
-            width: 56px;
-            height: 42px;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.55rem;
+            margin-bottom: 0.75rem;
           }
         }
       `}</style>
