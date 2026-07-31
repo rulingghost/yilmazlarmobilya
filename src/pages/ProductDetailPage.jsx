@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   Phone, 
   ChevronLeft, 
+  ChevronRight,
   Sparkles
 } from 'lucide-react';
 import { WhatsAppIcon } from '../components/WhatsAppIcon';
@@ -13,7 +14,43 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
   const images = product.images && product.images.length > 0 ? product.images : [null];
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  // Swipe handling for mobile
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
   const currentImage = images[activeImageIndex] || images[0];
+
+  const handleNextImage = () => {
+    if (images.length <= 1) return;
+    setActiveImageIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+  };
+
+  const handlePrevImage = () => {
+    if (images.length <= 1) return;
+    setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (images.length <= 1) return;
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 40;
+
+    if (diff > minSwipeDistance) {
+      // Swiped Left -> Next Image
+      handleNextImage();
+    } else if (diff < -minSwipeDistance) {
+      // Swiped Right -> Prev Image
+      handlePrevImage();
+    }
+  };
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('tr-TR', {
@@ -42,17 +79,43 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
 
       {/* Main Product Layout */}
       <div className="detail-grid">
-        {/* Left: Gallery Column (strictly contained with min-width: 0) */}
+        {/* Left: Gallery Column */}
         <div className="detail-gallery-col">
-          <div className="detail-main-image">
+          <div 
+            className="detail-main-image"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <ImageWithFallback
               src={currentImage}
               alt={product.name}
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
+
+            {/* Desktop Left/Right Navigation Arrows */}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={handlePrevImage}
+                  className="detail-nav-arrow detail-arrow-left"
+                  aria-label="Önceki Fotoğraf"
+                >
+                  <ChevronLeft size={22} />
+                </button>
+                <button
+                  onClick={handleNextImage}
+                  className="detail-nav-arrow detail-arrow-right"
+                  aria-label="Sonraki Fotoğraf"
+                >
+                  <ChevronRight size={22} />
+                </button>
+              </>
+            )}
+
             {images.length > 1 && (
               <span className="detail-image-counter">
-                {activeImageIndex + 1} / {images.length} Fotoğraf
+                {activeImageIndex + 1} / {images.length} Fotoğraf (Kaydırın 👋)
               </span>
             )}
           </div>
@@ -222,6 +285,36 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           box-shadow: var(--shadow-sm);
           margin-bottom: 1rem;
           position: relative;
+          user-select: none;
+          touch-action: pan-y;
+        }
+        .detail-nav-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.85);
+          color: var(--text-main);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+          z-index: 5;
+          backdrop-filter: blur(4px);
+        }
+        .detail-nav-arrow:hover {
+          background: #FFF;
+          color: var(--accent-wood);
+          transform: translateY(-50%) scale(1.1);
+        }
+        .detail-arrow-left {
+          left: 12px;
+        }
+        .detail-arrow-right {
+          right: 12px;
         }
         .detail-image-counter {
           position: absolute;
@@ -234,6 +327,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           border-radius: var(--radius-full);
           font-size: 0.75rem;
           font-weight: 600;
+          z-index: 4;
         }
         .detail-thumb-wrapper {
           min-width: 0;
@@ -397,7 +491,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           border-top: 1px solid var(--border-light);
         }
 
-        /* ========= MOBILE RESPONSIVE STRICT OVERFLOW FIXES ========= */
+        /* ========= MOBILE RESPONSIVE ========= */
         @media (max-width: 768px) {
           .detail-grid {
             grid-template-columns: 1fr;
@@ -418,6 +512,12 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
             border-radius: var(--radius-sm);
             margin-bottom: 0.5rem;
           }
+          .detail-nav-arrow {
+            width: 32px;
+            height: 32px;
+          }
+          .detail-arrow-left { left: 8px; }
+          .detail-arrow-right { right: 8px; }
           .detail-thumb-wrapper {
             width: 100%;
             max-width: 100%;

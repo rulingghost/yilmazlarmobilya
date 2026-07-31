@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Filter, X, ArrowUpDown, ChevronDown } from 'lucide-react';
+import { Search, Filter, X, ArrowUpDown, ChevronDown, Check } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 
 export function ProductsPage({ 
@@ -12,9 +12,19 @@ export function ProductsPage({
 }) {
   const [sortOrder, setSortOrder] = useState('default');
   const [visibleCount, setVisibleCount] = useState(24);
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   const categories = useMemo(() => {
     return ['Tümü', ...Array.from(new Set(products.map(p => p.category)))];
+  }, [products]);
+
+  // Calculate category counts
+  const categoryCounts = useMemo(() => {
+    const map = { 'Tümü': products.length };
+    products.forEach(p => {
+      map[p.category] = (map[p.category] || 0) + 1;
+    });
+    return map;
   }, [products]);
 
   useEffect(() => {
@@ -41,6 +51,8 @@ export function ProductsPage({
     return filteredProducts.slice(0, visibleCount);
   }, [filteredProducts, visibleCount]);
 
+  const activeCategoryLabel = selectedCategory && selectedCategory !== 'Tümü' ? selectedCategory : 'Tüm Kategoriler';
+
   return (
     <div className="animate-fade-in container" style={{ paddingTop: '1.25rem' }}>
       {/* Header */}
@@ -51,8 +63,8 @@ export function ProductsPage({
         </p>
       </div>
 
-      {/* Search & Filter Controls */}
-      <div className="catalog-controls">
+      {/* Desktop Search & Filter Controls */}
+      <div className="catalog-controls desktop-controls-box">
         <div className="catalog-controls-top">
           {/* Search Box */}
           <div className="catalog-search-box">
@@ -100,17 +112,61 @@ export function ProductsPage({
                 onClick={() => setSelectedCategory(cat === 'Tümü' ? null : cat)}
                 className={`catalog-pill ${isSelected ? 'catalog-pill-active' : ''}`}
               >
-                {cat}
+                {cat} ({categoryCounts[cat] || 0})
               </button>
             );
           })}
         </div>
       </div>
 
+      {/* Mobile-Dedicated Compact Filter Bar */}
+      <div className="mobile-filter-bar">
+        {/* Search input */}
+        <div className="catalog-search-box" style={{ width: '100%', marginBottom: '0.5rem' }}>
+          <input
+            type="text"
+            placeholder="Ürün adı veya model ara..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="catalog-search-input"
+          />
+          <Search size={15} className="catalog-search-icon" />
+          {searchQuery && (
+            <button onClick={() => setSearchQuery('')} className="catalog-search-clear">
+              <X size={14} />
+            </button>
+          )}
+        </div>
+
+        {/* Filter Trigger Button & Sort Dropdown */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+          <button
+            onClick={() => setIsMobileFilterOpen(true)}
+            className="mobile-filter-btn"
+          >
+            <Filter size={14} />
+            <span className="mobile-filter-btn-text">{activeCategoryLabel}</span>
+          </button>
+
+          <div style={{ position: 'relative' }}>
+            <select
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value)}
+              className="mobile-sort-select"
+            >
+              <option value="default">Sırala: Önerilen</option>
+              <option value="price-low">Fiyat: Düşükten Yükseğe</option>
+              <option value="price-high">Fiyat: Yüksekten Düşüğe</option>
+              <option value="newest">En Yeniler</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       {/* Count & Clear */}
       <div className="catalog-result-bar">
         <div className="catalog-result-count">
-          Toplam <strong>{filteredProducts.length}</strong> güncel İstikbal ürünü listeleniyor
+          Toplam <strong>{filteredProducts.length}</strong> ürün listeleniyor
         </div>
         {(selectedCategory || searchQuery) && (
           <button onClick={() => { setSelectedCategory(null); setSearchQuery(''); }} className="catalog-clear-btn">
@@ -154,6 +210,55 @@ export function ProductsPage({
           >
             Tüm Ürünleri Göster
           </button>
+        </div>
+      )}
+
+      {/* Mobile Category Filter Bottom Drawer Modal */}
+      {isMobileFilterOpen && (
+        <div className="mobile-modal-backdrop" onClick={() => setIsMobileFilterOpen(false)}>
+          <div className="mobile-modal-sheet" onClick={(e) => e.stopPropagation()}>
+            <div className="mobile-modal-header">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, fontSize: '1.05rem' }}>
+                <Filter size={18} style={{ color: 'var(--accent-wood)' }} />
+                <span>Kategori Seçin</span>
+              </div>
+              <button onClick={() => setIsMobileFilterOpen(false)} style={{ padding: '0.4rem', color: 'var(--text-muted)' }}>
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="mobile-modal-list">
+              {categories.map((cat) => {
+                const isSelected = (!selectedCategory && cat === 'Tümü') || selectedCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => {
+                      setSelectedCategory(cat === 'Tümü' ? null : cat);
+                      setIsMobileFilterOpen(false);
+                    }}
+                    className={`mobile-category-row ${isSelected ? 'mobile-category-row-active' : ''}`}
+                  >
+                    <span>{cat}</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span className="mobile-category-count">{categoryCounts[cat] || 0} ürün</span>
+                      {isSelected && <Check size={16} style={{ color: 'var(--accent-wood)' }} />}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div style={{ marginTop: '1rem', paddingTop: '0.75rem', borderTop: '1px solid var(--border-light)' }}>
+              <button 
+                onClick={() => setIsMobileFilterOpen(false)}
+                className="btn-primary"
+                style={{ width: '100%', borderRadius: 'var(--radius-full)' }}
+              >
+                Sonuçları Göster ({filteredProducts.length} Ürün)
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
@@ -307,10 +412,108 @@ export function ProductsPage({
           font-size: 0.9rem;
         }
 
-        /* ========= MOBILE RESPONSIVE COMPACT CONTROLS ========= */
-        @media (max-width: 640px) {
-          .catalog-header {
-            margin-bottom: 0.85rem;
+        /* Mobile Filter Bar & Drawer */
+        .mobile-filter-bar {
+          display: none;
+        }
+        .mobile-filter-btn {
+          background: var(--bg-card);
+          border: 1px solid var(--border-light);
+          padding: 0.5rem 0.75rem;
+          border-radius: var(--radius-sm);
+          font-size: 0.82rem;
+          font-weight: 700;
+          color: var(--text-main);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.4rem;
+          width: 100%;
+        }
+        .mobile-filter-btn-text {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .mobile-sort-select {
+          background: var(--bg-card);
+          border: 1px solid var(--border-light);
+          padding: 0.5rem 0.75rem;
+          border-radius: var(--radius-sm);
+          font-size: 0.82rem;
+          font-weight: 700;
+          color: var(--text-main);
+          width: 100%;
+          outline: none;
+        }
+        .mobile-modal-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(3px);
+          z-index: 200;
+          display: flex;
+          align-items: flex-end;
+          animation: fadeIn 0.2s ease forwards;
+        }
+        .mobile-modal-sheet {
+          background: var(--bg-main);
+          width: 100%;
+          max-height: 80vh;
+          border-top-left-radius: var(--radius-lg);
+          border-top-right-radius: var(--radius-lg);
+          padding: 1.25rem;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 -8px 30px rgba(0,0,0,0.2);
+        }
+        .mobile-modal-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 0.85rem;
+          border-bottom: 1px solid var(--border-light);
+          margin-bottom: 0.75rem;
+        }
+        .mobile-modal-list {
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+          max-height: 50vh;
+        }
+        .mobile-category-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.75rem 0.85rem;
+          border-radius: var(--radius-sm);
+          background: #FFF;
+          border: 1px solid var(--border-subtle);
+          font-size: 0.92rem;
+          font-weight: 600;
+          color: var(--text-main);
+          text-align: left;
+        }
+        .mobile-category-row-active {
+          border-color: var(--accent-wood);
+          background: var(--accent-amber-light);
+          color: var(--accent-wood);
+          font-weight: 700;
+        }
+        .mobile-category-count {
+          font-size: 0.78rem;
+          color: var(--text-muted);
+        }
+
+        /* ========= RESPONSIVE SWITCH ========= */
+        @media (max-width: 768px) {
+          .desktop-controls-box {
+            display: none !important;
+          }
+          .mobile-filter-bar {
+            display: block !important;
+            margin-bottom: 1rem;
           }
           .catalog-title {
             font-size: 1.35rem;
@@ -319,51 +522,11 @@ export function ProductsPage({
           .catalog-desc {
             font-size: 0.82rem;
           }
-          .catalog-controls {
-            padding: 0.75rem;
-            gap: 0.6rem;
-            margin-bottom: 0.85rem;
-          }
-          .catalog-controls-top {
-            flex-direction: column;
-            gap: 0.5rem;
-          }
-          .catalog-search-box {
-            min-width: 100%;
-          }
-          .catalog-search-input {
-            padding: 0.5rem 0.75rem 0.5rem 2.1rem;
-            font-size: 0.85rem;
-          }
-          .catalog-sort {
-            width: 100%;
-          }
-          .catalog-sort-select {
-            width: 100%;
-            padding: 0.45rem 0.75rem;
-            font-size: 0.82rem;
-          }
-          .catalog-pills {
-            overflow-x: auto;
-            flex-wrap: nowrap;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 0.35rem;
-            gap: 0.35rem;
-          }
-          .catalog-pill {
-            flex-shrink: 0;
-            font-size: 0.76rem;
-            padding: 0.28rem 0.7rem;
-          }
-          .catalog-pills-label {
-            flex-shrink: 0;
-            font-size: 0.75rem;
+          .catalog-header {
+            margin-bottom: 0.75rem;
           }
           .catalog-result-bar {
             margin-bottom: 0.85rem;
-          }
-          .catalog-result-count {
-            font-size: 0.8rem;
           }
         }
       `}</style>

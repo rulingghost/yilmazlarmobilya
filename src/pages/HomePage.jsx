@@ -61,43 +61,34 @@ export function HomePage({ products, onSelectProduct, setActivePage, setSelected
         </div>
       </section>
 
-      {/* Feature Highlights Banner */}
+      {/* Popular Showcase Products (Directly Visible First on Mobile) */}
       <section className="container" style={{ marginBottom: '3.5rem' }}>
-        <div className="features-grid">
-          <div className="feature-item">
-            <div className="feature-icon-box">
-              <Award size={24} />
-            </div>
-            <div>
-              <h4 className="feature-title">Orijinal İstikbal Garantisi</h4>
-              <p className="feature-desc">2 Yıl resmi fabrika garantisi</p>
-            </div>
+        <div className="products-header">
+          <div>
+            <span className="section-tag">Vitrin Modelleri</span>
+            <h2 className="section-title">Öne Çıkan Ürünlerimiz</h2>
           </div>
+          <button 
+            onClick={() => { setActivePage('products'); window.scrollTo(0,0); }}
+            className="btn-outline products-header-btn"
+          >
+            Tümünü Gör ({products.length})
+          </button>
+        </div>
 
-          <div className="feature-item">
-            <div className="feature-icon-box">
-              <Truck size={24} />
-            </div>
-            <div>
-              <h4 className="feature-title">Teslimat ve Montaj Hizmeti</h4>
-              <p className="feature-desc">Uzman ekibimizle kapınıza teslimat</p>
-            </div>
-          </div>
-
-          <div className="feature-item">
-            <div className="feature-icon-box">
-              <ShieldCheck size={24} />
-            </div>
-            <div>
-              <h4 className="feature-title">Doğrudan Temsilci Desteği</h4>
-              <p className="feature-desc">{siteConfig.phoneDisplay} hattımızdan bilgi</p>
-            </div>
-          </div>
+        <div className="grid-3">
+          {featuredProducts.map((product) => (
+            <ProductCard 
+              key={product.id} 
+              product={product} 
+              onSelectProduct={onSelectProduct} 
+            />
+          ))}
         </div>
       </section>
 
       {/* Featured Categories Grid */}
-      <section className="container" style={{ marginBottom: '4.5rem' }}>
+      <section className="container" style={{ marginBottom: '3.5rem' }}>
         <div className="section-header">
           <span className="section-tag">Kategoriler</span>
           <h2 className="section-title">Mobilya & Ev Tekstili Koleksiyonları</h2>
@@ -141,29 +132,38 @@ export function HomePage({ products, onSelectProduct, setActivePage, setSelected
         </div>
       </section>
 
-      {/* Popular Showcase Products */}
-      <section className="container" style={{ marginBottom: '4.5rem' }}>
-        <div className="products-header">
-          <div>
-            <span className="section-tag">Vitrin Modelleri</span>
-            <h2 className="section-title">Öne Çıkan Ürünlerimiz</h2>
+      {/* Feature Highlights Banner (Placed Below Products on Mobile) */}
+      <section className="container" style={{ marginBottom: '3.5rem' }}>
+        <div className="features-grid">
+          <div className="feature-item">
+            <div className="feature-icon-box">
+              <Award size={24} />
+            </div>
+            <div>
+              <h4 className="feature-title">Orijinal İstikbal Garantisi</h4>
+              <p className="feature-desc">2 Yıl resmi fabrika garantisi</p>
+            </div>
           </div>
-          <button 
-            onClick={() => { setActivePage('products'); window.scrollTo(0,0); }}
-            className="btn-outline products-header-btn"
-          >
-            Tümünü Gör ({products.length})
-          </button>
-        </div>
 
-        <div className="grid-3">
-          {featuredProducts.map((product) => (
-            <ProductCard 
-              key={product.id} 
-              product={product} 
-              onSelectProduct={onSelectProduct} 
-            />
-          ))}
+          <div className="feature-item">
+            <div className="feature-icon-box">
+              <Truck size={24} />
+            </div>
+            <div>
+              <h4 className="feature-title">Teslimat ve Montaj Hizmeti</h4>
+              <p className="feature-desc">Uzman ekibimizle kapınıza teslimat</p>
+            </div>
+          </div>
+
+          <div className="feature-item">
+            <div className="feature-icon-box">
+              <ShieldCheck size={24} />
+            </div>
+            <div>
+              <h4 className="feature-title">Doğrudan Temsilci Desteği</h4>
+              <p className="feature-desc">{siteConfig.phoneDisplay} hattımızdan bilgi</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -424,76 +424,76 @@ export function HomePage({ products, onSelectProduct, setActivePage, setSelected
         /* ========= MOBILE RESPONSIVE ========= */
         @media (max-width: 768px) {
           .hero-section {
-            min-height: 420px;
-            padding: 2.5rem 1.5rem;
-            margin: 0.75rem auto 2rem auto;
+            min-height: 380px;
+            padding: 2rem 1.25rem;
+            margin: 0.5rem auto 1.75rem auto;
             border-radius: var(--radius-md);
           }
           .hero-title {
-            font-size: clamp(1.6rem, 6vw, 2.4rem);
+            font-size: clamp(1.5rem, 5.5vw, 2.2rem);
           }
           .hero-desc {
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
           }
           .hero-cta-primary,
           .hero-cta-wa {
-            padding: 0.75rem 1.5rem;
-            font-size: 0.92rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.88rem;
             width: 100%;
             justify-content: center;
           }
           .hero-cta-row {
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.6rem;
           }
-          .hero-badge-glass {
-            font-size: 0.72rem;
-            padding: 0.25rem 0.65rem;
-          }
-          .hero-badge-primary {
-            font-size: 0.72rem;
-            padding: 0.25rem 0.65rem;
+          .hero-badge-glass, .hero-badge-primary {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
           }
           .features-grid {
             grid-template-columns: 1fr;
-            padding: 1.25rem;
-            gap: 1rem;
+            padding: 1rem;
+            gap: 0.85rem;
           }
           .categories-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.85rem;
+            gap: 0.65rem;
           }
           .category-banner-card {
-            height: 160px;
+            height: 140px;
           }
           .category-card-content {
-            padding: 0.85rem;
+            padding: 0.75rem;
           }
           .category-card-name {
-            font-size: 1rem;
+            font-size: 0.92rem;
           }
           .category-card-count {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
           }
           .products-header {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+          }
+          .products-header-btn {
+            font-size: 0.78rem;
+            padding: 0.4rem 0.85rem;
           }
           .cta-banner {
-            padding: 2rem 1.25rem;
+            padding: 1.5rem 1rem;
             border-radius: var(--radius-md);
             flex-direction: column;
             text-align: center;
             align-items: stretch;
           }
           .cta-banner-title {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
           }
           .cta-banner-desc {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
           }
           .cta-banner-actions {
             flex-direction: column;
@@ -501,33 +501,6 @@ export function HomePage({ products, onSelectProduct, setActivePage, setSelected
           .cta-banner-btn {
             width: 100%;
             justify-content: center;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .hero-section {
-            min-height: 360px;
-            padding: 1.75rem 1rem;
-            margin: 0.5rem auto 1.5rem auto;
-            border-radius: var(--radius-sm);
-          }
-          .hero-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.85rem;
-          }
-          .hero-desc {
-            font-size: 0.88rem;
-            margin-bottom: 1.25rem;
-          }
-          .categories-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 0.65rem;
-          }
-          .category-banner-card {
-            height: 130px;
-          }
-          .category-card-name {
-            font-size: 0.9rem;
           }
         }
       `}</style>
