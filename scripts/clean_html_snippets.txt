@@ -1,0 +1,175 @@
+-->
+window.viewerModel = JSON.parse(document.getElementById('wix-essential-viewer-model').textContent)
+window.commonConfig = viewerModel.commonConfig
+6e4)return{counter:0}}return{counter:o}}return{counter:0}}();e
+ANASAYFA | İstikbal Yilmazlar
+@view-transition {navigation: auto;types: OutIn}
+0){
+        document.body.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`)
+    }
+#comp-kcann1ed1{visibility:hidden !important;}
+top of page
+Siteyi oluşturan:
+AGB Ali BATMAZ
+HAKKIMIZDA
+İLETİŞİM
+UYKU TESTİ
+DİJİTAL KATALOG
+OTURMA ODASI
+KOLTUK TAKIMLARI
+KANEPE VE KOLTUK
+KÖŞE TAKIMLARI
+TV KOLTUKLARI
+TV ÜNİTESİ
+BERJER
+YEMEK ODASI
+YEMEK ODASI TAKIMLARI
+MUTFAK MASA TAKIMLARI
+KONSOL AYNASI
+YEMEK MASASI
+KONSOL
+VİTRİN
+SANDALYE
+YATAK ODASI
+YATAK ODASI TAKIMLARI
+DOLAP
+ŞİFONYER
+KOMODİN
+MAKYAJ MASASI
+KARYOLA
+KARYOLA BAŞLIĞI
+YATAK VE BAZA
+YATAK
+BAZA
+BAŞLIK
+ÇOCUK VE GENÇ ODASI
+GENÇ ODASI TAKIMLARI
+GENÇ ODASI ŞİFONYER
+GENÇ ODASI BAŞLIK
+ÇALIŞMA MASASI
+BEBEK ODASI TAKIMLARI
+GENÇ ODASI KARYOLA
+GENÇ ODASI DOLAP
+GENÇ ODASI KOMODİN
+BAHÇE MOBİLYASI
+TAMAMLAYICI ÜRÜNLER
+HALI
+TEKSTİL
+Yılmazlar Mobilya
+Web Sitemize Hoşgeldiniz
+&Uuml;r&uuml;n Kategorileri
+Oturma Odası
+Ürünler Mağaza
+K&ouml;şe Takımları
+TV &Uuml;nitesi
+Yemek Odaları
+Yatak Odaları
+Yatak ve Baza
+Yeni &Uuml;r&uuml;nler
+Hızlı Bakış
+MARY KÖŞE TAKIMI
+Sepete Ekle
+CLİMA WOOL BAZA BAŞLIK
+HERA BAŞLIK BAZA
+TEDDY KÖŞE TAKIMI
+MİTRA UZANMALI KÖŞE TAKIMI
+SENFONİ KÖŞE TAKIMI
+PLATO S KÖŞE TAKIMI
+PLATO S UZANMALI KÖŞE TAKIMI
+REVEL MİNİ TAKIM
+PABLO MİNİ TAKIM
+ARMİN MASA TAKIMI - SU YEŞİLİ
+ARMİN MASA TAKIMI
+DUBLİN MİNİ TAKIM
+SOFİA MİNİ TAKIM
+SENTA MİNİ TAKIM
+SARA SALINCAK
+BEVERLY GENÇ ODASI TAKIMI
+VEGA GENÇ ODASI TAKIMI
+DAİSY GENÇ ODASI TAKIMI
+MİTRA MONTESSORİ BEBEK ODASI
+Yılmazlar Mobilya ve Dekorasyon
+Hakkımızda
+Cross Yemek Odası Takımı
+Grand Comfort 5 Zone
+Graphene Premium Yatak
+Nova Koltuk Takımı Gri
+Clark Mutfak Takımı
+Lena Koltuk Takımı
+Aren Koltuk Takımı
+Roxy Yatak Odası Takımı
+Roxy Yemek Odası Takımı
+Detox Ultra Yatak
+Nova Yaşam Ünitesi
+Roxy TV Ünitesi
+Yatak Odası Takımları
+TRUVA YATAK ODASI TAKIMI
+FİONA YATAK ODASI TAKIMI
+ALEXA YATAK ODASI TAKIMI
+BORNEO BOHEM YATAK ODASI TAKIMI
+LAVİTA YATAK ODASI TAKIMI
+TRUVA YEMEK ODASI TAKIMI
+ALEXA YEMEK ODASI TAKIMI
+BORNEO BOHEM YEMEK ODASI TAKIMI
+Albero Yatak Odası Takımı
+Alya Yatak Odası Takımı
+MARVEN YATAK ODASI
+Yatak Odası Takımı Aren
+Yatak Odası Takımı Armony
+Yatak Odası Takımı Prado
+Yatak Odası Takımı Betty
+Diego Yatak Odası Takımı
+YENİ ÜRÜN
+Misty Yatak Odası Takımı
+Vista Yatak Odası Takımı
+Mary Yatak Odası Takımı
+İletişim Bilgilerimiz
+Adres
+Demirhendek Caddesi No: 162 Siteler Altındağ / ANKARA
+&nbsp;
+yilmazlar@yilmazlarmobilya.com
+Telefon:0 312 348 87 63
+Telefon:0 312 350 77 92
+Faks:0 312 350 16 02
+Gsm:0 546 961 01 31
+&Ccedil;alışma Saatlerimiz
+Hafta İ&ccedil;i
+10.00 - 19:30
+Hafta Sonu
+10:00 - 18:00
+Sosyal
+Facebook
+Instagram
+Yelp
+Men&uuml;
+Bize Ulaşın
+Form &Uuml;zerinden Bize Ulaşın
+Adı
+Soyadı
+Email
+Telefon
+Mesajınız
+Gönder
+Teşekkür Ederiz.
+bottom of page
+window.fedops = JSON.parse(document.getElementById('wix-fedops').textContent)
+0?{dpr:r}:null}catch{return null}})();return n?(e=i,t=n.dpr,!e||!t||t
+=t)&&Object.keys(f.O).every(e=>f.O[e](r[d]))?r.splice(d--,1):(n=!1,t
+=t&&e
+=5&&t.quality
+=.1&&T.radius
+=0&&T.amount
+=0&&T.threshold
+e+t,0);if(h>e)return null;if(t){if(i){let t=Math.floor(e/r.length),i=r.map(()=>t);if((l=t*r.length)
+(l+=e+t,e+t));if(l
+e>t?e:t,-1/0),_=t(o,h,c,s,u,p,m,g);if(!_){for(let e=1;e
+!!e.moreDOMid).forEach(e=>{if(e.moreIndex
+l?(c="auto",d=0):c=e
+e.startsWith(t))){if(e.includes("__"))return e;(!c||e.length
+0&&o[o.length-1])||6!==c[0]&&2!==c[0])){u=0;continue}if(3===c[0]&&(!o||c[1]>o[0]&&c[1]
+externalRegistryPromise.then(() => window.externalsRegistry[name].onload())
+window.viewerModel = JSON.parse(document.getElementById('wix-viewer-model').textContent)
+["location","window","site","seo","user"]
+window.usedPlatformApis = JSON.parse(document.getElementById('used-platform-apis-data').textContent)
+0&&e.responseStart
+window.clientSideRender = false;

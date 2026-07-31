@@ -1,0 +1,290 @@
+":true}}
+window.viewerModel = JSON.parse(document.getElementById('wix-essential-viewer-model').textContent)
+
+    (function () {
+      var now = Date.now()
+      var activationStart = 0
+      try {
+        var navEntry = performance.getEntriesByType('navigation')[0];
+        if (navEntry && navEntry.activationStart > 0) {
+          activationStart = navEntry.activationStart;
+        }
+      } catch (e) {}
+      window.initialTimestamps = {
+        initialTimestamp: now,
+        initialRequestTimestamp: Math.round(performance.timeOrigin ? performance.timeOrigin + activationStart : now - performance.now() + activationStart)
+      }
+
+      window.thunderboltTag = "
+":1785511428060}
+
+
+
+
+    if (window.ResizeObserver &&
+        (!window.PerformanceObserver || !PerformanceObserver.supportedEntryTypes || PerformanceObserver.supportedEntryTypes.indexOf('paint') === -1)) {
+        new ResizeObserver(function (entries, observer) {
+            entries.some(function (entry) {
+                var contentRect = entry.contentRect;
+                if (contentRect.width > 0 && contentRect.height > 0) {
+                    requestAnimationFrame(function (now) {
+                        window.wixFirstPaint = now;
+                        dispatchEvent(new CustomEvent('wixFirstPaint'));
+                    });
+                    observer.disconnect();
+                    return true;
+                }
+            });
+        }).observe(document.body);
+    }
+
+
+    const div = document.createElement('div')
+    div.style.overflowY = 'scroll'
+    div.style.width = '50px'
+    div.style.height = '50px'
+    div.style.visibility = 'hidden'
+    document.body.appendChild(div)
+    const scrollbarWidth= div.offsetWidth - div.clientWidth
+    document.body.removeChild(div)
+    if(scrollbarWidth > 0){
+        document.body.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`)
+    }
+
+
+    window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
+        requestAnimationFrame(function() {
+            try {
+                var stored = sessionStorage.getItem('wix-motion-played-animations');
+                if (stored) {
+                    var played = JSON.parse(stored);
+                    for (var compId in played) {
+                        if (played[compId]) {
+                            var el = document.getElementById(compId);
+                            if (el) {
+                                el.dataset.motionEnter = 'done';
+                            }
+                        }
+                    }
+                }
+            } catch (e) {}
+        });
+    });
+
+{"
+":true}}
+window.fedops = JSON.parse(document.getElementById('wix-fedops').textContent)
+(()=>{"
+"siteLocaleService"
+"64cadf7e"
+"==typeof window)return window}})(),f.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r),a={},f.l=function(e,r,o,t){if(a[e])return void a[e].push(r);if(void 0!==o)for(var i,c,n=document.getElementsByTagName("
+",d.type=c,d.request=n,i.parentNode&&i.parentNode.removeChild(i),t(d)}},a?a.parentNode.insertBefore(i,a.nextSibling):document.head.appendChild(i),i},s=function(e,r){for(var a=document.getElementsByTagName("
+"===t.rel&&(i===e||i===r))return t}for(var c=document.getElementsByTagName("
+"===r?null:`${+r}`===r?+r:r):r:e.dataset[t]},_=(e,t)=>e&&t&&Object.assign(e.dataset,t),b=e=>e||document.documentElement.clientHeight||window.innerHeight||0,T={fit:"
+"),{width:m,height:g}=a,p=`${m}px`,f=`${g}px`,_=`${(n.width-m)/2}px`;if(e){let e=r.document.documentElement.clientLeft;_=u?`${l.offsetLeft-e}px`:`${n.left-e}px`}let T=e||d?0:`${(n.height-g)/2}px`;Object.assign(c,o?{"
+"].concat(E,[y]);w.forEach(e=>{let t=`${r}${e}`;b[t]=n.getRootNode().getElementById(`${t}`)}),a=T,s={},w.forEach(e=>{let t=`${r}${e}`,i=b[t];i&&(s[t]={width:i.offsetWidth,boundingClientRectWidth:Math.round(i.getBoundingClientRect().width/a),height:i.offsetHeight})}),_.children=s;let L=b[r],v=b[`${r}itemsContainer`],A=v.childNodes,O=b[`${r}moreContainer`],C=O.childNodes,R=f(L,"
+");_.absoluteLeft=L.getBoundingClientRect().left,_.bodyClientWidth=e.document.body.clientWidth,_.alignButtons=f(L,"
+",c={width:t.children[e+h].width,left:t.children[e+h].left},d=((e,t,i,r,n)=>{let{width:a,height:o,alignButtons:s,hoverListPosition:l,menuItemContainerExtraPixels:h}=t,c=t.absoluteLeft,d=((e,t,i,r,n,a,o,s,l,h)=>{let c="
+"),this._hideElement(),this._waitForDomLoad().then(()=>{super.observeResize(),this._observeChildrenResize(),this.reLayout()})}disconnectedCallback(){t.mutationService.clear(this._mutationIds.read),t.mutationService.clear(this._mutationIds.write),super.disconnectedCallback()}_waitForDomLoad(){let e,t=new Promise(t=>{e=t});return this._isDomReady()?e():(this._waitForDomReadyObserver=new i.MutationObserver(()=>this._onRootMutate(e)),this._waitForDomReadyObserver.observe(this,{childList:!0,subtree:!0})),t}_isDomReady(){return this._itemsContainer=this.getRootNode().getElementById(`${this._id}itemsContainer`),this._dropContainer=this.getRootNode().getElementById(`${this._id}dropWrapper`),this._itemsContainer&&this._dropContainer}_onRootMutate(e){this._isDomReady()&&(this._waitForDomReadyObserver.disconnect(),e())}_observeChildrenResize(){let e=Array.from(this._itemsContainer.childNodes);this._labelItems=e.map(e=>this.getRootNode().getElementById(`${e.getAttribute("
+",qualities:s,staticVideoUrl:l,videoId:h,videoFormat:c,focalPoint:m}){var g,p,f,_,b,I,E,w,L,v;let A,O,y,C=i?t.offsetWidth:e.parentElement.offsetWidth,R=e.parentElement.offsetHeight,M=parseInt(r,10),x=parseInt(n,10),S=(g=a,p={wScale:C/M,hScale:R/x},f=M,_=x,{width:Math.round(f*(A=g===u.fittingTypes.SCALE_TO_FIT?Math.min(p.wScale,p.hScale):Math.max(p.wScale,p.hScale))),height:Math.round(_*A)}),G=(b=function(e,{width:t,height:i}){var r;return(r=e=>e.size,Object.values(e.reduce((e,t)=>(e[r(t)]=t,e),{}))).find(e=>e.size>t*i)||e[e.length-1]}(s,S),I=l,E=h,"
+",userDomainMediaPrefixes:e.userDomainMediaPrefixes??[],experiments:p,isViewerMode:!0,devicePixelRatio:/iemobile/i.test(navigator.userAgent)?Math.round(window.screen.availWidth/(window.screen.width||window.document.documentElement.clientWidth)):window.devicePixelRatio,...s},b={getMediaDimensionsByEffect:m,..._={mutationService:n(),isExperimentOpen:g,siteService:u()},...o},{...e,wixCustomElements:a||(T=u(),h({resizeService:{init:e=>new ResizeObserver(e)},windowResizeService:{init:e=>window.addEventListener("
+"!=typeof e)return null;let r=a(t);if(r){let t=i.querySelector(`.${e}`);if(t)return t}let n=i.getElementById(e);return n&&r&&s(t?.logger,e,"
+"getElementCompId"
+",sourceSets:s},n){var o,l;let d,c=i.image,h=i[e],u=n.getScreenHeightOverride?.()||document.documentElement.clientHeight||window.innerHeight||0,g=r?.dataset.mediaHeightOverrideType,m=a&&"
+"===g?document.documentElement.clientHeight+80:v,t.screenHeight=u,t.imgSrc=w,t.boundingRect=h.getBoundingClientRect(),t.mediaHeightOverrideType=g,t.srcset=c.srcset},u=function(e,t,i,a,s,o,d,c,h,u){if(!Object.keys(t).length)return;let{imageData:g}=a,m=i[e],f=i.image;h&&(g.devicePixelRatio=1);let b=a.targetScale||1,p=s.isExperimentOpen?.("
+"==typeof window)return;let a={staticMediaUrl:r.STATIC_MEDIA_URL,mediaRootUrl:r.MEDIA_ROOT_URL,experiments:{},devicePixelRatio:/iemobile/i.test(navigator.userAgent)?Math.round(window.screen.availWidth/(window.screen.width||window.document.documentElement.clientWidth)):window.devicePixelRatio,disableImagesLazyLoading:(()=>{try{return"
+"===this.dataset.isResponsive,{bgEffectName:l}=this.dataset,{scrollEffect:d}=r.imageData,{sourceSets:c}=r,m=l||d&&g[d];c&&c.length&&c.forEach(e=>{e.scrollEffect&&(e.scrollEffect=g[e.scrollEffect])}),e[i]=this,r.containerId&&(e[r.containerId]=o.document.getElementById(`${r.containerId}`));let f=r.containerId?e[r.containerId]:void 0;if(e.image=this.querySelector("
+"Adreslerim"
+"Adreslerim"
+"Adreslerim"
+"Adreslerim"
+"Adreslerim"
+"Adreslerim"
+"Adreslerim\"
+"Adreslerim\"
+"YATAK ODASI TAKIMLARI"
+"yatak-odasi-takimlari"
+"yatak-odasi-takimlari"
+"KANEPE VE KOLTUK"
+"kanepe-ve-koltuk"
+"kanepe-ve-koltuk"
+"Adreslerim"
+"YEMEK MASASI"
+"yemek-masasi"
+"yemek-masasi"
+"YATAK"
+"yatak"
+"yatak"
+"TV KOLTUKLARI"
+"tv-koltuklari"
+"tv-koltuklari"
+"YATAK VE BAZA"
+"yatak-ve-baza"
+"yatak-ve-baza"
+"YEMEK ODASI TAKIMLARI"
+"yemek-odasi-takimlari"
+"yemek-odasi-takimlari"
+"Ürün Sayfası"
+"TAMAMLAYICI ÜRÜNLER"
+"tamamlayici-ürünler"
+"tamamlayici-ürünler"
+"KOLTUK TAKIMLARI"
+"koltuk-takimlari"
+"koltuk-takimlari"
+"YEMEK ODASI"
+"yemek-odasi"
+"yemek-odasi"
+"YATAK ODASI"
+"yatak-odasi"
+"yatak-odasi"
+".\/yatak-odasi-takimlari"
+".\/kanepe-ve-koltuk"
+".\/yemek-masasi"
+".\/yatak"
+".\/tv-koltuklari"
+".\/yatak-ve-baza"
+".\/yemek-odasi-takimlari"
+".\/tamamlayici-ürünler"
+".\/koltuk-takimlari"
+".\/yemek-odasi"
+".\/yatak-odasi"
+"İstikbal Yilmazlar"
+"specs.stores.SliderGalleryInfiniteLoopToggleViewer"
+"specs.stores.SideCartElementsVisibilityInCss"
+"specs.bookings.SitePropertiesFacadeMigration"
+"İstikbal Yilmazlar"
+"YATAK ODASI TAKIMLARI"
+"KANEPE VE KOLTUK"
+"Adreslerim"
+"YEMEK MASASI"
+"YATAK"
+"TV KOLTUKLARI"
+"YATAK VE BAZA"
+"YEMEK ODASI TAKIMLARI"
+"Ürün Sayfası"
+"TAMAMLAYICI ÜRÜNLER"
+"KOLTUK TAKIMLARI"
+"YEMEK ODASI"
+"YATAK ODASI"
+"Adreslerim\"
+"Adreslerim\"
+"Adreslerim\"
+"Adreslerim\"
+"specs.stores.SliderGalleryInfiniteLoopToggleViewer"
+"specs.stores.SideCartElementsVisibilityInCss"
+"specs.bookings.SitePropertiesFacadeMigration"
+"specs.thunderbolt.useNewTelemetryAPI"
+"siteLanguage"
+"Adreslerim\"
+"Adreslerim\"
+":false}
+window.viewerModel = JSON.parse(document.getElementById('wix-viewer-model').textContent)
+["
+"]
+window.usedPlatformApis = JSON.parse(document.getElementById('used-platform-apis-data').textContent)
+"
+"],function(){return e(e.s=40250)}),e.O()}]);
+//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/sendBeat12.inline.995b241c.bundle.min.js.map
+
+    window.firstPageId = 'c1dmp'
+
+    if (window.requestCloseWelcomeScreen) {
+        window.requestCloseWelcomeScreen()
+    }
+	if (!window.__browser_deprecation__) {
+		window.fedops.phaseStarted('partially_visible', {paramsOverrides: { pageId: firstPageId, isSuccessfulSSR: !clientSideRender }})
+	}
+
+
+			const wixAdsOffsetHeight = document.querySelector(':is(.WIX_ADS, #WIX_ADS)')?.offsetHeight || 0;
+			const header = document.getElementsByTagName('header')[0];
+
+			let headerOffsetHeight = 0;
+
+			if (header) {
+				const headerPosition = window.getComputedStyle(header).getPropertyValue('position').toLowerCase();
+				const isHeaderStickyOrFixed = headerPosition === 'sticky' || headerPosition === 'fixed';
+				headerOffsetHeight = isHeaderStickyOrFixed ? header.offsetHeight : 0;
+			}
+
+			document.documentElement.style.scrollPaddingTop = `${wixAdsOffsetHeight + headerOffsetHeight}px`;
+        
+
+
+
+{"
+"Adreslerim"
+"YENİ ÜRÜN"
+"cross-yemek-odası-takımı"
+"Cross Yemek Odası Takımı"
+"YENİ ÜRÜN"
+"YENİ ÜRÜN"
+"graphene-premium-yatak"
+"Graphene Premium Yatak"
+"YENİ ÜRÜN"
+"nova-koltuk-takımı-gri"
+"Nova Koltuk Takımı Gri"
+"YENİ ÜRÜN"
+"YENİ ÜRÜN"
+"lena-koltuk-takımı"
+"Lena Koltuk Takımı"
+"YENİ ÜRÜN"
+"aren-koltuk-takımı"
+"Aren Koltuk Takımı"
+"YENİ ÜRÜN"
+"roxy-yatak-odası-takımı"
+"Roxy Yatak Odası Takımı"
+"YENİ ÜRÜN"
+"roxy-yemek-odası-takımı"
+"Roxy Yemek Odası Takımı"
+"YENİ ÜRÜN"
+"detox-ultra-yatak"
+"Detox Ultra Yatak"
+"YENİ ÜRÜN"
+"YENİ ÜRÜN"
+"9f762c_0ecade454753427fb98d677a7be3c7ed~mv2.webp"
+"https:\/\/static.wixstatic.com\/media\/9f762c_0ecade454753427fb98d677a7be3c7ed~mv2.webp\/v1\/fit\/w_500,h_500,q_90\/file.webp"
+"YATAK ODASI TAKIMLARI"
+"truva-yatak-odasi-takimi"
+"TRUVA YATAK ODASI TAKIMI"
+"fiona-yatak-odasi-takimi"
+"FİONA YATAK ODASI TAKIMI"
+"alexa-yatak-odasi-takimi"
+"ALEXA YATAK ODASI TAKIMI"
+"borneo-bohemyatak-odasi-takimi"
+"BORNEO BOHEM YATAK ODASI TAKIMI"
+"lavita-yatak-odasi-takimi"
+"LAVİTA YATAK ODASI TAKIMI"
+"truva-yemek-odasi-takimi"
+"TRUVA YEMEK ODASI TAKIMI"
+"alexa-yemek-odasi-takimi"
+"ALEXA YEMEK ODASI TAKIMI"
+"borneo-bohem-yemek-odasi-takimi"
+"BORNEO BOHEM YEMEK ODASI TAKIMI"
+"albero-yatak-odası-takımı"
+"Albero Yatak Odası Takımı"
+"alya-yatak-odası-takımı"
+"Alya Yatak Odası Takımı"
+"marven-yatak-odasi"
+"MARVEN YATAK ODASI"
+"yatak-odası-takımı-aren"
+"Yatak Odası Takımı Aren"
+"yatak-odası-takımı-armony"
+"Yatak Odası Takımı Armony"
+"yatak-odası-takımı-prado"
+"Yatak Odası Takımı Prado"
+"yatak-odası-takımı-betty"
+"Yatak Odası Takımı Betty"
+"diego-yatak-odası-takımı"
+"Diego Yatak Odası Takımı"
+"roxy-yatak-odası-takımı-1"
+"Roxy Yatak Odası Takımı"
+"YENİ ÜRÜN"
+"misty-yatak-odası-takımı"
+"Misty Yatak Odası Takımı"
+"YENİ ÜRÜN"
+"vista-yatak-odası-takımı"
+"Vista Yatak Odası Takımı"
+"YENİ ÜRÜN"
+"mary-yatak-odası-takımı"
+"Mary Yatak Odası Takımı"

@@ -1,0 +1,4 @@
+# Yılmazlar Mobilya - Her gece TSİ 01.00 Otomatik Ürün Güncelleme Cron Görevi
+# Sunucu Saat Dilimi: Europe/Istanbul
+
+0 1 * * * cd /proje/klasoru && npm run update-products >> logs/product-update.log 2>&1
