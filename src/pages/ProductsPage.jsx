@@ -42,7 +42,7 @@ export function ProductsPage({
   }, [filteredProducts, visibleCount]);
 
   return (
-    <div className="animate-fade-in container" style={{ paddingTop: '1.5rem' }}>
+    <div className="animate-fade-in container" style={{ paddingTop: '1.25rem' }}>
       {/* Header */}
       <div className="catalog-header">
         <h1 className="catalog-title">Tüm Ürün Kataloğu</h1>
@@ -58,22 +58,22 @@ export function ProductsPage({
           <div className="catalog-search-box">
             <input
               type="text"
-              placeholder="Ürün adı, koleksiyon veya özellik ara..."
+              placeholder="Ürün adı veya model ara..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="catalog-search-input"
             />
-            <Search size={18} className="catalog-search-icon" />
+            <Search size={16} className="catalog-search-icon" />
             {searchQuery && (
               <button onClick={() => setSearchQuery('')} className="catalog-search-clear">
-                <X size={16} />
+                <X size={15} />
               </button>
             )}
           </div>
 
           {/* Sort */}
           <div className="catalog-sort">
-            <ArrowUpDown size={16} style={{ color: 'var(--text-muted)' }} />
+            <ArrowUpDown size={15} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
             <select
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value)}
@@ -90,7 +90,7 @@ export function ProductsPage({
         {/* Category Pills */}
         <div className="catalog-pills">
           <span className="catalog-pills-label">
-            <Filter size={14} /> Kategoriler:
+            <Filter size={13} /> Kategoriler:
           </span>
           {categories.map((cat) => {
             const isSelected = (!selectedCategory && cat === 'Tümü') || selectedCategory === cat;
@@ -114,7 +114,7 @@ export function ProductsPage({
         </div>
         {(selectedCategory || searchQuery) && (
           <button onClick={() => { setSelectedCategory(null); setSearchQuery(''); }} className="catalog-clear-btn">
-            <X size={14} /> Filtreleri Temizle
+            <X size={14} /> Temizle
           </button>
         )}
       </div>
@@ -133,13 +133,13 @@ export function ProductsPage({
           </div>
 
           {visibleCount < filteredProducts.length && (
-            <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <div style={{ textAlign: 'center', marginTop: '2.5rem', marginBottom: '2rem' }}>
               <button
                 onClick={() => setVisibleCount(prev => prev + 24)}
                 className="btn-outline catalog-load-more"
               >
-                <span>Daha Fazla Ürün Göster ({filteredProducts.length - visibleCount} ürün kaldı)</span>
-                <ChevronDown size={18} />
+                <span>Daha Fazla Göster ({filteredProducts.length - visibleCount} kaldı)</span>
+                <ChevronDown size={16} />
               </button>
             </div>
           )}
@@ -159,31 +159,32 @@ export function ProductsPage({
 
       <style>{`
         .catalog-header {
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
         .catalog-title {
           font-family: var(--font-serif);
-          font-size: 2.25rem;
+          font-size: 2.1rem;
           font-weight: 700;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.35rem;
         }
         .catalog-desc {
           color: var(--text-muted);
+          font-size: 0.95rem;
         }
         .catalog-controls {
           background: var(--bg-card);
-          padding: 1.25rem;
+          padding: 1rem 1.15rem;
           border-radius: var(--radius-md);
           border: 1px solid var(--border-subtle);
           box-shadow: var(--shadow-sm);
-          margin-bottom: 2rem;
+          margin-bottom: 1.25rem;
           display: flex;
           flex-direction: column;
-          gap: 1.25rem;
+          gap: 0.85rem;
         }
         .catalog-controls-top {
           display: flex;
-          gap: 1rem;
+          gap: 0.85rem;
           flex-wrap: wrap;
           align-items: center;
           justify-content: space-between;
@@ -191,27 +192,27 @@ export function ProductsPage({
         .catalog-search-box {
           position: relative;
           flex: 1;
-          min-width: 200px;
+          min-width: 220px;
         }
         .catalog-search-input {
           width: 100%;
-          padding: 0.75rem 1rem 0.75rem 2.5rem;
+          padding: 0.6rem 1rem 0.6rem 2.25rem;
           border-radius: var(--radius-sm);
           border: 1px solid var(--border-light);
           background-color: var(--bg-main);
-          font-size: 0.95rem;
+          font-size: 0.9rem;
           outline: none;
         }
         .catalog-search-icon {
           position: absolute;
-          left: 0.85rem;
+          left: 0.75rem;
           top: 50%;
           transform: translateY(-50%);
           color: var(--text-light);
         }
         .catalog-search-clear {
           position: absolute;
-          right: 0.85rem;
+          right: 0.75rem;
           top: 50%;
           transform: translateY(-50%);
           color: var(--text-light);
@@ -219,42 +220,43 @@ export function ProductsPage({
         .catalog-sort {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.4rem;
         }
         .catalog-sort-select {
-          padding: 0.75rem 1rem;
+          padding: 0.6rem 0.85rem;
           border-radius: var(--radius-sm);
           border: 1px solid var(--border-light);
           background-color: var(--bg-main);
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           font-weight: 600;
           color: var(--text-main);
           cursor: pointer;
         }
         .catalog-pills {
           display: flex;
-          gap: 0.5rem;
+          gap: 0.4rem;
           flex-wrap: wrap;
           align-items: center;
         }
         .catalog-pills-label {
-          font-size: 0.85rem;
+          font-size: 0.8rem;
           font-weight: 700;
           color: var(--text-muted);
-          margin-right: 0.5rem;
+          margin-right: 0.35rem;
           display: inline-flex;
           align-items: center;
-          gap: 0.3rem;
+          gap: 0.25rem;
         }
         .catalog-pill {
-          padding: 0.4rem 1rem;
-          font-size: 0.85rem;
+          padding: 0.35rem 0.85rem;
+          font-size: 0.82rem;
           font-weight: 500;
           border-radius: var(--radius-full);
           background-color: var(--bg-main);
           color: var(--text-main);
           border: 1px solid var(--border-light);
           transition: all 0.2s ease;
+          white-space: nowrap;
         }
         .catalog-pill-active {
           font-weight: 700;
@@ -266,16 +268,16 @@ export function ProductsPage({
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.25rem;
           flex-wrap: wrap;
           gap: 0.5rem;
         }
         .catalog-result-count {
-          font-size: 0.95rem;
+          font-size: 0.88rem;
           color: var(--text-muted);
         }
         .catalog-clear-btn {
-          font-size: 0.85rem;
+          font-size: 0.82rem;
           color: var(--accent-wood);
           font-weight: 600;
           display: inline-flex;
@@ -284,73 +286,84 @@ export function ProductsPage({
         }
         .catalog-load-more {
           border-radius: var(--radius-full);
-          padding: 0.85rem 2rem;
-          font-size: 0.95rem;
+          padding: 0.75rem 1.75rem;
+          font-size: 0.9rem;
         }
         .catalog-empty {
           text-align: center;
-          padding: 4rem 2rem;
+          padding: 3rem 1.5rem;
           background: var(--bg-card);
           border-radius: var(--radius-md);
           border: 1px dashed var(--border-light);
         }
         .catalog-empty-title {
-          font-size: 1.25rem;
+          font-size: 1.15rem;
           font-weight: 700;
           margin-bottom: 0.5rem;
         }
         .catalog-empty-desc {
           color: var(--text-muted);
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.25rem;
+          font-size: 0.9rem;
         }
 
-        /* ========= MOBILE RESPONSIVE ========= */
-        @media (max-width: 768px) {
+        /* ========= MOBILE RESPONSIVE COMPACT CONTROLS ========= */
+        @media (max-width: 640px) {
+          .catalog-header {
+            margin-bottom: 0.85rem;
+          }
           .catalog-title {
-            font-size: 1.75rem;
+            font-size: 1.35rem;
+            margin-bottom: 0.2rem;
+          }
+          .catalog-desc {
+            font-size: 0.82rem;
           }
           .catalog-controls {
-            padding: 1rem;
+            padding: 0.75rem;
+            gap: 0.6rem;
+            margin-bottom: 0.85rem;
           }
           .catalog-controls-top {
             flex-direction: column;
+            gap: 0.5rem;
           }
           .catalog-search-box {
             min-width: 100%;
+          }
+          .catalog-search-input {
+            padding: 0.5rem 0.75rem 0.5rem 2.1rem;
+            font-size: 0.85rem;
           }
           .catalog-sort {
             width: 100%;
           }
           .catalog-sort-select {
             width: 100%;
+            padding: 0.45rem 0.75rem;
+            font-size: 0.82rem;
           }
           .catalog-pills {
             overflow-x: auto;
             flex-wrap: nowrap;
             -webkit-overflow-scrolling: touch;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.35rem;
+            gap: 0.35rem;
           }
           .catalog-pill {
             flex-shrink: 0;
-            font-size: 0.8rem;
-            padding: 0.35rem 0.85rem;
+            font-size: 0.76rem;
+            padding: 0.28rem 0.7rem;
           }
           .catalog-pills-label {
             flex-shrink: 0;
+            font-size: 0.75rem;
           }
-        }
-        @media (max-width: 480px) {
-          .catalog-title {
-            font-size: 1.5rem;
-          }
-          .catalog-desc {
-            font-size: 0.88rem;
+          .catalog-result-bar {
+            margin-bottom: 0.85rem;
           }
           .catalog-result-count {
-            font-size: 0.85rem;
-          }
-          .catalog-empty {
-            padding: 2.5rem 1rem;
+            font-size: 0.8rem;
           }
         }
       `}</style>

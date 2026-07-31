@@ -15,7 +15,7 @@ export function StickyContactBar() {
           className="floating-btn floating-wa"
           title="WhatsApp Danışma Hattı"
         >
-          <WhatsAppIcon size={28} />
+          <WhatsAppIcon size={22} />
         </a>
 
         {/* Phone Call Floating Action Button */}
@@ -24,7 +24,7 @@ export function StickyContactBar() {
           className="floating-btn floating-phone"
           title="Telefon ile Müşteri Hizmetleri"
         >
-          <Phone size={26} />
+          <Phone size={20} />
         </a>
       </div>
 
@@ -36,11 +36,11 @@ export function StickyContactBar() {
           z-index: 99;
           display: flex;
           flex-direction: column;
-          gap: 0.75rem;
+          gap: 0.65rem;
         }
         .floating-btn {
-          width: 54px;
-          height: 54px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           color: #FFF;
           display: flex;
@@ -54,26 +54,26 @@ export function StickyContactBar() {
         }
         .floating-wa {
           background-color: #25D366;
-          box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+          box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
         }
         .floating-phone {
           background-color: #0284C7;
-          box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+          box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4);
         }
 
         @media (max-width: 640px) {
           .sticky-bar {
-            bottom: 14px;
-            right: 14px;
-            gap: 0.6rem;
+            bottom: 12px;
+            right: 12px;
+            gap: 0.5rem;
           }
           .floating-btn {
-            width: 48px;
-            height: 48px;
+            width: 42px;
+            height: 42px;
           }
           .floating-btn svg {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
           }
         }
       `}</style>

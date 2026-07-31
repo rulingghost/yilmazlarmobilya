@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Camera, Tag, Percent } from 'lucide-react';
+import { ArrowRight, Camera, Percent } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
 
 export function ProductCard({ product, onSelectProduct }) {
@@ -21,22 +21,11 @@ export function ProductCard({ product, onSelectProduct }) {
   return (
     <div className="product-card">
       {/* Badges Container */}
-      <div style={{ position: 'absolute', top: '12px', left: '12px', right: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2, pointerEvents: 'none' }}>
+      <div className="product-card-badges">
         <div>
           {discountPercent ? (
-            <span style={{
-              background: '#E11D48',
-              color: '#FFF',
-              fontSize: '0.75rem',
-              fontWeight: 800,
-              padding: '0.25rem 0.65rem',
-              borderRadius: 'var(--radius-full)',
-              boxShadow: '0 4px 10px rgba(225, 29, 72, 0.3)',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.2rem'
-            }}>
-              <Percent size={12} /> {discountPercent} İndirim
+            <span className="badge-discount">
+              <Percent size={11} /> %{discountPercent} İndirim
             </span>
           ) : product.isNew ? (
             <span className="product-badge-new">
@@ -46,19 +35,8 @@ export function ProductCard({ product, onSelectProduct }) {
         </div>
 
         {imageCount > 1 && (
-          <span style={{
-            background: 'rgba(0,0,0,0.65)',
-            color: '#FFF',
-            backdropFilter: 'blur(4px)',
-            fontSize: '0.72rem',
-            fontWeight: 700,
-            padding: '0.25rem 0.6rem',
-            borderRadius: 'var(--radius-full)',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.3rem'
-          }}>
-            <Camera size={12} /> {imageCount}
+          <span className="badge-camera">
+            <Camera size={11} /> {imageCount}
           </span>
         )}
       </div>
@@ -105,10 +83,64 @@ export function ProductCard({ product, onSelectProduct }) {
             title="Ürünü ve fotoğraflarını detaylı inceleyin"
           >
             <span>İncele</span>
-            <ArrowRight size={15} />
+            <ArrowRight size={14} />
           </button>
         </div>
       </div>
+
+      <style>{`
+        .product-card-badges {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          right: 8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          zIndex: 2;
+          pointer-events: none;
+        }
+        .badge-discount {
+          background: #E11D48;
+          color: #FFF;
+          font-size: 0.72rem;
+          font-weight: 800;
+          padding: 0.2rem 0.55rem;
+          border-radius: var(--radius-full);
+          box-shadow: 0 3px 8px rgba(225, 29, 72, 0.3);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.2rem;
+        }
+        .badge-camera {
+          background: rgba(0,0,0,0.65);
+          color: #FFF;
+          backdrop-filter: blur(4px);
+          font-size: 0.7rem;
+          font-weight: 700;
+          padding: 0.2rem 0.5rem;
+          border-radius: var(--radius-full);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+
+        @media (max-width: 640px) {
+          .product-card-badges {
+            top: 6px;
+            left: 6px;
+            right: 6px;
+          }
+          .badge-discount {
+            font-size: 0.62rem;
+            padding: 0.15rem 0.4rem;
+          }
+          .badge-camera {
+            font-size: 0.62rem;
+            padding: 0.15rem 0.4rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }

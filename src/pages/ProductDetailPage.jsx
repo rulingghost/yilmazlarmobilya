@@ -25,18 +25,18 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
 
   const similarProducts = allProducts
     .filter(p => p.category === product.category && p.id !== product.id)
-    .slice(0, 3);
+    .slice(0, 4);
 
   const whatsappUrl = siteConfig.getWhatsAppLink(product.name);
 
   return (
-    <div className="animate-fade-in container" style={{ paddingTop: '1.5rem' }}>
+    <div className="animate-fade-in container" style={{ paddingTop: '1.25rem', paddingBottom: '3rem' }}>
       {/* Back Button */}
       <button 
         onClick={onBack}
         className="detail-back-btn"
       >
-        <ChevronLeft size={18} />
+        <ChevronLeft size={16} />
         <span>Tüm Ürünlere Dön</span>
       </button>
 
@@ -60,7 +60,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           {images.length > 1 && (
             <div>
               <div className="detail-thumb-label">
-                Tüm Fotoğraf Galerisi ({images.length} Görsel):
+                Fotoğraf Galerisi ({images.length} Görsel):
               </div>
               <div className="detail-thumb-row">
                 {images.map((imgUrl, idx) => (
@@ -97,7 +97,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
 
           <h1 className="detail-title">{product.name}</h1>
 
-          {/* Price */}
+          {/* Price Box */}
           <div className="detail-price-box">
             <div>
               <div className="detail-price-label">Güncel İstikbal Fiyatı</div>
@@ -120,14 +120,14 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
               rel="noopener noreferrer"
               className="btn-whatsapp detail-cta-btn"
             >
-              <WhatsAppIcon size={22} />
-              <span>WhatsApp'tan Sor</span>
+              <WhatsAppIcon size={20} />
+              <span>WhatsApp'tan Sor & Fiyat Al</span>
             </a>
             <a
               href={`tel:${siteConfig.phoneRaw}`}
               className="btn-phone detail-cta-btn"
             >
-              <Phone size={22} />
+              <Phone size={20} />
               <span>Telefonla Bilgi Al</span>
             </a>
           </div>
@@ -136,8 +136,8 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           {product.details && Object.keys(product.details).length > 0 && (
             <div className="detail-specs-card">
               <h3 className="detail-specs-title">
-                <Sparkles size={18} style={{ color: 'var(--accent-wood)' }} />
-                Ürün Detayları & Teknik Özellikler
+                <Sparkles size={16} style={{ color: 'var(--accent-wood)' }} />
+                Teknik Özellikler & Detaylar
               </h3>
               <div className="detail-specs-list">
                 {Object.entries(product.details).map(([key, val]) => (
@@ -157,7 +157,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
       {/* Similar Products */}
       {similarProducts.length > 0 && (
         <section className="detail-similar-section">
-          <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
+          <div className="section-header" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
             <span className="section-tag">Kombin Önerileri</span>
             <h2 className="section-title">Benzer Ürünler</h2>
           </div>
@@ -180,12 +180,12 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
         .detail-back-btn {
           display: inline-flex;
           align-items: center;
-          gap: 0.4rem;
-          font-size: 0.95rem;
+          gap: 0.35rem;
+          font-size: 0.88rem;
           font-weight: 600;
           color: var(--text-muted);
-          margin-bottom: 1.75rem;
-          padding: 0.4rem 0.8rem;
+          margin-bottom: 1.25rem;
+          padding: 0.35rem 0.75rem;
           border-radius: var(--radius-sm);
           background-color: var(--bg-card);
           border: 1px solid var(--border-subtle);
@@ -193,8 +193,8 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
         .detail-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 3rem;
-          margin-bottom: 4rem;
+          gap: 2.5rem;
+          margin-bottom: 3.5rem;
         }
         .detail-main-image {
           width: 100%;
@@ -204,38 +204,38 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           background-color: #F7F3ED;
           border: 1px solid var(--border-subtle);
           box-shadow: var(--shadow-sm);
-          margin-bottom: 1.25rem;
+          margin-bottom: 1rem;
           position: relative;
         }
         .detail-image-counter {
           position: absolute;
-          bottom: 12px;
-          right: 12px;
+          bottom: 10px;
+          right: 10px;
           background: rgba(0,0,0,0.65);
           color: #FFF;
           backdrop-filter: blur(4px);
-          padding: 0.3rem 0.75rem;
+          padding: 0.25rem 0.65rem;
           border-radius: var(--radius-full);
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           font-weight: 600;
         }
         .detail-thumb-label {
-          font-size: 0.85rem;
+          font-size: 0.82rem;
           font-weight: 700;
           color: var(--text-muted);
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.4rem;
         }
         .detail-thumb-row {
           display: flex;
-          gap: 0.75rem;
+          gap: 0.6rem;
           overflow-x: auto;
-          padding-bottom: 0.75rem;
+          padding-bottom: 0.5rem;
           scroll-behavior: smooth;
           -webkit-overflow-scrolling: touch;
         }
         .detail-thumb {
-          width: 85px;
-          height: 65px;
+          width: 75px;
+          height: 56px;
           border-radius: var(--radius-sm);
           overflow: hidden;
           border: 1px solid var(--border-light);
@@ -255,95 +255,95 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
         .detail-tags {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 0.5rem;
+          gap: 0.6rem;
+          margin-bottom: 0.4rem;
         }
         .detail-new-badge {
-          font-size: 0.75rem;
+          font-size: 0.72rem;
           font-weight: 700;
           color: var(--accent-wood);
           background-color: var(--accent-amber-light);
-          padding: 0.2rem 0.6rem;
+          padding: 0.2rem 0.55rem;
           border-radius: var(--radius-full);
         }
         .detail-title {
           font-family: var(--font-serif);
-          font-size: clamp(1.75rem, 3vw, 2.5rem);
+          font-size: clamp(1.5rem, 2.5vw, 2.25rem);
           font-weight: 700;
           color: var(--text-main);
           line-height: 1.2;
-          margin-bottom: 1rem;
+          margin-bottom: 0.85rem;
         }
         .detail-price-box {
           background: var(--accent-amber-light);
-          padding: 1.25rem;
+          padding: 1rem 1.15rem;
           border-radius: var(--radius-md);
           display: flex;
           align-items: baseline;
           gap: 1rem;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.25rem;
           border: 1px solid rgba(140, 90, 60, 0.15);
         }
         .detail-price-label {
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           color: var(--accent-wood);
           font-weight: 700;
           text-transform: uppercase;
         }
         .detail-price-value {
-          font-size: 2.25rem;
+          font-size: 1.85rem;
           font-weight: 800;
           color: var(--text-main);
           line-height: 1;
         }
         .detail-price-old {
-          font-size: 1.1rem;
+          font-size: 1rem;
           color: var(--text-light);
           text-decoration: line-through;
         }
         .detail-desc {
-          font-size: 1.05rem;
+          font-size: 0.98rem;
           color: var(--text-muted);
-          line-height: 1.6;
-          margin-bottom: 2rem;
+          line-height: 1.55;
+          margin-bottom: 1.5rem;
         }
         .detail-cta-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 1rem;
-          margin-bottom: 2.5rem;
+          gap: 0.75rem;
+          margin-bottom: 2rem;
         }
         .detail-cta-btn {
-          padding: 1rem;
+          padding: 0.85rem;
         }
         .detail-specs-card {
           background: var(--bg-card);
           border: 1px solid var(--border-subtle);
           border-radius: var(--radius-md);
-          padding: 1.5rem;
+          padding: 1.25rem;
           box-shadow: var(--shadow-sm);
         }
         .detail-specs-title {
-          font-size: 1.1rem;
+          font-size: 1rem;
           font-weight: 700;
-          margin-bottom: 1rem;
+          margin-bottom: 0.85rem;
           border-bottom: 1px solid var(--border-subtle);
-          padding-bottom: 0.5rem;
+          padding-bottom: 0.4rem;
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.4rem;
         }
         .detail-specs-list {
           display: flex;
           flex-direction: column;
-          gap: 0.85rem;
+          gap: 0.65rem;
         }
         .detail-spec-row {
           display: flex;
           justify-content: space-between;
-          font-size: 0.92rem;
+          font-size: 0.88rem;
           gap: 0.5rem;
-          padding-bottom: 0.5rem;
+          padding-bottom: 0.4rem;
           border-bottom: 1px dashed var(--border-subtle);
         }
         .detail-spec-column {
@@ -362,63 +362,69 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           text-align: left;
         }
         .detail-similar-section {
-          margin-top: 4rem;
-          padding-top: 3rem;
+          margin-top: 3rem;
+          padding-top: 2rem;
           border-top: 1px solid var(--border-light);
         }
 
-        /* ========= MOBILE RESPONSIVE ========= */
+        /* ========= MOBILE RESPONSIVE COMPACT LAYOUT ========= */
         @media (max-width: 768px) {
           .detail-grid {
             grid-template-columns: 1fr;
-            gap: 1.75rem;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+          }
+          .detail-main-image {
+            aspect-ratio: 16 / 10;
+            max-height: 250px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 0.65rem;
           }
           .detail-title {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
+            margin-bottom: 0.65rem;
           }
           .detail-price-value {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
           }
           .detail-price-box {
-            padding: 1rem;
+            padding: 0.85rem;
+            margin-bottom: 1rem;
           }
           .detail-desc {
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.15rem;
           }
           .detail-cta-grid {
             grid-template-columns: 1fr;
-            gap: 0.75rem;
-            margin-bottom: 1.75rem;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
           }
           .detail-cta-btn {
-            padding: 0.85rem;
+            padding: 0.75rem;
+            font-size: 0.9rem;
           }
           .detail-specs-card {
-            padding: 1rem;
+            padding: 0.9rem;
           }
           .detail-specs-title {
-            font-size: 1rem;
+            font-size: 0.92rem;
           }
           .detail-spec-row {
-            font-size: 0.85rem;
-            flex-direction: column;
-            gap: 0.2rem;
-          }
-          .detail-spec-val {
-            text-align: left;
+            font-size: 0.82rem;
           }
           .detail-similar-section {
-            margin-top: 2.5rem;
-            padding-top: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
           }
           .detail-back-btn {
-            font-size: 0.88rem;
-            margin-bottom: 1rem;
+            font-size: 0.82rem;
+            padding: 0.3rem 0.6rem;
+            margin-bottom: 0.85rem;
           }
           .detail-thumb {
-            width: 70px;
-            height: 52px;
+            width: 56px;
+            height: 42px;
           }
         }
       `}</style>
