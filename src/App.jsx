@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { StickyContactBar } from './components/StickyContactBar';
@@ -25,26 +25,88 @@ export default function App() {
   const [products] = useState(initialProductsData || []);
   const [lastUpdateInfo] = useState(lastUpdateData || null);
 
-  const handleSelectProduct = (product) => {
-    setSelectedProduct(product);
-    setActivePage('detail');
+  // Helper to parse current hash into state
+  const syncStateFromHash = () => {
+    const hash = window.location.hash.replace('#', '');
+    
+    if (!hash || hash === 'home') {
+      setActivePage('home');
+      setSelectedProduct(null);
+    } else if (hash === 'products') {
+      setActivePage('products');
+      setSelectedProduct(null);
+    } else if (hash === 'categories') {
+      setActivePage('categories');
+      setSelectedProduct(null);
+    } else if (hash === 'new') {
+      setActivePage('new');
+      setSelectedProduct(null);
+    } else if (hash === 'about') {
+      setActivePage('about');
+      setSelectedProduct(null);
+    } else if (hash === 'contact') {
+      setActivePage('contact');
+      setSelectedProduct(null);
+    } else if (hash.startsWith('product-')) {
+      const prodId = hash.replace('product-', '');
+      const foundProduct = products.find(p => String(p.id) === String(prodId));
+      if (foundProduct) {
+        setSelectedProduct(foundProduct);
+        setActivePage('detail');
+      } else {
+        setActivePage('products');
+        setSelectedProduct(null);
+      }
+    } else {
+      setActivePage('home');
+      setSelectedProduct(null);
+    }
+  };
+
+  // Sync state on initial mount & back/forward popstate
+  useEffect(() => {
+    syncStateFromHash();
+
+    const handleHashChange = () => {
+      syncStateFromHash();
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handleHashChange);
+    };
+  }, [products]);
+
+  // Handle page navigation with hash update
+  const navigateToPage = (pageId, product = null) => {
+    if (pageId === 'detail' && product) {
+      setSelectedProduct(product);
+      setActivePage('detail');
+      window.location.hash = `product-${product.id}`;
+    } else {
+      setSelectedProduct(null);
+      setActivePage(pageId);
+      window.location.hash = pageId === 'home' ? '' : pageId;
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleSelectProduct = (product) => {
+    navigateToPage('detail', product);
+  };
+
   const handleBackToProducts = () => {
-    setSelectedProduct(null);
-    setActivePage('products');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigateToPage('products');
   };
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar 
         activePage={activePage} 
-        setActivePage={(page) => {
-          setActivePage(page);
-          if (page !== 'detail') setSelectedProduct(null);
-        }} 
+        setActivePage={(page) => navigateToPage(page)} 
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         selectedCategory={selectedCategory}
@@ -56,7 +118,7 @@ export default function App() {
           <HomePage 
             products={products} 
             onSelectProduct={handleSelectProduct}
-            setActivePage={setActivePage}
+            setActivePage={(page) => navigateToPage(page)}
             setSelectedCategory={setSelectedCategory}
           />
         )}
@@ -76,7 +138,7 @@ export default function App() {
           <CategoriesPage 
             products={products}
             setSelectedCategory={setSelectedCategory}
-            setActivePage={setActivePage}
+            setActivePage={(page) => navigateToPage(page)}
           />
         )}
 
@@ -104,10 +166,7 @@ export default function App() {
       <StickyContactBar />
 
       <Footer 
-        setActivePage={(page) => {
-          setActivePage(page);
-          if (page !== 'detail') setSelectedProduct(null);
-        }}
+        setActivePage={(page) => navigateToPage(page)}
         lastUpdateInfo={lastUpdateInfo}
       />
     </div>
