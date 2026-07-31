@@ -203,14 +203,19 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
                 Teknik Özellikler & Detaylar
               </h3>
               <div className="detail-specs-list">
-                {Object.entries(product.details).map(([key, val]) => (
-                  <div key={key} className={`detail-spec-row ${key === 'Öne Çıkan Özellikler' ? 'detail-spec-column' : ''}`}>
-                    <span className="detail-spec-key">{key}:</span>
-                    <span className="detail-spec-val">
-                      {Array.isArray(val) ? val.join(', ') : val}
-                    </span>
-                  </div>
-                ))}
+                {Object.entries(product.details)
+                  .filter(([key]) => {
+                    const lk = key.toLowerCase();
+                    return !lk.includes('öne çıkan') && !lk.includes('soru') && !lk.includes('yorum');
+                  })
+                  .map(([key, val]) => (
+                    <div key={key} className="detail-spec-row">
+                      <span className="detail-spec-key">{key}:</span>
+                      <span className="detail-spec-val">
+                        {Array.isArray(val) ? val.join(', ') : val}
+                      </span>
+                    </div>
+                  ))}
               </div>
             </div>
           )}

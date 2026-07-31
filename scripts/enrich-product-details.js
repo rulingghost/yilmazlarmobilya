@@ -140,13 +140,29 @@ const categoryDefaults = {
 };
 
 let enrichedCount = 0;
+let removedCount = 0;
 
 const updatedProducts = products.map(product => {
   const existingDetails = product.details || {};
   const defaults = categoryDefaults[product.category] || categoryDefaults['Koltuk Takımları'];
   
-  // Merge defaults with existing details, prioritizing specific existing details
-  const mergedDetails = { ...defaults, ...existingDetails };
+  // Filter out any "Öne Çıkan", Q&A, or random customer comment keys
+  const cleanedExisting = {};
+  Object.entries(existingDetails).forEach(([k, v]) => {
+    const lowerKey = k.toLowerCase();
+    if (
+      lowerKey.includes('öne çıkan') || 
+      lowerKey.includes('özellikler') && lowerKey.includes('detay') ||
+      lowerKey.includes('soru') ||
+      lowerKey.includes('yorum')
+    ) {
+      removedCount++;
+      return; // Strip this key out!
+    }
+    cleanedExisting[k] = v;
+  });
+
+  const mergedDetails = { ...defaults, ...cleanedExisting };
   
   const cleanedDetails = {};
   Object.entries(mergedDetails).forEach(([k, v]) => {
@@ -166,4 +182,4 @@ const updatedProducts = products.map(product => {
 });
 
 fs.writeFileSync(productsPath, JSON.stringify(updatedProducts, null, 2), 'utf8');
-console.log(`Successfully enriched technical specs for all ${enrichedCount} products!`);
+console.log(`Cleaned & enriched all ${enrichedCount} products! (Removed ${removedCount} junk Q&A fields)`);
