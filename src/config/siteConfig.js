@@ -7,7 +7,7 @@ export const siteConfig = {
   tagline: "İstikbal Kalitesi ve Yılmazlar Güvencesiyle Evlerinizde",
   logoText: "Yılmazlar Mobilya",
   logoSubtext: "İstikbal Yetkili Bayi",
-  developerCredit: "AGB Ali BATMAZ (AGB Yazılım)",
+  developerCredit: "sarfea",
 
   // Main Brand Logo Image
   logoUrl: "/images/logo.png",
