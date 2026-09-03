@@ -16,8 +16,9 @@ import { WhatsAppIcon } from './WhatsAppIcon';
 import { siteConfig } from '../config/siteConfig';
 import { AdminSyncModal } from './AdminSyncModal';
 
-export function Footer({ setActivePage, lastUpdateInfo }) {
+export function Footer({ setActivePage, lastUpdateInfo, onOpenAdminSync }) {
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  const handleOpenSync = onOpenAdminSync || (() => setIsAdminModalOpen(true));
   const formattedUpdateDate = lastUpdateInfo?.lastUpdate || '31.07.2026';
 
   return (
@@ -128,6 +129,18 @@ export function Footer({ setActivePage, lastUpdateInfo }) {
                 <strong>Tanıtım ve Bilgi Kataloğudur.</strong> Online sipariş ve WhatsApp destek hattımız üzerinden bilgi alabilirsiniz.
               </div>
             </div>
+
+            {/* Admin Live Sync Highlight Button */}
+            <div className="footer-admin-box" style={{ marginTop: '1rem' }}>
+              <button
+                onClick={handleOpenSync}
+                className="btn-admin-sync-prominent"
+              >
+                <RefreshCw size={16} />
+                <span>İstikbal Canlı Senkronizasyon</span>
+                <span className="admin-pill">Yönetici</span>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -136,7 +149,7 @@ export function Footer({ setActivePage, lastUpdateInfo }) {
           <div>© {new Date().getFullYear()} <strong>{siteConfig.name}</strong>. Tüm hakları saklıdır.</div>
           <div className="footer-bottom-actions">
             <button
-              onClick={() => setIsAdminModalOpen(true)}
+              onClick={handleOpenSync}
               className="footer-sync-trigger-btn"
               title="Yönetici Canlı Fiyat Güncellemesi"
             >
@@ -338,6 +351,39 @@ export function Footer({ setActivePage, lastUpdateInfo }) {
           gap: 0.75rem;
           font-size: 0.78rem;
           color: #D8CCC0;
+        }
+        .btn-admin-sync-prominent {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+          background: rgba(140, 90, 60, 0.25);
+          border: 1.5px solid var(--accent-amber);
+          color: #FFF;
+          font-weight: 700;
+          font-size: 0.85rem;
+          padding: 0.65rem 1.1rem;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .btn-admin-sync-prominent:hover {
+          background: var(--accent-amber);
+          color: #1A1A1A;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+        }
+        .admin-pill {
+          background: rgba(0,0,0,0.35);
+          font-size: 0.7rem;
+          padding: 0.15rem 0.45rem;
+          border-radius: 4px;
+          color: var(--accent-amber);
+          text-transform: uppercase;
+        }
+        .btn-admin-sync-prominent:hover .admin-pill {
+          background: #1A1A1A;
+          color: #FFF;
         }
 
         /* Bottom Bar */

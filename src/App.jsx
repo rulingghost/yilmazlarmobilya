@@ -12,6 +12,8 @@ import { ProductDetailPage } from './pages/ProductDetailPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 
+import { AdminSyncModal } from './components/AdminSyncModal';
+
 // Import catalog data & metadata
 import initialProductsData from '../data/products.json';
 import lastUpdateData from '../data/last_update.json';
@@ -21,6 +23,7 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
 
   const [products, setProducts] = useState(initialProductsData || []);
   const [lastUpdateInfo, setLastUpdateInfo] = useState(lastUpdateData || null);
@@ -52,6 +55,11 @@ export default function App() {
   const syncStateFromHash = () => {
     const hash = window.location.hash.replace('#', '');
     
+    if (hash === 'sync' || hash === 'admin') {
+      setIsAdminModalOpen(true);
+      return;
+    }
+
     if (!hash || hash === 'home') {
       setActivePage('home');
       setSelectedProduct(null);
@@ -94,12 +102,21 @@ export default function App() {
       syncStateFromHash();
     };
 
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+        setIsAdminModalOpen(true);
+      }
+    };
+
     window.addEventListener('hashchange', handleHashChange);
     window.addEventListener('popstate', handleHashChange);
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
       window.removeEventListener('popstate', handleHashChange);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [products]);
 
@@ -191,6 +208,17 @@ export default function App() {
       <Footer 
         setActivePage={(page) => navigateToPage(page)}
         lastUpdateInfo={lastUpdateInfo}
+        onOpenAdminSync={() => setIsAdminModalOpen(true)}
+      />
+
+      <AdminSyncModal
+        isOpen={isAdminModalOpen}
+        onClose={() => {
+          setIsAdminModalOpen(false);
+          if (window.location.hash.includes('sync') || window.location.hash.includes('admin')) {
+            window.location.hash = '';
+          }
+        }}
       />
     </div>
   );
