@@ -56,15 +56,27 @@ export function ContactPage() {
             <div className="contact-card-body">
               <div className="contact-card-label">Mağaza Adresi</div>
               <p className="contact-card-address">{siteConfig.address}</p>
-              <a 
-                href={siteConfig.googleMapsDirectUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="contact-maps-link"
-              >
-                <span>Google Haritalar'da Aç</span>
-                <ExternalLink size={14} />
-              </a>
+              <div className="contact-maps-links-row" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+                <a 
+                  href={siteConfig.googleMapsDirectUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="contact-maps-link"
+                >
+                  <span>Google Haritalar</span>
+                  <ExternalLink size={14} />
+                </a>
+                <a 
+                  href={siteConfig.yandexMapsDirectUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="contact-maps-link"
+                  style={{ color: '#D97706' }}
+                >
+                  <span>Yandex Harita</span>
+                  <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
           </div>
 

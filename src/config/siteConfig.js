@@ -31,25 +31,31 @@ export const siteConfig = {
   whatsappDisplay: "0546 961 01 31",
   whatsappRaw: "905469610131",
   
-  address: "Siteler Mobilyacılar Çarşısı, Altındağ / Ankara",
-  city: "Ankara & İstanbul, Türkiye",
+  address: "Demirhendek Cad., No:158, Siteler, Altındağ / Ankara",
+  coordinates: {
+    lat: 39.954087,
+    lng: 32.905199
+  },
+  city: "Ankara, Türkiye",
   email: "yilmazlar@yilmazlarmobilya.com",
   
-  // Map iframe src & direct Google Maps navigation URL
-  googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.468761895313!2d32.9094121!3d39.953258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d350f96bc8e6eb%3A0xb3629e46a7df1e2!2sSiteler%2C%20Alt%C4%B1nda%C4%9F%2FAnkara!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str",
-  googleMapsDirectUrl: "https://maps.google.com/?q=Siteler+Altindag+Ankara+Yilmazlar+Istikbal",
+  // Map iframe src & direct navigation URLs (Google & Yandex)
+  googleMapsEmbedUrl: "https://maps.google.com/maps?q=39.954087,32.905199&hl=tr&z=17&output=embed",
+  googleMapsDirectUrl: "https://www.google.com/maps/search/?api=1&query=39.954087,32.905199",
+  yandexMapsDirectUrl: "https://yandex.com.tr/harita/?pt=32.905199,39.954087&z=17&l=map",
 
   // Social Media Links
   instagram: "https://instagram.com/yilmazlar.istikbal.mobilya",
   facebook: "https://facebook.com/yilmazlaristikbalmobilya",
 
-  // Special campaigns extracted from Wix site
-  campaignBanner: "3'lü Düğün Paketi 99.000 TL'den Başlayan Fiyatlarla!",
+  // Special campaigns extracted from Wix site & İstikbal
+  campaignBanner: "3'lü Düğün Paketi 141.372 TL'den Başlayan Fiyatlarla!",
 
   // Business Working Hours
   workingHours: {
-    weekdays: "Pazartesi - Cumartesi: 09:00 - 20:00",
-    sunday: "Pazar: 11:00 - 19:00",
+    weekdays: "Pazartesi - Cumartesi: 09:00 - 19:00",
+    sunday: "Pazar: 11:00 - 18:00",
+    display: "Pzt - Cmt: 09:00 - 19:00 | Pazar: 11:00 - 18:00"
   },
   
   // Custom pre-filled WhatsApp inquiry link for a product

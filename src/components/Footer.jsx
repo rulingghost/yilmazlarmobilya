@@ -105,6 +105,10 @@ export function Footer({ setActivePage, lastUpdateInfo, onOpenAdminSync }) {
                 <Mail size={18} style={{ color: 'var(--accent-amber)', flexShrink: 0 }} />
                 <a href={`mailto:${siteConfig.email}`} className="footer-contact-link-white">{siteConfig.email}</a>
               </div>
+              <div className="footer-contact-item">
+                <Clock size={18} style={{ color: 'var(--accent-amber)', flexShrink: 0 }} />
+                <span style={{ fontSize: '0.82rem' }}>Pzt - Cmt: 09:00 - 19:00<br />Pazar: 11:00 - 18:00</span>
+              </div>
             </div>
           </div>
 

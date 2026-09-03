@@ -1441,8 +1441,8 @@
     "id": "istikbal-tetra-koltuk-takimi",
     "name": "Tetra Koltuk Takımı",
     "category": "Koltuk Takımları",
-    "price": 456,
-    "originalPrice": 888,
+    "price": 66730,
+    "originalPrice": null,
     "currency": "₺",
     "images": [
       "https://www.istikbal.com.tr/idea/kc/80/myassets/products/886/tedra-koltuk-takimi-alternatif-berjer1.jpg?revision=1778237851",
@@ -1681,7 +1681,7 @@
       }
     ],
     "sku": "58NAZM0000000",
-    "installmentPrice": 500,
+    "installmentPrice": null,
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/tetra-koltuk-takimi",
     "createdAt": "2026-07-30T15:48:18.588Z",
@@ -38507,8 +38507,8 @@
     "id": "istikbal-lexus-yatak-odasi-takimi",
     "name": "Lexus Yatak Odası Takımı",
     "category": "Yatak Odası",
-    "price": 123,
-    "originalPrice": 999,
+    "price": 125595,
+    "originalPrice": 132193,
     "currency": "₺",
     "images": [
       "https://www.istikbal.com.tr/idea/kc/80/myassets/products/191/lexus-yatak-odasi001.jpg?revision=1787560363",
@@ -39030,7 +39030,7 @@
       }
     ],
     "sku": "58LEX8005HITK",
-    "installmentPrice": 150,
+    "installmentPrice": 132193,
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/lexus-yatak-odasi-takimi",
     "createdAt": "2026-07-30T15:48:18.588Z",
@@ -47162,7 +47162,65 @@
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/cooler-5-zone-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "80493",
+        "name": "90X190",
+        "price": 17699,
+        "originalPrice": null,
+        "url": "/urun/cooler-5-zone-yatak-90x190"
+      },
+      {
+        "id": "80486",
+        "name": "100X200",
+        "price": 18584,
+        "originalPrice": null,
+        "url": "/urun/cooler-5-zone-yatak-100x200"
+      },
+      {
+        "id": "80487",
+        "name": "120X200",
+        "price": 20885,
+        "originalPrice": null,
+        "url": "/urun/cooler-5-zone-yatak-120x200"
+      },
+      {
+        "id": "80488",
+        "name": "140X190",
+        "price": 23540,
+        "originalPrice": null,
+        "url": "/urun/cooler-5-zone-yatak-140x190"
+      },
+      {
+        "id": "80489",
+        "name": "150X200",
+        "price": 24779,
+        "originalPrice": null,
+        "url": "/urun/cooler-5-zone-yatak-150x200"
+      },
+      {
+        "id": "80490",
+        "name": "160X200",
+        "price": 26195,
+        "originalPrice": null,
+        "url": "/urun/cooler-5-zone-yatak-160x200"
+      },
+      {
+        "id": "80491",
+        "name": "180X200",
+        "price": 28849,
+        "originalPrice": null,
+        "url": "/urun/cooler-5-zone-yatak-180x200"
+      },
+      {
+        "id": "80492",
+        "name": "200X200",
+        "price": 32035,
+        "originalPrice": null,
+        "url": "/urun/cooler-5-zone-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-cooler-bohem-yatak",
@@ -47207,7 +47265,65 @@
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/cooler-bohem-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "80466",
+        "name": "90X190",
+        "price": 12999,
+        "originalPrice": null,
+        "url": "/urun/cooler-bohem-yatak-90x190"
+      },
+      {
+        "id": "80459",
+        "name": "100X200",
+        "price": 13649,
+        "originalPrice": null,
+        "url": "/urun/cooler-bohem-yatak-100x200"
+      },
+      {
+        "id": "80460",
+        "name": "120X200",
+        "price": 15339,
+        "originalPrice": null,
+        "url": "/urun/cooler-bohem-yatak-120x200"
+      },
+      {
+        "id": "80461",
+        "name": "140X190",
+        "price": 17289,
+        "originalPrice": null,
+        "url": "/urun/cooler-bohem-yatak-140x190"
+      },
+      {
+        "id": "80462",
+        "name": "150X200",
+        "price": 18199,
+        "originalPrice": null,
+        "url": "/urun/cooler-bohem-yatak-150x200"
+      },
+      {
+        "id": "80463",
+        "name": "160X200",
+        "price": 19239,
+        "originalPrice": null,
+        "url": "/urun/cooler-bohem-yatak-160x200"
+      },
+      {
+        "id": "80464",
+        "name": "180X200",
+        "price": 21188,
+        "originalPrice": null,
+        "url": "/urun/cooler-bohem-yatak-180x200"
+      },
+      {
+        "id": "80465",
+        "name": "200X200",
+        "price": 23528,
+        "originalPrice": null,
+        "url": "/urun/cooler-bohem-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-baby-natural-yatak",
@@ -47289,7 +47405,58 @@
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/baby-natural-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "79430",
+        "name": "60X120",
+        "price": 6699,
+        "originalPrice": null,
+        "url": "/urun/baby-natural-yatak-60x120"
+      },
+      {
+        "id": "79432",
+        "name": "70X130",
+        "price": 6699,
+        "originalPrice": null,
+        "url": "/urun/baby-natural-yatak-70x130"
+      },
+      {
+        "id": "79427",
+        "name": "70X140",
+        "price": 6699,
+        "originalPrice": null,
+        "url": "/urun/baby-natural-yatak-70x140"
+      },
+      {
+        "id": "79431",
+        "name": "80X130",
+        "price": 6699,
+        "originalPrice": null,
+        "url": "/urun/baby-natural-yatak-80x130"
+      },
+      {
+        "id": "79433",
+        "name": "80X140",
+        "price": 6699,
+        "originalPrice": null,
+        "url": "/urun/baby-natural-yatak-80x140"
+      },
+      {
+        "id": "79428",
+        "name": "90X190",
+        "price": 6699,
+        "originalPrice": null,
+        "url": "/urun/baby-natural-yatak-90x190"
+      },
+      {
+        "id": "79429",
+        "name": "90X200",
+        "price": 6699,
+        "originalPrice": null,
+        "url": "/urun/baby-natural-yatak-90x200"
+      }
+    ]
   },
   {
     "id": "istikbal-active-life-gold-s-yatak",
@@ -47335,7 +47502,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/active-life-gold-s-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "10485",
+        "name": "90X190",
+        "price": 13899,
+        "originalPrice": null,
+        "url": "/urun/active-life-gold-s-yatak-90x190"
+      },
+      {
+        "id": "10486",
+        "name": "100X200",
+        "price": 14594,
+        "originalPrice": null,
+        "url": "/urun/active-life-gold-s-yatak-100x200"
+      },
+      {
+        "id": "10487",
+        "name": "120X200",
+        "price": 16401,
+        "originalPrice": null,
+        "url": "/urun/active-life-gold-s-yatak-120x200"
+      },
+      {
+        "id": "10489",
+        "name": "140X190",
+        "price": 18486,
+        "originalPrice": null,
+        "url": "/urun/active-life-gold-s-yatak-140x190"
+      },
+      {
+        "id": "10492",
+        "name": "150X200",
+        "price": 19459,
+        "originalPrice": null,
+        "url": "/urun/active-life-gold-s-yatak-150x200"
+      },
+      {
+        "id": "10491",
+        "name": "160X200",
+        "price": 20571,
+        "originalPrice": null,
+        "url": "/urun/active-life-gold-s-yatak-160x200"
+      },
+      {
+        "id": "10488",
+        "name": "180X200",
+        "price": 22655,
+        "originalPrice": null,
+        "url": "/urun/active-life-gold-s-yatak-180x200"
+      },
+      {
+        "id": "10490",
+        "name": "200X200",
+        "price": 25157,
+        "originalPrice": null,
+        "url": "/urun/active-life-gold-s-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-active-life-bronze-s-yatak",
@@ -47380,7 +47605,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/active-life-bronze-s-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "10000",
+        "name": "90X190",
+        "price": 10399,
+        "originalPrice": null,
+        "url": "/urun/active-life-bronze-s-yatak-90x190"
+      },
+      {
+        "id": "10009",
+        "name": "100X200",
+        "price": 10919,
+        "originalPrice": null,
+        "url": "/urun/active-life-bronze-s-yatak-100x200"
+      },
+      {
+        "id": "10005",
+        "name": "120X200",
+        "price": 12271,
+        "originalPrice": null,
+        "url": "/urun/active-life-bronze-s-yatak-120x200"
+      },
+      {
+        "id": "9996",
+        "name": "140X190",
+        "price": 13831,
+        "originalPrice": null,
+        "url": "/urun/active-life-bronze-s-yatak-140x190"
+      },
+      {
+        "id": "10004",
+        "name": "150X200",
+        "price": 14559,
+        "originalPrice": null,
+        "url": "/urun/active-life-bronze-s-yatak-150x200"
+      },
+      {
+        "id": "10007",
+        "name": "160X200",
+        "price": 15391,
+        "originalPrice": null,
+        "url": "/urun/active-life-bronze-s-yatak-160x200"
+      },
+      {
+        "id": "10010",
+        "name": "180X200",
+        "price": 16950,
+        "originalPrice": null,
+        "url": "/urun/active-life-bronze-s-yatak-180x200"
+      },
+      {
+        "id": "10015",
+        "name": "200X200",
+        "price": 18822,
+        "originalPrice": null,
+        "url": "/urun/active-life-bronze-s-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-deluxe-premium-yatak",
@@ -47424,7 +47707,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/deluxe-premium-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "78760",
+        "name": "90X190",
+        "price": 16499,
+        "originalPrice": null,
+        "url": "/urun/deluxe-premium-yatak-90x190"
+      },
+      {
+        "id": "78753",
+        "name": "100X200",
+        "price": 17324,
+        "originalPrice": null,
+        "url": "/urun/deluxe-premium-yatak-100x200"
+      },
+      {
+        "id": "78754",
+        "name": "120X200",
+        "price": 19469,
+        "originalPrice": null,
+        "url": "/urun/deluxe-premium-yatak-120x200"
+      },
+      {
+        "id": "78755",
+        "name": "140X190",
+        "price": 21944,
+        "originalPrice": null,
+        "url": "/urun/deluxe-premium-yatak-140x190"
+      },
+      {
+        "id": "78756",
+        "name": "150X200",
+        "price": 23099,
+        "originalPrice": null,
+        "url": "/urun/deluxe-premium-yatak-150x200"
+      },
+      {
+        "id": "78757",
+        "name": "160X200",
+        "price": 24419,
+        "originalPrice": null,
+        "url": "/urun/deluxe-premium-yatak-160x200"
+      },
+      {
+        "id": "78758",
+        "name": "180X200",
+        "price": 26893,
+        "originalPrice": null,
+        "url": "/urun/deluxe-premium-yatak-180x200"
+      },
+      {
+        "id": "78759",
+        "name": "200X200",
+        "price": 29863,
+        "originalPrice": null,
+        "url": "/urun/deluxe-premium-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-suit-comfort-yatak",
@@ -47469,7 +47810,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/suit-comfort-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "78751",
+        "name": "90X190",
+        "price": 14799,
+        "originalPrice": null,
+        "url": "/urun/suit-comfort-yatak-90x190"
+      },
+      {
+        "id": "78744",
+        "name": "100X200",
+        "price": 15539,
+        "originalPrice": null,
+        "url": "/urun/suit-comfort-yatak-100x200"
+      },
+      {
+        "id": "78745",
+        "name": "120X200",
+        "price": 17463,
+        "originalPrice": null,
+        "url": "/urun/suit-comfort-yatak-120x200"
+      },
+      {
+        "id": "78746",
+        "name": "140X190",
+        "price": 19683,
+        "originalPrice": null,
+        "url": "/urun/suit-comfort-yatak-140x190"
+      },
+      {
+        "id": "78747",
+        "name": "150X200",
+        "price": 20719,
+        "originalPrice": null,
+        "url": "/urun/suit-comfort-yatak-150x200"
+      },
+      {
+        "id": "78748",
+        "name": "160X200",
+        "price": 21903,
+        "originalPrice": null,
+        "url": "/urun/suit-comfort-yatak-160x200"
+      },
+      {
+        "id": "78749",
+        "name": "180X200",
+        "price": 24122,
+        "originalPrice": null,
+        "url": "/urun/suit-comfort-yatak-180x200"
+      },
+      {
+        "id": "78750",
+        "name": "200X200",
+        "price": 26786,
+        "originalPrice": null,
+        "url": "/urun/suit-comfort-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-clima-wool-prime-yatak",
@@ -47514,7 +47913,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/clima-wool-prime-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "56357",
+        "name": "90X190",
+        "price": 19932,
+        "originalPrice": 23449,
+        "url": "/urun/clima-wool-prime-yatak-90x190"
+      },
+      {
+        "id": "56341",
+        "name": "100X200",
+        "price": 20929,
+        "originalPrice": 24621,
+        "url": "/urun/clima-wool-prime-yatak-100x200"
+      },
+      {
+        "id": "56342",
+        "name": "120X200",
+        "price": 23520,
+        "originalPrice": 27670,
+        "url": "/urun/clima-wool-prime-yatak-120x200"
+      },
+      {
+        "id": "56343",
+        "name": "140X190",
+        "price": 26510,
+        "originalPrice": 31187,
+        "url": "/urun/clima-wool-prime-yatak-140x190"
+      },
+      {
+        "id": "56344",
+        "name": "150X200",
+        "price": 27905,
+        "originalPrice": 32829,
+        "url": "/urun/clima-wool-prime-yatak-150x200"
+      },
+      {
+        "id": "56345",
+        "name": "160X200",
+        "price": 29499,
+        "originalPrice": 34705,
+        "url": "/urun/clima-wool-prime-yatak-160x200"
+      },
+      {
+        "id": "56346",
+        "name": "180X200",
+        "price": 32489,
+        "originalPrice": 38222,
+        "url": "/urun/clima-wool-prime-yatak-180x200"
+      },
+      {
+        "id": "56358",
+        "name": "200X200",
+        "price": 36077,
+        "originalPrice": 42443,
+        "url": "/urun/clima-wool-prime-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-clima-wool-ultra-yatak",
@@ -47557,7 +48014,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/clima-wool-ultra-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "56368",
+        "name": "90X190",
+        "price": 11899,
+        "originalPrice": 13999,
+        "url": "/urun/clima-wool-ultra-yatak-90x190"
+      },
+      {
+        "id": "56361",
+        "name": "100X200",
+        "price": 12494,
+        "originalPrice": 14699,
+        "url": "/urun/clima-wool-ultra-yatak-100x200"
+      },
+      {
+        "id": "56362",
+        "name": "120X200",
+        "price": 14041,
+        "originalPrice": 16519,
+        "url": "/urun/clima-wool-ultra-yatak-120x200"
+      },
+      {
+        "id": "56363",
+        "name": "140X190",
+        "price": 15826,
+        "originalPrice": 18619,
+        "url": "/urun/clima-wool-ultra-yatak-140x190"
+      },
+      {
+        "id": "56364",
+        "name": "150X200",
+        "price": 16659,
+        "originalPrice": 19599,
+        "url": "/urun/clima-wool-ultra-yatak-150x200"
+      },
+      {
+        "id": "56365",
+        "name": "160X200",
+        "price": 17611,
+        "originalPrice": 20719,
+        "url": "/urun/clima-wool-ultra-yatak-160x200"
+      },
+      {
+        "id": "56366",
+        "name": "180X200",
+        "price": 19395,
+        "originalPrice": 22818,
+        "url": "/urun/clima-wool-ultra-yatak-180x200"
+      },
+      {
+        "id": "56367",
+        "name": "200X200",
+        "price": 21537,
+        "originalPrice": 25338,
+        "url": "/urun/clima-wool-ultra-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-sleepwell-energy-s-yatak",
@@ -47604,7 +48119,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/sleepwell-energy-s-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "49800",
+        "name": "90X190",
+        "price": 12699,
+        "originalPrice": null,
+        "url": "/urun/sleepwell-energy-s-yatak-90x190"
+      },
+      {
+        "id": "49793",
+        "name": "100X200",
+        "price": 13334,
+        "originalPrice": null,
+        "url": "/urun/sleepwell-energy-s-yatak-100x200"
+      },
+      {
+        "id": "49794",
+        "name": "120X200",
+        "price": 14985,
+        "originalPrice": null,
+        "url": "/urun/sleepwell-energy-s-yatak-120x200"
+      },
+      {
+        "id": "49795",
+        "name": "140X190",
+        "price": 16890,
+        "originalPrice": null,
+        "url": "/urun/sleepwell-energy-s-yatak-140x190"
+      },
+      {
+        "id": "49796",
+        "name": "150X200",
+        "price": 17779,
+        "originalPrice": null,
+        "url": "/urun/sleepwell-energy-s-yatak-150x200"
+      },
+      {
+        "id": "49797",
+        "name": "160X200",
+        "price": 18795,
+        "originalPrice": null,
+        "url": "/urun/sleepwell-energy-s-yatak-160x200"
+      },
+      {
+        "id": "49798",
+        "name": "180X200",
+        "price": 20699,
+        "originalPrice": null,
+        "url": "/urun/sleepwell-energy-s-yatak-180x200"
+      },
+      {
+        "id": "49799",
+        "name": "200X200",
+        "price": 22985,
+        "originalPrice": null,
+        "url": "/urun/sleepwell-energy-s-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-synergy-prime-yatak",
@@ -47645,7 +48218,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/synergy-prime-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "13913",
+        "name": "90X190",
+        "price": 17699,
+        "originalPrice": null,
+        "url": "/urun/synergy-prime-yatak-90x190"
+      },
+      {
+        "id": "13919",
+        "name": "100X200",
+        "price": 18584,
+        "originalPrice": null,
+        "url": "/urun/synergy-prime-yatak-100x200"
+      },
+      {
+        "id": "13912",
+        "name": "120X200",
+        "price": 20885,
+        "originalPrice": null,
+        "url": "/urun/synergy-prime-yatak-120x200"
+      },
+      {
+        "id": "13907",
+        "name": "140X190",
+        "price": 23540,
+        "originalPrice": null,
+        "url": "/urun/synergy-prime-yatak-140x190"
+      },
+      {
+        "id": "13910",
+        "name": "150X200",
+        "price": 24779,
+        "originalPrice": null,
+        "url": "/urun/synergy-prime-yatak-150x200"
+      },
+      {
+        "id": "13911",
+        "name": "160X200",
+        "price": 26195,
+        "originalPrice": null,
+        "url": "/urun/synergy-prime-yatak-160x200"
+      },
+      {
+        "id": "13909",
+        "name": "180X200",
+        "price": 28849,
+        "originalPrice": null,
+        "url": "/urun/synergy-prime-yatak-180x200"
+      },
+      {
+        "id": "13908",
+        "name": "200X200",
+        "price": 32035,
+        "originalPrice": null,
+        "url": "/urun/synergy-prime-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-synergy-ultra-yatak",
@@ -47689,7 +48320,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/synergy-ultra-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "13921",
+        "name": "90X190",
+        "price": 11699,
+        "originalPrice": null,
+        "url": "/urun/synergy-ultra-yatak-90x190"
+      },
+      {
+        "id": "13916",
+        "name": "100X200",
+        "price": 12284,
+        "originalPrice": null,
+        "url": "/urun/synergy-ultra-yatak-100x200"
+      },
+      {
+        "id": "13915",
+        "name": "120X200",
+        "price": 13805,
+        "originalPrice": null,
+        "url": "/urun/synergy-ultra-yatak-120x200"
+      },
+      {
+        "id": "13920",
+        "name": "140X190",
+        "price": 15560,
+        "originalPrice": null,
+        "url": "/urun/synergy-ultra-yatak-140x190"
+      },
+      {
+        "id": "13914",
+        "name": "150X200",
+        "price": 16379,
+        "originalPrice": null,
+        "url": "/urun/synergy-ultra-yatak-150x200"
+      },
+      {
+        "id": "13917",
+        "name": "160X200",
+        "price": 17315,
+        "originalPrice": null,
+        "url": "/urun/synergy-ultra-yatak-160x200"
+      },
+      {
+        "id": "13922",
+        "name": "180X200",
+        "price": 19069,
+        "originalPrice": null,
+        "url": "/urun/synergy-ultra-yatak-180x200"
+      },
+      {
+        "id": "13918",
+        "name": "200X200",
+        "price": 21175,
+        "originalPrice": null,
+        "url": "/urun/synergy-ultra-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-grand-comfort-5-zone",
@@ -47733,7 +48422,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/grand-comfort-5-zone",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "6059",
+        "name": "90X190",
+        "price": 10099,
+        "originalPrice": null,
+        "url": "/urun/grand-comfort-5-zone-90x190"
+      },
+      {
+        "id": "6041",
+        "name": "100X200",
+        "price": 10604,
+        "originalPrice": null,
+        "url": "/urun/grand-comfort-5-zone-100x200"
+      },
+      {
+        "id": "6060",
+        "name": "120X200",
+        "price": 11917,
+        "originalPrice": null,
+        "url": "/urun/grand-comfort-5-zone-120x200"
+      },
+      {
+        "id": "6007",
+        "name": "140X190",
+        "price": 13432,
+        "originalPrice": null,
+        "url": "/urun/grand-comfort-5-zone-140x190"
+      },
+      {
+        "id": "5996",
+        "name": "150X200",
+        "price": 14139,
+        "originalPrice": null,
+        "url": "/urun/grand-comfort-5-zone-150x200"
+      },
+      {
+        "id": "6051",
+        "name": "160X200",
+        "price": 14947,
+        "originalPrice": null,
+        "url": "/urun/grand-comfort-5-zone-160x200"
+      },
+      {
+        "id": "6003",
+        "name": "180X200",
+        "price": 16461,
+        "originalPrice": null,
+        "url": "/urun/grand-comfort-5-zone-180x200"
+      },
+      {
+        "id": "6026",
+        "name": "200X200",
+        "price": 18279,
+        "originalPrice": null,
+        "url": "/urun/grand-comfort-5-zone-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-sleepist-yatak",
@@ -47815,7 +48562,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/sleepist-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "9952",
+        "name": "90X190",
+        "price": 9199,
+        "originalPrice": null,
+        "url": "/urun/sleepist-yatak-90x190"
+      },
+      {
+        "id": "9948",
+        "name": "100X200",
+        "price": 9659,
+        "originalPrice": null,
+        "url": "/urun/sleepist-yatak-100x200"
+      },
+      {
+        "id": "9954",
+        "name": "120X200",
+        "price": 10855,
+        "originalPrice": null,
+        "url": "/urun/sleepist-yatak-yatak-120x200"
+      },
+      {
+        "id": "9949",
+        "name": "140X190",
+        "price": 12235,
+        "originalPrice": null,
+        "url": "/urun/sleepist-yatak-140x190"
+      },
+      {
+        "id": "9953",
+        "name": "150X200",
+        "price": 12879,
+        "originalPrice": null,
+        "url": "/urun/sleepist-yatak-150x200"
+      },
+      {
+        "id": "9951",
+        "name": "160X200",
+        "price": 13615,
+        "originalPrice": null,
+        "url": "/urun/sleepist-yatak-160x200"
+      },
+      {
+        "id": "11116",
+        "name": "180X200",
+        "price": 14994,
+        "originalPrice": null,
+        "url": "/urun/sleepist-yatak-180x200"
+      },
+      {
+        "id": "9950",
+        "name": "200X200",
+        "price": 16650,
+        "originalPrice": null,
+        "url": "/urun/sleepist-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-life-dream-gri-yatak",
@@ -47899,7 +48704,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/life-dream-gri-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "6037",
+        "name": "90X190",
+        "price": 20899,
+        "originalPrice": null,
+        "url": "/urun/life-dream-gri-yatak-90x190"
+      },
+      {
+        "id": "6017",
+        "name": "100X200",
+        "price": 21944,
+        "originalPrice": null,
+        "url": "/urun/life-dream-gri-yatak-100x200"
+      },
+      {
+        "id": "6024",
+        "name": "120X200",
+        "price": 24661,
+        "originalPrice": null,
+        "url": "/urun/life-dream-gri-yatak-120x200"
+      },
+      {
+        "id": "6061",
+        "name": "140X190",
+        "price": 27796,
+        "originalPrice": null,
+        "url": "/urun/life-dream-gri-yatak-140x190"
+      },
+      {
+        "id": "6045",
+        "name": "150X200",
+        "price": 29259,
+        "originalPrice": null,
+        "url": "/urun/life-dream-gri-yatak-150x200"
+      },
+      {
+        "id": "6019",
+        "name": "160X200",
+        "price": 30931,
+        "originalPrice": null,
+        "url": "/urun/life-dream-gri-yatak-160x200"
+      },
+      {
+        "id": "6027",
+        "name": "180X200",
+        "price": 34065,
+        "originalPrice": null,
+        "url": "/urun/life-dream-gri-yatak-180x200"
+      },
+      {
+        "id": "6018",
+        "name": "200X200",
+        "price": 37827,
+        "originalPrice": null,
+        "url": "/urun/life-dream-gri-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-life-dream-vizon-yatak",
@@ -47983,7 +48846,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/life-dream-vizon-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "6025",
+        "name": "90X190",
+        "price": 20899,
+        "originalPrice": null,
+        "url": "/urun/life-dream-vizon-yatak-90x190"
+      },
+      {
+        "id": "6050",
+        "name": "100X200",
+        "price": 21944,
+        "originalPrice": null,
+        "url": "/urun/life-dream-vizon-yatak-100x200"
+      },
+      {
+        "id": "6047",
+        "name": "120X200",
+        "price": 24661,
+        "originalPrice": null,
+        "url": "/urun/life-dream-vizon-yatak-120x200"
+      },
+      {
+        "id": "6022",
+        "name": "140X190",
+        "price": 27796,
+        "originalPrice": null,
+        "url": "/urun/life-dream-vizon-yatak-140x190"
+      },
+      {
+        "id": "6052",
+        "name": "150X200",
+        "price": 29259,
+        "originalPrice": null,
+        "url": "/urun/life-dream-vizon-yatak-150x200"
+      },
+      {
+        "id": "6023",
+        "name": "160X200",
+        "price": 30931,
+        "originalPrice": null,
+        "url": "/urun/life-dream-vizon-yatak-160x200"
+      },
+      {
+        "id": "6063",
+        "name": "180X200",
+        "price": 34065,
+        "originalPrice": null,
+        "url": "/urun/life-dream-vizon-yatak-180x200"
+      },
+      {
+        "id": "6034",
+        "name": "200X200",
+        "price": 37827,
+        "originalPrice": null,
+        "url": "/urun/life-dream-vizon-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-sleep-connect-yatak",
@@ -48026,7 +48947,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/sleep-connect-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:29:04.082Z"
+    "updatedAt": "2026-09-03T18:29:04.082Z",
+    "variants": [
+      {
+        "id": "6042",
+        "name": "90X190",
+        "price": 12039,
+        "originalPrice": 15049,
+        "url": "/urun/sleep-connect-yatak-90x190"
+      },
+      {
+        "id": "6030",
+        "name": "100X200",
+        "price": 12641,
+        "originalPrice": 15801,
+        "url": "/urun/sleep-connect-yatak-100x200"
+      },
+      {
+        "id": "6004",
+        "name": "120X200",
+        "price": 14206,
+        "originalPrice": 17758,
+        "url": "/urun/sleep-connect-yatak-120x200"
+      },
+      {
+        "id": "6062",
+        "name": "140X190",
+        "price": 16012,
+        "originalPrice": 20015,
+        "url": "/urun/sleep-connect-yatak-140x190"
+      },
+      {
+        "id": "6013",
+        "name": "150X200",
+        "price": 16855,
+        "originalPrice": 21069,
+        "url": "/urun/sleep-connect-yatak-150x200"
+      },
+      {
+        "id": "6044",
+        "name": "160X200",
+        "price": 17818,
+        "originalPrice": 22273,
+        "url": "/urun/sleep-connect-yatak-160x200"
+      },
+      {
+        "id": "6043",
+        "name": "180X200",
+        "price": 19624,
+        "originalPrice": 24530,
+        "url": "/urun/sleep-connect-yatak-180x200"
+      },
+      {
+        "id": "6035",
+        "name": "200X200",
+        "price": 21791,
+        "originalPrice": 27239,
+        "url": "/urun/sleep-connect-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-detox-prime-yatak",
@@ -48071,7 +49050,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/detox-prime-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "3377",
+        "name": "90X190",
+        "price": 25299,
+        "originalPrice": null,
+        "url": "/urun/detox-prime-yatak-90x190"
+      },
+      {
+        "id": "3286",
+        "name": "100X200",
+        "price": 26564,
+        "originalPrice": null,
+        "url": "/urun/detox-prime-yatak-100x200"
+      },
+      {
+        "id": "3395",
+        "name": "120X200",
+        "price": 29853,
+        "originalPrice": null,
+        "url": "/urun/detox-prime-yatak-120x200"
+      },
+      {
+        "id": "3355",
+        "name": "140X190",
+        "price": 33648,
+        "originalPrice": null,
+        "url": "/urun/detox-prime-yatak-140x190"
+      },
+      {
+        "id": "3396",
+        "name": "150X200",
+        "price": 35419,
+        "originalPrice": null,
+        "url": "/urun/detox-prime-yatak-150x200"
+      },
+      {
+        "id": "3299",
+        "name": "160X200",
+        "price": 37443,
+        "originalPrice": null,
+        "url": "/urun/detox-prime-yatak-160x200"
+      },
+      {
+        "id": "3283",
+        "name": "180X200",
+        "price": 41237,
+        "originalPrice": null,
+        "url": "/urun/detox-prime-yatak-180x200"
+      },
+      {
+        "id": "3378",
+        "name": "200X200",
+        "price": 45791,
+        "originalPrice": null,
+        "url": "/urun/detox-prime-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-unstress-yatak",
@@ -48117,7 +49154,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/unstress-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "3330",
+        "name": "90X190",
+        "price": 7899,
+        "originalPrice": null,
+        "url": "/urun/unstress-yatak-90x190"
+      },
+      {
+        "id": "3365",
+        "name": "100X200",
+        "price": 8294,
+        "originalPrice": null,
+        "url": "/urun/unstress-yatak-100x200"
+      },
+      {
+        "id": "3279",
+        "name": "120X200",
+        "price": 9321,
+        "originalPrice": null,
+        "url": "/urun/unstress-yatak-120x200"
+      },
+      {
+        "id": "3245",
+        "name": "140X190",
+        "price": 10506,
+        "originalPrice": null,
+        "url": "/urun/unstress-yatak-140x190"
+      },
+      {
+        "id": "3267",
+        "name": "150X200",
+        "price": 11059,
+        "originalPrice": null,
+        "url": "/urun/unstress-yatak-150x200"
+      },
+      {
+        "id": "3354",
+        "name": "160X200",
+        "price": 11691,
+        "originalPrice": null,
+        "url": "/urun/unstress-yatak-160x200"
+      },
+      {
+        "id": "3375",
+        "name": "180X200",
+        "price": 12875,
+        "originalPrice": null,
+        "url": "/urun/unstress-yatak-180x200"
+      },
+      {
+        "id": "3347",
+        "name": "200X200",
+        "price": 14297,
+        "originalPrice": null,
+        "url": "/urun/unstress-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-graphene-premium-yatak",
@@ -48162,7 +49257,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/graphene-premium-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "3199",
+        "name": "90X190",
+        "price": 12419,
+        "originalPrice": 13799,
+        "url": "/urun/graphene-premium-yatak-90x190"
+      },
+      {
+        "id": "3317",
+        "name": "100X200",
+        "price": 13040,
+        "originalPrice": 14489,
+        "url": "/urun/graphene-premium-yatak-100x200"
+      },
+      {
+        "id": "3284",
+        "name": "120X200",
+        "price": 14654,
+        "originalPrice": 16283,
+        "url": "/urun/graphene-premium-yatak-120x200"
+      },
+      {
+        "id": "3260",
+        "name": "140X190",
+        "price": 16517,
+        "originalPrice": 18353,
+        "url": "/urun/graphene-premium-yatak-140x190"
+      },
+      {
+        "id": "3270",
+        "name": "150X200",
+        "price": 17387,
+        "originalPrice": 19319,
+        "url": "/urun/graphene-premium-yatak-150x200"
+      },
+      {
+        "id": "3404",
+        "name": "160X200",
+        "price": 18380,
+        "originalPrice": 20423,
+        "url": "/urun/graphene-premium-yatak-160x200"
+      },
+      {
+        "id": "3301",
+        "name": "180X200",
+        "price": 20243,
+        "originalPrice": 22492,
+        "url": "/urun/graphene-premium-yatak-180x200"
+      },
+      {
+        "id": "3253",
+        "name": "200X200",
+        "price": 22478,
+        "originalPrice": 24976,
+        "url": "/urun/graphene-premium-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-graphene-dream-yatak",
@@ -48208,7 +49361,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/graphene-dream-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "3263",
+        "name": "90X190",
+        "price": 10799,
+        "originalPrice": 11999,
+        "url": "/urun/graphene-dream-yatak-90x190"
+      },
+      {
+        "id": "3238",
+        "name": "100X200",
+        "price": 11339,
+        "originalPrice": 12599,
+        "url": "/urun/graphene-dream-yatak-100x200"
+      },
+      {
+        "id": "3310",
+        "name": "120X200",
+        "price": 12743,
+        "originalPrice": 14159,
+        "url": "/urun/graphene-dream-yatak-120x200"
+      },
+      {
+        "id": "3242",
+        "name": "140X190",
+        "price": 14363,
+        "originalPrice": 15959,
+        "url": "/urun/graphene-dream-yatak-140x190"
+      },
+      {
+        "id": "3327",
+        "name": "150X200",
+        "price": 15119,
+        "originalPrice": 16799,
+        "url": "/urun/graphene-dream-yatak-150x200"
+      },
+      {
+        "id": "3413",
+        "name": "160X200",
+        "price": 15983,
+        "originalPrice": 17759,
+        "url": "/urun/graphene-dream-yatak-160x200"
+      },
+      {
+        "id": "3203",
+        "name": "180X200",
+        "price": 17602,
+        "originalPrice": 19558,
+        "url": "/urun/graphene-dream-yatak-180x200"
+      },
+      {
+        "id": "3280",
+        "name": "200X200",
+        "price": 19546,
+        "originalPrice": 21718,
+        "url": "/urun/graphene-dream-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-dreamwell-yatak",
@@ -48290,7 +49501,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/dreamwell-yatak",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "3311",
+        "name": "90X190",
+        "price": 5669,
+        "originalPrice": 6299,
+        "url": "/urun/dreamwell-yatak-90x190-1"
+      },
+      {
+        "id": "3239",
+        "name": "100X200",
+        "price": 5952,
+        "originalPrice": 6614,
+        "url": "/urun/dreamwell-yatak-100x200-1"
+      },
+      {
+        "id": "3276",
+        "name": "120X200",
+        "price": 6689,
+        "originalPrice": 7433,
+        "url": "/urun/dreamwell-yatak-120x200-1"
+      },
+      {
+        "id": "3272",
+        "name": "140X190",
+        "price": 7540,
+        "originalPrice": 8378,
+        "url": "/urun/dreamwell-yatak-140x190"
+      },
+      {
+        "id": "3389",
+        "name": "150X200",
+        "price": 7937,
+        "originalPrice": 8819,
+        "url": "/urun/dreamwell-yatak-150x200"
+      },
+      {
+        "id": "3400",
+        "name": "160X200",
+        "price": 8390,
+        "originalPrice": 9323,
+        "url": "/urun/dreamwell-yatak-160x200"
+      },
+      {
+        "id": "3358",
+        "name": "180X200",
+        "price": 9240,
+        "originalPrice": 10267,
+        "url": "/urun/dreamwell-yatak-180x200"
+      },
+      {
+        "id": "3341",
+        "name": "200X200",
+        "price": 10261,
+        "originalPrice": 11401,
+        "url": "/urun/dreamwell-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-optimal-s-yatak",
@@ -48334,7 +49603,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/optimal-s-yatak",
     "createdAt": "2026-09-03T18:17:31.481Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "81381",
+        "name": "90X190",
+        "price": 7559,
+        "originalPrice": 8399,
+        "url": "/urun/optimal-s-yatak-90x190"
+      },
+      {
+        "id": "81374",
+        "name": "100X200",
+        "price": 7937,
+        "originalPrice": 8819,
+        "url": "/urun/optimal-s-yatak-100x200"
+      },
+      {
+        "id": "81375",
+        "name": "120X200",
+        "price": 8920,
+        "originalPrice": 9911,
+        "url": "/urun/optimal-s-yatak-120x200"
+      },
+      {
+        "id": "81376",
+        "name": "140X190",
+        "price": 10053,
+        "originalPrice": 11171,
+        "url": "/urun/optimal-s-yatak-140x190"
+      },
+      {
+        "id": "81377",
+        "name": "150X200",
+        "price": 10583,
+        "originalPrice": 11759,
+        "url": "/urun/optimal-s-yatak-150x200"
+      },
+      {
+        "id": "81378",
+        "name": "160X200",
+        "price": 11187,
+        "originalPrice": 12431,
+        "url": "/urun/optimal-s-yatak-160x200"
+      },
+      {
+        "id": "81379",
+        "name": "180X200",
+        "price": 12321,
+        "originalPrice": 13690,
+        "url": "/urun/optimal-s-yatak-180x200"
+      },
+      {
+        "id": "81380",
+        "name": "200X200",
+        "price": 13682,
+        "originalPrice": 15202,
+        "url": "/urun/optimal-s-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-dreamwell-s-yatak",
@@ -48376,7 +49703,65 @@
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/dreamwell-s-yatak",
     "createdAt": "2026-09-03T18:17:31.481Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "81372",
+        "name": "90X190",
+        "price": 5669,
+        "originalPrice": 6299,
+        "url": "/urun/dreamwell-s-yatak-90x190"
+      },
+      {
+        "id": "81365",
+        "name": "100X200",
+        "price": 5952,
+        "originalPrice": 6614,
+        "url": "/urun/dreamwell-s-yatak-100x200"
+      },
+      {
+        "id": "81366",
+        "name": "120X200",
+        "price": 6689,
+        "originalPrice": 7433,
+        "url": "/urun/dreamwell-s-yatak-120x200"
+      },
+      {
+        "id": "81367",
+        "name": "140X190",
+        "price": 7540,
+        "originalPrice": 8378,
+        "url": "/urun/dreamwell-s-yatak-140x190"
+      },
+      {
+        "id": "81368",
+        "name": "150X200",
+        "price": 7937,
+        "originalPrice": 8819,
+        "url": "/urun/dreamwell-s-yatak-150x200"
+      },
+      {
+        "id": "81369",
+        "name": "160X200",
+        "price": 8390,
+        "originalPrice": 9323,
+        "url": "/urun/dreamwell-s-yatak-160x200"
+      },
+      {
+        "id": "81370",
+        "name": "180X200",
+        "price": 9240,
+        "originalPrice": 10267,
+        "url": "/urun/dreamwell-s-yatak-180x200"
+      },
+      {
+        "id": "81371",
+        "name": "200X200",
+        "price": 10261,
+        "originalPrice": 11401,
+        "url": "/urun/dreamwell-s-yatak-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-ella-katlanir-bebek-yatagi",
@@ -48454,7 +49839,16 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/ella-katlanir-bebek-yatagi",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "50140",
+        "name": "60X120",
+        "price": 3199,
+        "originalPrice": null,
+        "url": "/urun/ella-katlanir-bebek-yatagi-60x120"
+      }
+    ]
   },
   {
     "id": "istikbal-lexus-baza",
@@ -48520,7 +49914,30 @@
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/lexus-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "81345",
+        "name": "150 - Krem",
+        "price": 19795,
+        "originalPrice": 20837,
+        "url": "/urun/lexus-baza-150-krem"
+      },
+      {
+        "id": "81344",
+        "name": "160 - Krem",
+        "price": 19795,
+        "originalPrice": 20837,
+        "url": "/urun/lexus-baza-160-krem"
+      },
+      {
+        "id": "81346",
+        "name": "180 - Krem",
+        "price": 19795,
+        "originalPrice": 20837,
+        "url": "/urun/lexus-baza-180-krem"
+      }
+    ]
   },
   {
     "id": "istikbal-cooler-baza-baslik-takimi",
@@ -48588,7 +50005,65 @@
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/cooler-baza-baslik-takimi",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:29:05.248Z"
+    "updatedAt": "2026-09-03T18:29:05.248Z",
+    "variants": [
+      {
+        "id": "80564",
+        "name": "90X190",
+        "price": 33798,
+        "originalPrice": null,
+        "url": "/urun/cooler-baza-baslik-takimi-90x190"
+      },
+      {
+        "id": "80532",
+        "name": "100X200",
+        "price": 35488,
+        "originalPrice": null,
+        "url": "/urun/cooler-baza-baslik-takimi-100x200"
+      },
+      {
+        "id": "80533",
+        "name": "120X200",
+        "price": 39882,
+        "originalPrice": null,
+        "url": "/urun/cooler-baza-baslik-takimi-120x200"
+      },
+      {
+        "id": "80534",
+        "name": "140X190",
+        "price": 44951,
+        "originalPrice": null,
+        "url": "/urun/cooler-baza-baslik-takimi-140x190"
+      },
+      {
+        "id": "80535",
+        "name": "150X200",
+        "price": 47317,
+        "originalPrice": null,
+        "url": "/urun/cooler-baza-baslik-takimi-150x200"
+      },
+      {
+        "id": "80536",
+        "name": "160X200",
+        "price": 50021,
+        "originalPrice": null,
+        "url": "/urun/cooler-baza-baslik-takimi-160x200"
+      },
+      {
+        "id": "80562",
+        "name": "180X200",
+        "price": 55091,
+        "originalPrice": null,
+        "url": "/urun/cooler-baza-baslik-takimi-180x200"
+      },
+      {
+        "id": "80563",
+        "name": "200X200",
+        "price": 61174,
+        "originalPrice": null,
+        "url": "/urun/cooler-baza-baslik-takimi-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-bohem-baza",
@@ -48626,7 +50101,65 @@
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/bohem-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:29:06.443Z"
+    "updatedAt": "2026-09-03T18:29:06.443Z",
+    "variants": [
+      {
+        "id": "80475",
+        "name": "90X190",
+        "price": 42398,
+        "originalPrice": null,
+        "url": "/urun/bohem-baza-90x190"
+      },
+      {
+        "id": "80468",
+        "name": "100X200",
+        "price": 44518,
+        "originalPrice": null,
+        "url": "/urun/bohem-baza-100x200"
+      },
+      {
+        "id": "80469",
+        "name": "120X200",
+        "price": 50030,
+        "originalPrice": null,
+        "url": "/urun/bohem-baza-120x200"
+      },
+      {
+        "id": "80470",
+        "name": "140X190",
+        "price": 56389,
+        "originalPrice": null,
+        "url": "/urun/bohem-baza-140x190"
+      },
+      {
+        "id": "80471",
+        "name": "150X200",
+        "price": 59357,
+        "originalPrice": null,
+        "url": "/urun/bohem-baza-150x200"
+      },
+      {
+        "id": "80472",
+        "name": "160X200",
+        "price": 62749,
+        "originalPrice": null,
+        "url": "/urun/bohem-baza-160x200"
+      },
+      {
+        "id": "80473",
+        "name": "180X200",
+        "price": 69109,
+        "originalPrice": null,
+        "url": "/urun/bohem-baza-180x200"
+      },
+      {
+        "id": "80474",
+        "name": "200X200",
+        "price": 76740,
+        "originalPrice": null,
+        "url": "/urun/bohem-baza-200x200"
+      }
+    ]
   },
   {
     "id": "istikbal-alfa-duz-baza",
@@ -48663,7 +50196,590 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/alfa-duz-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:29:08.506Z"
+    "updatedAt": "2026-09-03T18:29:08.506Z",
+    "variants": [
+      {
+        "id": "15406",
+        "name": "Large (29 Cm) - 100X200 - Krem",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-large-100x200-krem"
+      },
+      {
+        "id": "15405",
+        "name": "Large (29 Cm) - 120X200 - Krem",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-large-120x200-krem"
+      },
+      {
+        "id": "15404",
+        "name": "Large (29 Cm) - 140X190 - Krem",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-large-140x190-krem"
+      },
+      {
+        "id": "15407",
+        "name": "Large (29 Cm) - 150X200 - Krem",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-large-150x200-krem"
+      },
+      {
+        "id": "15400",
+        "name": "Large (29 Cm) - 160X200 - Krem",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-large-160x200-krem"
+      },
+      {
+        "id": "15403",
+        "name": "Large (29 Cm) - 180X200 - Krem",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-large-180x200-krem"
+      },
+      {
+        "id": "15402",
+        "name": "Large (29 Cm) - 200X200 - Krem",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-large-200x200-krem"
+      },
+      {
+        "id": "15401",
+        "name": "Large (29 Cm) - 90X190 - Krem",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-large-90x190-krem"
+      },
+      {
+        "id": "43325",
+        "name": "Medium (26 Cm) - 100X200 - Gri",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-medium-100x200-gri"
+      },
+      {
+        "id": "43319",
+        "name": "Medium (26 Cm) - 120X200 - Gri",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-medium-120x200-gri"
+      },
+      {
+        "id": "43323",
+        "name": "Medium (26 Cm) - 140X190 - Gri",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-medium-140x190-gri"
+      },
+      {
+        "id": "43321",
+        "name": "Medium (26 Cm) - 150X200 - Gri",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-medium-150x200-gri"
+      },
+      {
+        "id": "43324",
+        "name": "Medium (26 Cm) - 160X200 - Gri",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-medium-160x200-gri"
+      },
+      {
+        "id": "43320",
+        "name": "Medium (26 Cm) - 180X200 - Gri",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-medium-180x200-gri"
+      },
+      {
+        "id": "43322",
+        "name": "Medium (26 Cm) - 200X200 - Gri",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-medium-200x200-gri"
+      },
+      {
+        "id": "43318",
+        "name": "Medium (26 Cm) - 90X190 - Gri",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-medium-90x190-gri"
+      },
+      {
+        "id": "78943",
+        "name": "90X190 - Allure Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-allure-krem-large-29-cm"
+      },
+      {
+        "id": "49976",
+        "name": "90X190 - Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-antrasit-large-29-cm"
+      },
+      {
+        "id": "79729",
+        "name": "90X190 - Astra Gri - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-astra-gri-large-29-cm"
+      },
+      {
+        "id": "79036",
+        "name": "90X190 - Divin Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-divin-antrasit-large-29-cm"
+      },
+      {
+        "id": "78814",
+        "name": "90X190 - Lacivert - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-lacivert-large-29-cm"
+      },
+      {
+        "id": "80044",
+        "name": "90X190 - Lorea Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-lorea-bej-large-29-cm"
+      },
+      {
+        "id": "78798",
+        "name": "90X190 - Mavi - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-mavi-large-29-cm"
+      },
+      {
+        "id": "79003",
+        "name": "90X190 - Mitra Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-mitra-bej-large-29-cm"
+      },
+      {
+        "id": "80116",
+        "name": "90X190 - Zeus Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-90x190-zeus-krem-large-29-cm"
+      },
+      {
+        "id": "78953",
+        "name": "100X200 - Allure Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-allure-krem-large-29-cm"
+      },
+      {
+        "id": "49986",
+        "name": "100X200 - Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-antrasit-large-29-cm"
+      },
+      {
+        "id": "79739",
+        "name": "100X200 - Astra Gri - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-astra-gri-large-29-cm"
+      },
+      {
+        "id": "79046",
+        "name": "100X200 - Divin Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-divin-antrasit-large-29-cm"
+      },
+      {
+        "id": "78824",
+        "name": "100X200 - Lacivert - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-lacivert-large-29-cm"
+      },
+      {
+        "id": "80054",
+        "name": "100X200 - Lorea Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-lorea-bej-large-29-cm"
+      },
+      {
+        "id": "78808",
+        "name": "100X200 - Mavi - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-mavi-large-29-cm"
+      },
+      {
+        "id": "79013",
+        "name": "100X200 - Mitra Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-mitra-bej-large-29-cm"
+      },
+      {
+        "id": "80126",
+        "name": "100X200 - Zeus Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-100x200-zeus-krem-large-29-cm"
+      },
+      {
+        "id": "78951",
+        "name": "120X200 - Allure Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-allure-krem-large-29-cm"
+      },
+      {
+        "id": "49984",
+        "name": "120X200 - Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-antrasit-large-29-cm"
+      },
+      {
+        "id": "79737",
+        "name": "120X200 - Astra Gri - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-astra-gri-large-29-cm"
+      },
+      {
+        "id": "79044",
+        "name": "120X200 - Divin Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-divin-antrasit-large-29-cm"
+      },
+      {
+        "id": "78822",
+        "name": "120X200 - Lacivert - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-lacivert-large-29-cm"
+      },
+      {
+        "id": "80052",
+        "name": "120X200 - Lorea Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-lorea-bej-large-29-cm"
+      },
+      {
+        "id": "78806",
+        "name": "120X200 - Mavi - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-mavi-large-29-cm"
+      },
+      {
+        "id": "79011",
+        "name": "120X200 - Mitra Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-mitra-bej-large-29-cm"
+      },
+      {
+        "id": "80124",
+        "name": "120X200 - Zeus Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-120x200-zeus-krem-large-29-cm"
+      },
+      {
+        "id": "78949",
+        "name": "140X190 - Allure Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-140x190-allure-krem-large-29-cm"
+      },
+      {
+        "id": "49982",
+        "name": "140X190 - Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-140x190-antrasit-large-29-cm"
+      },
+      {
+        "id": "79042",
+        "name": "140X190 - Divin Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-140x190-divin-antrasit-large-29-cm"
+      },
+      {
+        "id": "78820",
+        "name": "140X190 - Lacivert - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-140x190-lacivert-large-29-cm"
+      },
+      {
+        "id": "80050",
+        "name": "140X190 - Lorea Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-140x190-lorea-bej-large-29-cm"
+      },
+      {
+        "id": "78804",
+        "name": "140X190 - Mavi - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-140x190-mavi-large-29-cm"
+      },
+      {
+        "id": "79009",
+        "name": "140X190 - Mitra Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-140x190-mitra-bej-large-29-cm"
+      },
+      {
+        "id": "80122",
+        "name": "140X190 - Zeus Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-140x190-zeus-krem-large-29-cm"
+      },
+      {
+        "id": "78955",
+        "name": "150X200 - Allure Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-150x200-allure-krem-large-29-cm"
+      },
+      {
+        "id": "49988",
+        "name": "150X200 - Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-150x200-antrasit-large-29-cm"
+      },
+      {
+        "id": "79048",
+        "name": "150X200 - Divin Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-150x200-divin-antrasit-large-29-cm"
+      },
+      {
+        "id": "78826",
+        "name": "150X200 - Lacivert - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-150x200-lacivert-large-29-cm"
+      },
+      {
+        "id": "80056",
+        "name": "150X200 - Lorea Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-150x200-lorea-bej-large-29-cm"
+      },
+      {
+        "id": "78810",
+        "name": "150X200 - Mavi - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-150x200-mavi-large-29-cm"
+      },
+      {
+        "id": "79015",
+        "name": "150X200 - Mitra Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-150x200-mitra-bej-large-29-cm"
+      },
+      {
+        "id": "80128",
+        "name": "150X200 - Zeus Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-150x200-zeus-krem-large-29-cm"
+      },
+      {
+        "id": "78941",
+        "name": "160X200 - Allure Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-allure-krem-large-29-cm"
+      },
+      {
+        "id": "49974",
+        "name": "160X200 - Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-antrasit-large-29-cm"
+      },
+      {
+        "id": "79727",
+        "name": "160X200 - Astra Gri - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-astra-gri-large-29-cm"
+      },
+      {
+        "id": "79034",
+        "name": "160X200 - Divin Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-divin-antrasit-large-29-cm"
+      },
+      {
+        "id": "78812",
+        "name": "160X200 - Lacivert - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-lacivert-large-29-cm"
+      },
+      {
+        "id": "80042",
+        "name": "160X200 - Lorea Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-lorea-bej-large-29-cm"
+      },
+      {
+        "id": "78796",
+        "name": "160X200 - Mavi - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-mavi-large-29-cm"
+      },
+      {
+        "id": "79001",
+        "name": "160X200 - Mitra Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-mitra-bej-large-29-cm"
+      },
+      {
+        "id": "80114",
+        "name": "160X200 - Zeus Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-160x200-zeus-krem-large-29-cm"
+      },
+      {
+        "id": "78947",
+        "name": "180X200 - Allure Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-180x200-allure-krem-large-29-cm"
+      },
+      {
+        "id": "49980",
+        "name": "180X200 - Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-180x200-antrasit-large-29-cm"
+      },
+      {
+        "id": "79040",
+        "name": "180X200 - Divin Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-180x200-divin-antrasit-large-29-cm"
+      },
+      {
+        "id": "78818",
+        "name": "180X200 - Lacivert - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-180x200-lacivert-large-29-cm"
+      },
+      {
+        "id": "80048",
+        "name": "180X200 - Lorea Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-180x200-lorea-bej-large-29-cm"
+      },
+      {
+        "id": "78802",
+        "name": "180X200 - Mavi - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-180x200-mavi-large-29-cm"
+      },
+      {
+        "id": "79007",
+        "name": "180X200 - Mitra Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-180x200-mitra-bej-large-29-cm"
+      },
+      {
+        "id": "80120",
+        "name": "180X200 - Zeus Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-180x200-zeus-krem-large-29-cm"
+      },
+      {
+        "id": "78945",
+        "name": "200X200 - Allure Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-200x200-allure-krem-large-29-cm"
+      },
+      {
+        "id": "49978",
+        "name": "200X200 - Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-200x200-antrasit-large-29-cm"
+      },
+      {
+        "id": "79038",
+        "name": "200X200 - Divin Antrasit - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-200x200-divin-antrasit-large-29-cm"
+      },
+      {
+        "id": "78816",
+        "name": "200X200 - Lacivert - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-200x200-lacivert-large-29-cm"
+      },
+      {
+        "id": "78800",
+        "name": "200X200 - Mavi - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-200x200-mavi-large-29-cm"
+      },
+      {
+        "id": "79005",
+        "name": "200X200 - Mitra Bej - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-200x200-mitra-bej-large-29-cm"
+      },
+      {
+        "id": "80118",
+        "name": "200X200 - Zeus Krem - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-200x200-zeus-krem-large-29-cm"
+      }
+    ]
   },
   {
     "id": "istikbal-alfa-kapitone-baza",
@@ -48726,7 +50842,170 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/alfa-kapitone-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:29:09.793Z"
+    "updatedAt": "2026-09-03T18:29:09.793Z",
+    "variants": [
+      {
+        "id": "43359",
+        "name": "Large (29 Cm) - 100X200 - Vizon",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-large-100x200-vizon-1"
+      },
+      {
+        "id": "43353",
+        "name": "Large (29 Cm) - 120X200 - Vizon",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-large-120x200-vizon-1"
+      },
+      {
+        "id": "43357",
+        "name": "Large (29 Cm) - 140X190 - Vizon",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-large-140x190-vizon-1"
+      },
+      {
+        "id": "43352",
+        "name": "Large (29 Cm) - 150X200 - Vizon",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-large-150x200-vizon-1"
+      },
+      {
+        "id": "43358",
+        "name": "Large (29 Cm) - 160X200 - Vizon",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-large-160x200-vizon-1"
+      },
+      {
+        "id": "43356",
+        "name": "Large (29 Cm) - 180X200 - Vizon",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-large-180x200-vizon-1"
+      },
+      {
+        "id": "43355",
+        "name": "Large (29 Cm) - 200X200 - Vizon",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-large-200x200-vizon-1"
+      },
+      {
+        "id": "43354",
+        "name": "Large (29 Cm) - 90X190 - Vizon",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-large-90x190-vizon-1"
+      },
+      {
+        "id": "15337",
+        "name": "Medium (26 Cm) - 100X200 - Yeşil",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-medium-100x200-yesil"
+      },
+      {
+        "id": "15347",
+        "name": "Medium (26 Cm) - 120X200 - Yeşil",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-medium-120x200-yesil"
+      },
+      {
+        "id": "15340",
+        "name": "Medium (26 Cm) - 140X190 - Yeşil",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-medium-140x190-yesil"
+      },
+      {
+        "id": "15339",
+        "name": "Medium (26 Cm) - 150X200 - Yeşil",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-medium-150x200-yesil"
+      },
+      {
+        "id": "15335",
+        "name": "Medium (26 Cm) - 160X200 - Yeşil",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-medium-160x200-yesil"
+      },
+      {
+        "id": "15341",
+        "name": "Medium (26 Cm) - 180X200 - Yeşil",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-medium-180x200-yesil"
+      },
+      {
+        "id": "15338",
+        "name": "Medium (26 Cm) - 200X200 - Yeşil",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-medium-200x200-yesil"
+      },
+      {
+        "id": "15342",
+        "name": "Medium (26 Cm) - 90X190 - Yeşil",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-medium-90x190-yesil"
+      },
+      {
+        "id": "80194",
+        "name": "90X190 - Krem - Large (29 Cm)",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-90x190-krem-large-29-cm"
+      },
+      {
+        "id": "80184",
+        "name": "100X200 - Krem - Large (29 Cm)",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-100x200-krem-large-29-cm"
+      },
+      {
+        "id": "80196",
+        "name": "120X200 - Krem - Large (29 Cm)",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-120x200-krem-large-29-cm"
+      },
+      {
+        "id": "80190",
+        "name": "140X190 - Krem - Large (29 Cm)",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-140x190-krem-large-29-cm"
+      },
+      {
+        "id": "80188",
+        "name": "150X200 - Krem - Large (29 Cm)",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-150x200-krem-large-29-cm"
+      },
+      {
+        "id": "78863",
+        "name": "160X200 - Krem - Large (29 Cm)",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-160x200-krem-large-29-cm"
+      },
+      {
+        "id": "80192",
+        "name": "180X200 - Krem - Large (29 Cm)",
+        "price": 10460,
+        "originalPrice": null,
+        "url": "/urun/alfa-kapitone-baza-180x200-krem-large-29-cm"
+      }
+    ]
   },
   {
     "id": "istikbal-alfa-nakisli-baza",
@@ -48789,7 +51068,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/alfa-nakisli-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "15367",
+        "name": "Medium (26 Cm) - 100X200 - Vizon",
+        "price": 11560,
+        "originalPrice": null,
+        "url": "/urun/alfa-nakisli-baza-medium-100x200-vizon"
+      },
+      {
+        "id": "15369",
+        "name": "Medium (26 Cm) - 120X200 - Vizon",
+        "price": 11560,
+        "originalPrice": null,
+        "url": "/urun/alfa-nakisli-baza-medium-120x200-vizon"
+      },
+      {
+        "id": "15370",
+        "name": "Medium (26 Cm) - 140X190 - Vizon",
+        "price": 11560,
+        "originalPrice": null,
+        "url": "/urun/alfa-nakisli-baza-medium-140x190-vizon"
+      },
+      {
+        "id": "15371",
+        "name": "Medium (26 Cm) - 150X200 - Vizon",
+        "price": 11560,
+        "originalPrice": null,
+        "url": "/urun/alfa-nakisli-baza-medium-150x200-vizon"
+      },
+      {
+        "id": "15333",
+        "name": "Medium (26 Cm) - 160X200 - Vizon",
+        "price": 11560,
+        "originalPrice": null,
+        "url": "/urun/alfa-nakisli-baza-medium-160x200-vizon"
+      },
+      {
+        "id": "15365",
+        "name": "Medium (26 Cm) - 180X200 - Vizon",
+        "price": 11560,
+        "originalPrice": null,
+        "url": "/urun/alfa-nakisli-baza-medium-180x200-vizon"
+      },
+      {
+        "id": "15366",
+        "name": "Medium (26 Cm) - 200X200 - Vizon",
+        "price": 11560,
+        "originalPrice": null,
+        "url": "/urun/alfa-nakisli-baza-medium-200x200-vizon"
+      },
+      {
+        "id": "15368",
+        "name": "Medium (26 Cm) - 90X190 - Vizon",
+        "price": 11560,
+        "originalPrice": null,
+        "url": "/urun/alfa-nakisli-baza-medium-90x190-vizon"
+      }
+    ]
   },
   {
     "id": "istikbal-oreo-duz-baza",
@@ -48852,7 +51189,121 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/oreo-duz-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "15358",
+        "name": "Medium (26 Cm) - 100X200 - Krem",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-100x200-krem"
+      },
+      {
+        "id": "15362",
+        "name": "Medium (26 Cm) - 100X200 - Vizon",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-100x200-vizon"
+      },
+      {
+        "id": "15356",
+        "name": "Medium (26 Cm) - 120X200 - Krem",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-120x200-krem"
+      },
+      {
+        "id": "15355",
+        "name": "Medium (26 Cm) - 120X200 - Vizon",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-120x200-vizon"
+      },
+      {
+        "id": "15359",
+        "name": "Medium (26 Cm) - 140X190 - Krem",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-140x190-krem"
+      },
+      {
+        "id": "15364",
+        "name": "Medium (26 Cm) - 140X190 - Vizon",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-140x190-vizon"
+      },
+      {
+        "id": "15354",
+        "name": "Medium (26 Cm) - 150X200 - Krem",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-150x200-krem"
+      },
+      {
+        "id": "15361",
+        "name": "Medium (26 Cm) - 150X200 - Vizon",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-150x200-vizon"
+      },
+      {
+        "id": "15331",
+        "name": "Medium (26 Cm) - 160X200 - Krem",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-160x200-krem"
+      },
+      {
+        "id": "15330",
+        "name": "Medium (26 Cm) - 160X200 - Vizon",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-160x200-vizon"
+      },
+      {
+        "id": "15363",
+        "name": "Medium (26 Cm) - 180X200 - Krem",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-180x200-krem"
+      },
+      {
+        "id": "15351",
+        "name": "Medium (26 Cm) - 180X200 - Vizon",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-180x200-vizon"
+      },
+      {
+        "id": "15360",
+        "name": "Medium (26 Cm) - 200X200 - Krem",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-200x200-krem"
+      },
+      {
+        "id": "15352",
+        "name": "Medium (26 Cm) - 200X200 - Vizon",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-200x200-vizon"
+      },
+      {
+        "id": "15353",
+        "name": "Medium (26 Cm) - 90X190 - Krem",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-90x190-krem"
+      },
+      {
+        "id": "15357",
+        "name": "Medium (26 Cm) - 90X190 - Vizon",
+        "price": 11860,
+        "originalPrice": null,
+        "url": "/urun/oreo-duz-baza-medium-90x190-vizon"
+      }
+    ]
   },
   {
     "id": "istikbal-oreo-nakisli-baza",
@@ -48915,7 +51366,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/oreo-nakisli-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "15373",
+        "name": "Medium (26 Cm) - 100X200 - Antrasit",
+        "price": 13060,
+        "originalPrice": null,
+        "url": "/urun/oreo-nakisli-baza-medium-100x200-antrasit"
+      },
+      {
+        "id": "15376",
+        "name": "Medium (26 Cm) - 120X200 - Antrasit",
+        "price": 13060,
+        "originalPrice": null,
+        "url": "/urun/oreo-nakisli-baza-medium-120x200-antrasit"
+      },
+      {
+        "id": "15374",
+        "name": "Medium (26 Cm) - 140X190 - Antrasit",
+        "price": 13060,
+        "originalPrice": null,
+        "url": "/urun/oreo-nakisli-baza-medium-140x190-antrasit"
+      },
+      {
+        "id": "15378",
+        "name": "Medium (26 Cm) - 150X200 - Antrasit",
+        "price": 13060,
+        "originalPrice": null,
+        "url": "/urun/oreo-nakisli-baza-medium-150x200-antrasit"
+      },
+      {
+        "id": "15332",
+        "name": "Medium (26 Cm) - 160X200 - Antrasit",
+        "price": 13060,
+        "originalPrice": null,
+        "url": "/urun/oreo-nakisli-baza-medium-160x200-antrasit"
+      },
+      {
+        "id": "15372",
+        "name": "Medium (26 Cm) - 180X200 - Antrasit",
+        "price": 13060,
+        "originalPrice": null,
+        "url": "/urun/oreo-nakisli-baza-medium-180x200-antrasit"
+      },
+      {
+        "id": "15377",
+        "name": "Medium (26 Cm) - 200X200 - Antrasit",
+        "price": 13060,
+        "originalPrice": null,
+        "url": "/urun/oreo-nakisli-baza-medium-200x200-antrasit"
+      },
+      {
+        "id": "15375",
+        "name": "Medium (26 Cm) - 90X190 - Antrasit",
+        "price": 13060,
+        "originalPrice": null,
+        "url": "/urun/oreo-nakisli-baza-medium-90x190-antrasit"
+      }
+    ]
   },
   {
     "id": "istikbal-synergy-baza",
@@ -48975,7 +51484,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/synergy-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "13959",
+        "name": "90X190 - Gri",
+        "price": 13099,
+        "originalPrice": null,
+        "url": "/urun/synergy-baza-90x190-gri"
+      },
+      {
+        "id": "13969",
+        "name": "100X200 - Gri",
+        "price": 13099,
+        "originalPrice": null,
+        "url": "/urun/synergy-baza-100x200-gri"
+      },
+      {
+        "id": "13971",
+        "name": "120X200 - Gri",
+        "price": 13099,
+        "originalPrice": null,
+        "url": "/urun/synergy-baza-120x200-gri"
+      },
+      {
+        "id": "13966",
+        "name": "140X190 - Gri",
+        "price": 13099,
+        "originalPrice": null,
+        "url": "/urun/synergy-baza-140x190-gri"
+      },
+      {
+        "id": "13968",
+        "name": "150X200 - Gri",
+        "price": 13099,
+        "originalPrice": null,
+        "url": "/urun/synergy-baza-150x200-gri"
+      },
+      {
+        "id": "13967",
+        "name": "160X200 - Gri",
+        "price": 13099,
+        "originalPrice": null,
+        "url": "/urun/synergy-baza-160x200-gri"
+      },
+      {
+        "id": "13970",
+        "name": "180X200 - Gri",
+        "price": 13099,
+        "originalPrice": null,
+        "url": "/urun/synergy-baza-180x200-gri"
+      },
+      {
+        "id": "13963",
+        "name": "200X200 - Gri",
+        "price": 13099,
+        "originalPrice": null,
+        "url": "/urun/synergy-baza-200x200-gri"
+      }
+    ]
   },
   {
     "id": "istikbal-synergy-baza-ultra-baslik",
@@ -50231,7 +52798,23 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/optimal-yavrulu-baza-1",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "13939",
+        "name": "90X200 - Vizon",
+        "price": 26009,
+        "originalPrice": 28899,
+        "url": "/urun/optimal-yavrulu-baza-90x200-vizon"
+      },
+      {
+        "id": "13941",
+        "name": "100X200 - Vizon",
+        "price": 26009,
+        "originalPrice": 28899,
+        "url": "/urun/optimal-yavrulu-baza-100x200-vizon"
+      }
+    ]
   },
   {
     "id": "istikbal-universal-baza",
@@ -50291,7 +52874,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/universal-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "1890",
+        "name": "90X190 - Beyaz",
+        "price": 10699,
+        "originalPrice": null,
+        "url": "/urun/universal-baza-90x190-beyaz"
+      },
+      {
+        "id": "1815",
+        "name": "100X200 - Beyaz",
+        "price": 10699,
+        "originalPrice": null,
+        "url": "/urun/universal-baza-100x200-beyaz"
+      },
+      {
+        "id": "1652",
+        "name": "120X200 - Beyaz",
+        "price": 10699,
+        "originalPrice": null,
+        "url": "/urun/universal-baza-120x200-beyaz"
+      },
+      {
+        "id": "1969",
+        "name": "140X190 - Beyaz",
+        "price": 10699,
+        "originalPrice": null,
+        "url": "/urun/universal-baza-140x190-beyaz"
+      },
+      {
+        "id": "1970",
+        "name": "150X200 - Beyaz",
+        "price": 10699,
+        "originalPrice": null,
+        "url": "/urun/universal-baza-150x200-beyaz"
+      },
+      {
+        "id": "1651",
+        "name": "160X200 - Beyaz",
+        "price": 10699,
+        "originalPrice": null,
+        "url": "/urun/universal-baza-160x200-beyaz"
+      },
+      {
+        "id": "1645",
+        "name": "180X200 - Beyaz",
+        "price": 10699,
+        "originalPrice": null,
+        "url": "/urun/universal-baza-180x200-beyaz"
+      },
+      {
+        "id": "1992",
+        "name": "200X200 - Beyaz",
+        "price": 10699,
+        "originalPrice": null,
+        "url": "/urun/universal-baza-200x200-beyaz"
+      }
+    ]
   },
   {
     "id": "istikbal-klasik-katlanir-somya",
@@ -50352,7 +52993,16 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/klasik-katlanir-somya",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "2390",
+        "name": "90X190",
+        "price": 13699,
+        "originalPrice": null,
+        "url": "/urun/klasik-katlanir-somya-90x190"
+      }
+    ]
   },
   {
     "id": "istikbal-yoga-katlanir-somya",
@@ -50419,7 +53069,16 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/yoga-katlanir-somya",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "79424",
+        "name": "90 x 190 cm",
+        "price": 19299,
+        "originalPrice": null,
+        "url": "/urun/yoga-katlanir-somya-90-x-190-cm"
+      }
+    ]
   },
   {
     "id": "istikbal-genc-odasi-alfa-duz-baza",
@@ -50487,7 +53146,65 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/genc-odasi-alfa-duz-baza",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "80758",
+        "name": "90X190 - Vizon - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/genc-odasi-alfa-duz-baza-90x190-vizon-large-29-cm"
+      },
+      {
+        "id": "80321",
+        "name": "90X190 - Yeşil - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/genc-odasi-alfa-duz-baza-90x190-yesil-large-29-cm"
+      },
+      {
+        "id": "80036",
+        "name": "90X190 - Zeus Pudra - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-kopya-90x190-zeus-pudra-large-29-cm"
+      },
+      {
+        "id": "80034",
+        "name": "100X200 - Astra Kahve - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-kopya-100x200-astra-kahve-large-29-cm"
+      },
+      {
+        "id": "80032",
+        "name": "100X200 - Vizon - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-kopya-100x200-vizon-large-29-cm"
+      },
+      {
+        "id": "80320",
+        "name": "100X200 - Yeşil - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/genc-odasi-alfa-duz-baza-100x200-yesil-large-29-cm"
+      },
+      {
+        "id": "80040",
+        "name": "100X200 - Zeus Pudra - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/alfa-duz-baza-kopya-100x200-zeus-pudra-large-29-cm"
+      },
+      {
+        "id": "80325",
+        "name": "120X200 - Yeşil - Large (29 Cm)",
+        "price": 8360,
+        "originalPrice": null,
+        "url": "/urun/genc-odasi-alfa-duz-baza-120x200-yesil-large-29-cm"
+      }
+    ]
   },
   {
     "id": "istikbal-diego-baza-4",
@@ -50547,7 +53264,289 @@
     "isNew": false,
     "sourceUrl": "https://www.istikbal.com.tr/urun/diego-baza-4",
     "createdAt": "2026-07-30T15:48:18.588Z",
-    "updatedAt": "2026-09-03T18:17:31.481Z"
+    "updatedAt": "2026-09-03T18:17:31.481Z",
+    "variants": [
+      {
+        "id": "9381",
+        "name": "90X190 - Bordo",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-90x190-bordo"
+      },
+      {
+        "id": "49533",
+        "name": "90X190 - Lacivert",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-90x190-lacivert"
+      },
+      {
+        "id": "49549",
+        "name": "90X190 - Taba",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-90x190-taba"
+      },
+      {
+        "id": "49541",
+        "name": "90X190 - Vizon",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-90x190-vizon"
+      },
+      {
+        "id": "49558",
+        "name": "90X190 - Yeşil",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-90x190-yesil"
+      },
+      {
+        "id": "9388",
+        "name": "100X200 - Bordo",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-100x200-bordo"
+      },
+      {
+        "id": "49540",
+        "name": "100X200 - Lacivert",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-100x200-lacivert"
+      },
+      {
+        "id": "49550",
+        "name": "100X200 - Taba",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-100x200-taba"
+      },
+      {
+        "id": "49543",
+        "name": "100X200 - Vizon",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-100x200-vizon"
+      },
+      {
+        "id": "49559",
+        "name": "100X200 - Yeşil",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-100x200-yesil"
+      },
+      {
+        "id": "9409",
+        "name": "120X200 - Bordo",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-120x200-bordo"
+      },
+      {
+        "id": "49537",
+        "name": "120X200 - Lacivert",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-120x200-lacivert"
+      },
+      {
+        "id": "49551",
+        "name": "120X200 - Taba",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-120x200-taba"
+      },
+      {
+        "id": "49542",
+        "name": "120X200 - Vizon",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-120x200-vizon"
+      },
+      {
+        "id": "49562",
+        "name": "120X200 - Yeşil",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-120x200-yesil"
+      },
+      {
+        "id": "9395",
+        "name": "140X190 - Bordo",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-140x190-bordo"
+      },
+      {
+        "id": "49539",
+        "name": "140X190 - Lacivert",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-140x190-lacivert"
+      },
+      {
+        "id": "49552",
+        "name": "140X190 - Taba",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-140x190-taba"
+      },
+      {
+        "id": "49544",
+        "name": "140X190 - Vizon",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-140x190-vizon"
+      },
+      {
+        "id": "49557",
+        "name": "140X190 - Yeşil",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-140x190-yesil"
+      },
+      {
+        "id": "9400",
+        "name": "150X200 - Bordo",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-150x200-bordo"
+      },
+      {
+        "id": "49534",
+        "name": "150X200 - Lacivert",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-150x200-lacivert"
+      },
+      {
+        "id": "49555",
+        "name": "150X200 - Taba",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-150x200-taba"
+      },
+      {
+        "id": "49546",
+        "name": "150X200 - Vizon",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-150x200-vizon"
+      },
+      {
+        "id": "49561",
+        "name": "150X200 - Yeşil",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-150x200-yesil"
+      },
+      {
+        "id": "9403",
+        "name": "160X200 - Bordo",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-160x200-bordo"
+      },
+      {
+        "id": "49536",
+        "name": "160X200 - Lacivert",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-160x200-lacivert"
+      },
+      {
+        "id": "49554",
+        "name": "160X200 - Taba",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-160x200-taba"
+      },
+      {
+        "id": "49545",
+        "name": "160X200 - Vizon",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-160x200-vizon"
+      },
+      {
+        "id": "49563",
+        "name": "160X200 - Yeşil",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-160x200-yesil"
+      },
+      {
+        "id": "9396",
+        "name": "180X200 - Bordo",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-180x200-bordo"
+      },
+      {
+        "id": "49535",
+        "name": "180X200 - Lacivert",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-180x200-lacivert"
+      },
+      {
+        "id": "49553",
+        "name": "180X200 - Taba",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-180x200-taba"
+      },
+      {
+        "id": "49548",
+        "name": "180X200 - Vizon",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-180x200-vizon"
+      },
+      {
+        "id": "49560",
+        "name": "180X200 - Yeşil",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-180x200-yesil"
+      },
+      {
+        "id": "9402",
+        "name": "200X200 - Bordo",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-200x200-bordo"
+      },
+      {
+        "id": "49538",
+        "name": "200X200 - Lacivert",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-200x200-lacivert"
+      },
+      {
+        "id": "49556",
+        "name": "200X200 - Taba",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-200x200-taba"
+      },
+      {
+        "id": "49547",
+        "name": "200X200 - Vizon",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-200x200-vizon"
+      },
+      {
+        "id": "49564",
+        "name": "200X200 - Yeşil",
+        "price": 15899,
+        "originalPrice": null,
+        "url": "/urun/diego-baza-200x200-yesil"
+      }
+    ]
   },
   {
     "id": "istikbal-fiona-genc-odasi-takimi",

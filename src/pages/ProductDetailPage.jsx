@@ -45,6 +45,16 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
     return initial;
   });
 
+  // Variant / Ebat selection state for Yatak, Baza, Başlık
+  const hasVariants = Boolean(product.variants && product.variants.length > 0);
+  const [selectedVariant, setSelectedVariant] = useState(() => {
+    return (product.variants && product.variants.length > 0) ? product.variants[0] : null;
+  });
+
+  useEffect(() => {
+    setSelectedVariant((product.variants && product.variants.length > 0) ? product.variants[0] : null);
+  }, [product]);
+
   // Swipe handling for mobile gallery
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -128,7 +138,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
     };
   }, [product, moduleQuantities]);
 
-  // Dynamic WhatsApp Message with customized bundle breakdown
+  // Dynamic WhatsApp Message with customized bundle breakdown or size variant
   const customWhatsAppUrl = useMemo(() => {
     let text = `Merhaba, Yılmazlar Mobilya web sitenizden *${product.name}* hakkında bilgi almak istiyorum.`;
     if (selectedModules.length > 0) {
@@ -137,19 +147,24 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
         text += `\n• ${item.currentQty} Adet ${item.name} (${formatPrice(item.lineTotal)})`;
       });
       text += `\n\n*Toplam Takım Tutarı:* ${formatPrice(calculatedTotal)}`;
+    } else if (selectedVariant) {
+      text += `\n\n*Seçilen Ebat / Boyut:* ${selectedVariant.name}`;
+      text += `\n*Güncel Fiyat:* ${formatPrice(selectedVariant.price)}`;
     } else {
-      text += `\nFiyat: ${formatPrice(product.price)}`;
+      text += `\n*Fiyat:* ${formatPrice(product.price)}`;
     }
     const rawPhone = (siteConfig.whatsappRaw || siteConfig.phoneRaw || '905469610131').replace(/[^0-9]/g, '');
     return `https://wa.me/${rawPhone}?text=${encodeURIComponent(text)}`;
-  }, [product, selectedModules, calculatedTotal]);
+  }, [product, selectedModules, calculatedTotal, selectedVariant]);
 
   const similarProducts = allProducts
     .filter(p => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
   const sku = product.sku || product.details?.['Stok Kodu'] || null;
-  const installmentPrice = product.installmentPrice || (product.originalPrice && product.originalPrice > product.price ? product.originalPrice : null);
+  const effectivePrice = hasBundle ? calculatedTotal : (selectedVariant ? selectedVariant.price : product.price);
+  const effectiveOriginalPrice = (selectedVariant && selectedVariant.originalPrice) ? selectedVariant.originalPrice : product.originalPrice;
+  const installmentPrice = product.installmentPrice || (effectiveOriginalPrice && effectiveOriginalPrice > effectivePrice ? effectiveOriginalPrice : null);
 
   return (
     <div className="animate-fade-in container detail-page-container">
@@ -229,17 +244,42 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
 
           <h1 className="detail-title">{product.name}</h1>
 
+          {/* Ebat / Boyut Seçimi (Size Variants) for Yatak, Baza, Başlık */}
+          {hasVariants && (
+            <div className="detail-variants-card">
+              <div className="variants-header">
+                <span className="variants-title">Ebat Seçiniz:</span>
+                <span className="variants-selected-badge">{selectedVariant ? selectedVariant.name : 'Seçiniz'}</span>
+              </div>
+              <div className="variants-pills-row">
+                {product.variants.map((v, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedVariant(v)}
+                    className={`variant-pill-btn ${selectedVariant?.name === v.name ? 'active' : ''}`}
+                  >
+                    <span className="variant-name">{v.name}</span>
+                    <span className="variant-price">{formatPrice(v.price)}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Price Box */}
           <div className="detail-price-box">
             <div className="detail-price-main-row">
               <div>
                 <div className="detail-price-label">
-                  {hasBundle ? 'SEÇİLEN TAKIM TUTARI' : 'GÜNCEL İSTİKBAL FİYATI'}
+                  {hasBundle 
+                    ? 'SEÇİLEN TAKIM TUTARI' 
+                    : (selectedVariant ? `${selectedVariant.name} EBAT TUTARI` : 'GÜNCEL İSTİKBAL FİYATI')}
                 </div>
-                <div className="detail-price-value">{formatPrice(calculatedTotal)}</div>
+                <div className="detail-price-value">{formatPrice(effectivePrice)}</div>
               </div>
-              {product.originalPrice && product.originalPrice > calculatedTotal && (
-                <div className="detail-price-old">{formatPrice(product.originalPrice)}</div>
+              {effectiveOriginalPrice && effectiveOriginalPrice > effectivePrice && (
+                <div className="detail-price-old">{formatPrice(effectiveOriginalPrice)}</div>
               )}
             </div>
 
@@ -248,7 +288,7 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
                 <CreditCard size={15} />
                 <span>Peşin Fiyatına World'e Özel 9 Taksit Uygulanmaktadır.</span>
               </div>
-              {installmentPrice && installmentPrice > calculatedTotal && (
+              {installmentPrice && installmentPrice > effectivePrice && (
                 <div className="installment-other">
                   Diğer Kartlara 9 Taksitli Fiyatı: <strong>{formatPrice(installmentPrice)}</strong>
                 </div>
@@ -880,6 +920,76 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
           color: var(--text-main);
           line-height: 1.2;
           margin: 0;
+        }
+        .detail-variants-card {
+          background: #FDFCF9;
+          border: 1.5px solid rgba(140, 90, 60, 0.25);
+          border-radius: var(--radius-md);
+          padding: 1rem 1.15rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          margin: 0.5rem 0;
+        }
+        .variants-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .variants-title {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: var(--text-main);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        .variants-selected-badge {
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--accent-wood);
+          background: rgba(140, 90, 60, 0.12);
+          padding: 0.2rem 0.65rem;
+          border-radius: 9999px;
+        }
+        .variants-pills-row {
+          display: flex;
+          gap: 0.5rem;
+          flex-wrap: wrap;
+        }
+        .variant-pill-btn {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem 0.85rem;
+          border-radius: 8px;
+          border: 1.5px solid var(--border-subtle);
+          background: #FFF;
+          cursor: pointer;
+          transition: all 0.15s ease;
+          min-width: 82px;
+        }
+        .variant-pill-btn:hover {
+          border-color: var(--accent-amber);
+          background: #FAF7F2;
+        }
+        .variant-pill-btn.active {
+          border-color: var(--accent-wood);
+          background: #8C5A3C;
+          color: #FFF;
+          box-shadow: 0 4px 12px rgba(140, 90, 60, 0.3);
+        }
+        .variant-name {
+          font-size: 0.82rem;
+          font-weight: 700;
+        }
+        .variant-price {
+          font-size: 0.72rem;
+          opacity: 0.85;
+          margin-top: 2px;
+        }
+        .variant-pill-btn.active .variant-price {
+          color: #FFECC8;
         }
         .detail-price-box {
           background: #FCFAF6;

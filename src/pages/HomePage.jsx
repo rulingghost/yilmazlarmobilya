@@ -12,54 +12,20 @@ import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { ProductCard } from '../components/ProductCard';
 import { siteConfig } from '../config/siteConfig';
 
+import { HeroSlider } from '../components/HeroSlider';
+
 export function HomePage({ products, onSelectProduct, setActivePage, setSelectedCategory }) {
   const categories = Array.from(new Set(products.map(p => p.category)));
   const featuredProducts = products.slice(0, 6);
 
   return (
     <div className="animate-fade-in">
-      {/* Hero Showcase Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          
-          <div className="hero-badges">
-            <span className="hero-badge-primary">
-              <Sparkles size={14} /> İstikbal Yetkili Bayi
-            </span>
-            <span className="hero-badge-glass">
-              <Tag size={14} style={{ color: 'var(--accent-gold)' }} /> {siteConfig.campaignBanner}
-            </span>
-          </div>
-
-          <h1 className="hero-title">
-            İstikbal Kalitesi ve Yılmazlar Güvencesi Evinizde
-          </h1>
-
-          <p className="hero-desc">
-            Oturma gruplarından yatak odalarına, yemek masalarından halı ve ev tekstiline kadar yüzlerce güncel İstikbal modelini inceleyin. Mağaza fiyatları ve özel indirimler için temsilcimizle WhatsApp'tan görüşün.
-          </p>
-
-          <div className="hero-cta-row">
-            <button 
-              onClick={() => { setActivePage('products'); window.scrollTo(0,0); }} 
-              className="btn-primary hero-cta-primary"
-            >
-              <span>Kataloğu İncele ({products.length} Ürün)</span>
-              <ArrowRight size={18} />
-            </button>
-
-            <a 
-              href={siteConfig.getGeneralWhatsAppLink()} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-whatsapp hero-cta-wa"
-            >
-              <WhatsAppIcon size={20} />
-              <span>WhatsApp Bilgi Al</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Dynamic Hero Showcase Slider */}
+      <HeroSlider 
+        products={products} 
+        setActivePage={setActivePage} 
+        setSelectedCategory={setSelectedCategory} 
+      />
 
       {/* Popular Showcase Products (Directly Visible First on Mobile) */}
       <section className="container" style={{ marginBottom: '3.5rem' }}>
