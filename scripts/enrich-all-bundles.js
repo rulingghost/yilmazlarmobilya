@@ -79,11 +79,15 @@ export function enrichAllSetBundles(products) {
           seenNames.add(simpleName);
           uniquePieces.push(pc);
         }
+      // Filter out pieces that lack real images or have İstikbal placeholders
+      const validPieces = uniquePieces.filter(pc => {
+        const img = (pc.images && pc.images[0]) || pc.image;
+        return img && !img.includes('gorsel-hazirlaniyor') && !img.includes('no-image') && !img.includes('placeholder');
       });
 
       // Build bundle items
-      const hasIkili = uniquePieces.some(p => p.name.toLowerCase().includes('ikili'));
-      const bundleItems = uniquePieces.map(pc => {
+      const hasIkili = validPieces.some(p => p.name.toLowerCase().includes('ikili'));
+      const bundleItems = validPieces.map(pc => {
         const pcLower = pc.name.toLowerCase();
         let defaultQty = 1;
         if (pcLower.includes('berjer') && !pcLower.includes('orta')) {

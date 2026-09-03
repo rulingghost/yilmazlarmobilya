@@ -200,6 +200,11 @@ async function enrichProductDetail(sourceUrl, fallbackCategory) {
                   modImage = modImages[0];
                 }
 
+                // Never list items that lack real images or have İstikbal placeholders
+                if (!modImage || modImage.includes('gorsel-hazirlaniyor') || modImage.includes('no-image') || modImage.includes('placeholder')) {
+                  return;
+                }
+
                 bundleItems.push({
                   id: String(mod.product_id || id),
                   name: mod.name,

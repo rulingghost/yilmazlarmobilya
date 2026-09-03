@@ -406,7 +406,12 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
             </div>
 
             <div className="module-cards-list">
-              {product.bundleItems.map((item) => {
+              {(product.bundleItems || [])
+                .filter(item => {
+                  const img = item.image || (item.images && item.images[0]);
+                  return img && !img.includes('gorsel-hazirlaniyor') && !img.includes('no-image') && !img.includes('placeholder');
+                })
+                .map((item) => {
                 const currentQty = moduleQuantities[item.id] !== undefined ? moduleQuantities[item.id] : (item.defaultQty || 0);
                 const subTab = moduleSubTabs[item.id] || 'specs';
                 const hasSpecs = item.specs && Object.keys(item.specs).length > 0;
