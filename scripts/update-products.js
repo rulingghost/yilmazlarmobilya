@@ -13,6 +13,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import axios from 'axios';
+import * as cheerio from 'cheerio';
 import { scrapeIstikbalProducts } from './scrapers/istikbalScraper.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -222,6 +224,9 @@ async function runUpdate() {
       errors
     });
 
+    // Also synchronize official homepage slider banners from İstikbal
+    await syncHomepageSliders();
+
     console.log(`[Update Engine] Sync complete at ${endTimeStr}. Added: ${addedCount}, Updated: ${updatedCount}, Total: ${finalProducts.length}`);
     console.log(`==================================================`);
 
@@ -268,4 +273,74 @@ function writeLog({ startTimeStr, endTimeStr, totalCount, addedCount, updatedCou
   }
 }
 
+async function syncHomepageSliders() {
+  try {
+    console.log('[Update Engine] Fetching official homepage slider banners from İstikbal...');
+    const res = await axios.get('https://www.istikbal.com.tr', {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+      },
+      timeout: 10000
+    });
+    const $ = cheerio.load(res.data);
+    const slides = [];
+
+    $('.entry-slider.slide-row-item').each((i, el) => {
+      const a = $(el).find('a').first();
+      const href = a.attr('href') || '';
+      const imgs = $(el).find('img');
+      let desktop = '';
+      let mobile = '';
+      let alt = '';
+
+      imgs.each((_, imgEl) => {
+        let src = $(imgEl).attr('data-lazy') || $(imgEl).attr('src') || '';
+        const cls = $(imgEl).attr('class') || '';
+        if (src.startsWith('//')) src = 'https:' + src;
+        else if (src.startsWith('/')) src = 'https://www.istikbal.com.tr' + src;
+
+        if (cls.includes('mobile') || src.includes('mobile')) {
+          mobile = src;
+        } else {
+          desktop = src;
+          alt = $(imgEl).attr('alt') || alt;
+        }
+      });
+
+      if (desktop && !slides.some(s => s.image === desktop)) {
+        let category = null;
+        const lower = (href + ' ' + alt).toLowerCase();
+        if (lower.includes('dugun') || lower.includes('düğün')) category = 'Düğün Paketi';
+        else if (lower.includes('yatak') || lower.includes('baza')) category = 'Baza & Yatak';
+        else if (lower.includes('koltuk') || lower.includes('kose') || lower.includes('köşe')) category = 'Koltuk Takımları';
+        else if (lower.includes('genc') || lower.includes('genç')) category = 'Genç Odası';
+        else if (lower.includes('yemek')) category = 'Yemek Odası';
+
+        slides.push({
+          id: `slide-${i + 1}`,
+          image: desktop,
+          mobile: mobile || desktop,
+          alt: alt || 'İstikbal Kampanyası',
+          category
+        });
+      }
+    });
+
+    if (slides.length > 0) {
+      const SLIDERS_JSON = path.join(DATA_DIR, 'sliders.json');
+      const PUBLIC_SLIDERS_JSON = path.join(PUBLIC_DATA_DIR, 'sliders.json');
+      const jsonStr = JSON.stringify(slides.slice(0, 10), null, 2);
+      fs.writeFileSync(SLIDERS_JSON, jsonStr, 'utf-8');
+      fs.writeFileSync(PUBLIC_SLIDERS_JSON, jsonStr, 'utf-8');
+      if (fs.existsSync(DIST_DATA_DIR)) {
+        fs.writeFileSync(path.join(DIST_DATA_DIR, 'sliders.json'), jsonStr, 'utf-8');
+      }
+      console.log(`[Update Engine] Successfully synchronized ${slides.length} homepage slider banners.`);
+    }
+  } catch (err) {
+    console.warn('[Update Engine] Slider banner sync warning:', err.message);
+  }
+}
+
 runUpdate();
+

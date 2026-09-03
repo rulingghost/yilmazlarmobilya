@@ -1,0 +1,44 @@
+[
+  {
+    "id": "slide-dugun",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_1.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "İstikbal'den Evlenenlere Büyük Jest - Düğün Paketleri 134.000 TL'den Başlayan Cazip Fiyatlarla",
+    "category": "Düğün Paketi"
+  },
+  {
+    "id": "slide-graphene",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_17.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Graphene Premium ve Dream Yataklarda %10 İndirim",
+    "category": "Baza & Yatak"
+  },
+  {
+    "id": "slide-yatak-baza",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_11.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Evlenen Gençlere Büyük Jest! Yatak Baza Başlık Alışverişlerinde %10 İndirim",
+    "category": "Baza & Yatak"
+  },
+  {
+    "id": "slide-tetra",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_2.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Tetra Koltuk Takımı - İstikbal Yetkili Bayi",
+    "category": "Koltuk Takımları"
+  },
+  {
+    "id": "slide-shine",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_12.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Shine Koltuk Takımı - İstikbal Yetkili Bayi",
+    "category": "Koltuk Takımları"
+  },
+  {
+    "id": "slide-dreamwell",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_18.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Dreamwell S ve Optimal S Yatak %10 İndirim",
+    "category": "Baza & Yatak"
+  },
+  {
+    "id": "slide-genc",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_3.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Okula Dönüş Başladı! Genç Odalarında %10 İndirim",
+    "category": "Genç Odası"
+  }
+]
