@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Phone, 
   MapPin, 
@@ -6,15 +6,18 @@ import {
   Instagram, 
   Facebook, 
   RefreshCw, 
-  ShieldCheck,
-  Mail,
-  Award,
-  Code
+  ShieldCheck, 
+  Mail, 
+  Award, 
+  Code,
+  Lock
 } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { siteConfig } from '../config/siteConfig';
+import { AdminSyncModal } from './AdminSyncModal';
 
 export function Footer({ setActivePage, lastUpdateInfo }) {
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
   const formattedUpdateDate = lastUpdateInfo?.lastUpdate || '31.07.2026';
 
   return (
@@ -128,15 +131,30 @@ export function Footer({ setActivePage, lastUpdateInfo }) {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Copyright & Admin Trigger */}
         <div className="footer-bottom">
           <div>© {new Date().getFullYear()} <strong>{siteConfig.name}</strong>. Tüm hakları saklıdır.</div>
-          <div className="footer-dev-credit">
-            <Code size={15} style={{ color: 'var(--accent-amber)' }} />
-            <span>Site Tasarım & Geliştirme: <strong>{siteConfig.developerCredit}</strong></span>
+          <div className="footer-bottom-actions">
+            <button
+              onClick={() => setIsAdminModalOpen(true)}
+              className="footer-sync-trigger-btn"
+              title="Yönetici Canlı Fiyat Güncellemesi"
+            >
+              <Lock size={12} />
+              <span>Fiyat Senkronizasyonu</span>
+            </button>
+            <div className="footer-dev-credit">
+              <Code size={15} style={{ color: 'var(--accent-amber)' }} />
+              <span>Site Tasarım & Geliştirme: <strong>{siteConfig.developerCredit}</strong></span>
+            </div>
           </div>
         </div>
       </div>
+
+      <AdminSyncModal
+        isOpen={isAdminModalOpen}
+        onClose={() => setIsAdminModalOpen(false)}
+      />
 
       <style>{`
         .site-footer {
@@ -332,6 +350,31 @@ export function Footer({ setActivePage, lastUpdateInfo }) {
           gap: 1rem;
           font-size: 0.85rem;
           color: #8A8075;
+        }
+        .footer-bottom-actions {
+          display: flex;
+          align-items: center;
+          gap: 1.25rem;
+          flex-wrap: wrap;
+        }
+        .footer-sync-trigger-btn {
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          color: #B8ADA0;
+          font-size: 0.75rem;
+          font-weight: 600;
+          padding: 0.3rem 0.65rem;
+          border-radius: 4px;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          transition: all 0.15s ease;
+        }
+        .footer-sync-trigger-btn:hover {
+          background: rgba(140, 90, 60, 0.25);
+          border-color: var(--accent-amber);
+          color: #FFF;
         }
         .footer-dev-credit {
           display: flex;

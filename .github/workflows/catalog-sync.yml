@@ -1,10 +1,10 @@
-name: Saatlik İstikbal Fiyat & Ürün Senkronizasyonu
+name: Otomatik İstikbal Fiyat & Ürün Senkronizasyonu
 
 on:
   schedule:
-    # Her saat başı otomatik çalışır (0 * * * *)
-    - cron: '0 * * * *'
-  workflow_dispatch: # GitHub arayüzünden tek tıkla manuel çalıştırma imkanı
+    # Her gece 04:00 TRT (01:00 UTC) çalışır
+    - cron: '0 1 * * *'
+  workflow_dispatch: # Site içi yönetim butonundan veya GitHub arayüzünden manuel tetikleme desteği
 
 jobs:
   sync-catalog:
@@ -32,11 +32,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ public/data/ logs/
+          git add data/ public/data/
           if git diff --staged --quiet; then
-            echo "Herhangi bir fiyat veya ürün değişikliği bulunamadı, katalog güncel."
+            echo "Herhangi bir fiyat veya ürün değişikliği bulunamadı, katalog zaten güncel."
           else
-            git commit -m "chore: saatlik İstikbal fiyat ve ürün güncellemesi [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]"
+            git commit -m "chore: otomatik İstikbal fiyat ve ürün güncellemesi [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]"
             git push
             echo "Yeni fiyat ve ürünler GitHub'a gönderildi. Vercel otomatik yeni yayını başlatıyor."
           fi

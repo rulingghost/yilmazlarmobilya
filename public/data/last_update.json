@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "03.09.2026 21:17",
-  "formattedText": "Son güncelleme: 03.09.2026 21:17",
-  "timestamp": "2026-09-03T18:17:31.517Z",
+  "lastUpdate": "03.09.2026 22:27",
+  "formattedText": "Son güncelleme: 03.09.2026 22:27",
+  "timestamp": "2026-09-03T19:27:28.634Z",
   "status": "success",
   "totalProducts": 446,
   "metrics": {
-    "added": 189,
-    "updated": 257,
-    "removed": 4
+    "added": 0,
+    "updated": 0,
+    "removed": 0
   }
 }

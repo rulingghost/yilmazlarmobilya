@@ -17,6 +17,7 @@
  * 6. Resilient batching with retries and fallback
  */
 
+import fs from 'fs';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 import http from 'http';
@@ -428,46 +429,71 @@ export async function scrapeIstikbalProducts() {
 
   const baseProducts = Array.from(allProductsMap.values());
   console.log(`[Scraper] Total unique products discovered across all pages: ${baseProducts.length}.`);
-  console.log(`[Scraper] Now performing deep enrichment for prices, SKU, bundle modules, and specs...`);
 
-  // Deep detail enrichment in controlled concurrent batches
-  const BATCH_SIZE = 5;
-  for (let i = 0; i < baseProducts.length; i += BATCH_SIZE) {
-    const batch = baseProducts.slice(i, i + BATCH_SIZE);
-    await Promise.all(batch.map(async (product) => {
-      const enriched = await enrichProductDetail(product.sourceUrl, product.category);
-      if (enriched) {
-        // Authoritative live price update
-        if (enriched.price && !isNaN(enriched.price)) {
-          product.price = enriched.price;
-        }
-        if (enriched.installmentPrice && !isNaN(enriched.installmentPrice)) {
-          product.installmentPrice = enriched.installmentPrice;
-          if (!product.originalPrice || product.installmentPrice > product.price) {
-            product.originalPrice = enriched.installmentPrice;
-          }
-        }
-        if (enriched.sku) {
-          product.sku = enriched.sku;
-        }
-        if (enriched.bundleItems && enriched.bundleItems.length > 0) {
-          product.bundleItems = enriched.bundleItems;
-        }
-        if (enriched.images && enriched.images.length > 0) {
-          product.images = enriched.images;
-        }
-        if (enriched.details) {
-          product.details = { ...product.details, ...enriched.details };
-        }
-      }
-    }));
-
-    if ((i + BATCH_SIZE) % 25 === 0 || i + BATCH_SIZE >= baseProducts.length) {
-      console.log(`[Scraper] Deep enriched ${Math.min(i + BATCH_SIZE, baseProducts.length)} / ${baseProducts.length} products.`);
+  // Load existing catalog for fast incremental delta checking
+  const existingMap = new Map();
+  try {
+    if (fs.existsSync('data/products.json')) {
+      const current = JSON.parse(fs.readFileSync('data/products.json', 'utf-8'));
+      current.forEach(p => existingMap.set(p.id, p));
+      console.log(`[Scraper] Found ${existingMap.size} existing products in local catalog for delta sync.`);
     }
-    await sleep(200);
+  } catch (_) {}
+
+  // Filter products that genuinely need deep enrichment
+  const productsToEnrich = [];
+  for (const product of baseProducts) {
+    const old = existingMap.get(product.id);
+    const isNewOrIncomplete = !old || 
+      !old.sku || 
+      !old.details || 
+      Object.keys(old.details).length <= 4 ||
+      (old.name.includes('Takım') && (!old.bundleItems || old.bundleItems.length === 0));
+
+    const priceChanged = old && (Math.abs(old.price - product.price) > 1);
+
+    if (isNewOrIncomplete || priceChanged) {
+      productsToEnrich.push(product);
+    } else {
+      // Re-use verified enriched data from existing catalog
+      product.price = old.price;
+      product.originalPrice = old.originalPrice;
+      product.sku = old.sku;
+      product.installmentPrice = old.installmentPrice;
+      product.bundleItems = old.bundleItems;
+      product.images = (old.images && old.images.length > 0) ? old.images : product.images;
+      product.details = { ...product.details, ...old.details };
+    }
   }
 
-  console.log(`[Scraper] Completed full enrichment! Total products: ${baseProducts.length}`);
+  console.log(`[Scraper] Delta analysis: ${productsToEnrich.length} products require deep enrichment (${baseProducts.length - productsToEnrich.length} already up-to-date).`);
+
+  if (productsToEnrich.length > 0) {
+    const BATCH_SIZE = 3;
+    for (let i = 0; i < productsToEnrich.length; i += BATCH_SIZE) {
+      const batch = productsToEnrich.slice(i, i + BATCH_SIZE);
+      await Promise.all(batch.map(async (product) => {
+        const enriched = await enrichProductDetail(product.sourceUrl, product.category);
+        if (enriched) {
+          if (enriched.price && !isNaN(enriched.price)) product.price = enriched.price;
+          if (enriched.installmentPrice && !isNaN(enriched.installmentPrice)) {
+            product.installmentPrice = enriched.installmentPrice;
+            if (!product.originalPrice || product.installmentPrice > product.price) {
+              product.originalPrice = enriched.installmentPrice;
+            }
+          }
+          if (enriched.sku) product.sku = enriched.sku;
+          if (enriched.bundleItems && enriched.bundleItems.length > 0) product.bundleItems = enriched.bundleItems;
+          if (enriched.images && enriched.images.length > 0) product.images = enriched.images;
+          if (enriched.details) product.details = { ...product.details, ...enriched.details };
+        }
+      }));
+
+      console.log(`[Scraper] Deep enriched ${Math.min(i + BATCH_SIZE, productsToEnrich.length)} / ${productsToEnrich.length} target products.`);
+      await sleep(300);
+    }
+  }
+
+  console.log(`[Scraper] Completed delta sync! Total products: ${baseProducts.length}`);
   return baseProducts;
 }
