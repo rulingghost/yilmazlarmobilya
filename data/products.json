@@ -1441,8 +1441,8 @@
     "id": "istikbal-tetra-koltuk-takimi",
     "name": "Tetra Koltuk Takımı",
     "category": "Koltuk Takımları",
-    "price": 66730,
-    "originalPrice": null,
+    "price": 456,
+    "originalPrice": 888,
     "currency": "₺",
     "images": [
       "https://www.istikbal.com.tr/idea/kc/80/myassets/products/886/tedra-koltuk-takimi-alternatif-berjer1.jpg?revision=1778237851",
@@ -1681,7 +1681,7 @@
       }
     ],
     "sku": "58NAZM0000000",
-    "installmentPrice": null,
+    "installmentPrice": 500,
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/tetra-koltuk-takimi",
     "createdAt": "2026-07-30T15:48:18.588Z",
@@ -38507,8 +38507,8 @@
     "id": "istikbal-lexus-yatak-odasi-takimi",
     "name": "Lexus Yatak Odası Takımı",
     "category": "Yatak Odası",
-    "price": 125595,
-    "originalPrice": 132193,
+    "price": 123,
+    "originalPrice": 999,
     "currency": "₺",
     "images": [
       "https://www.istikbal.com.tr/idea/kc/80/myassets/products/191/lexus-yatak-odasi001.jpg?revision=1787560363",
@@ -39030,7 +39030,7 @@
       }
     ],
     "sku": "58LEX8005HITK",
-    "installmentPrice": null,
+    "installmentPrice": 150,
     "isNew": true,
     "sourceUrl": "https://www.istikbal.com.tr/urun/lexus-yatak-odasi-takimi",
     "createdAt": "2026-07-30T15:48:18.588Z",
