@@ -412,13 +412,18 @@ export function ProductDetailPage({ product, allProducts, onSelectProduct, onBac
                 const hasSpecs = item.specs && Object.keys(item.specs).length > 0;
                 const hasDims = item.dimensions && Object.keys(item.dimensions).length > 0;
 
+                const rawImg = item.image || (item.images && item.images[0]);
+                const displayImg = (rawImg && !rawImg.includes('gorsel-hazirlaniyor') && !rawImg.includes('zemptyname'))
+                  ? rawImg 
+                  : currentImage;
+
                 return (
                   <div key={item.id} className={`module-card ${currentQty > 0 ? 'in-set' : 'not-in-set'}`}>
                     <div className="module-card-main">
                       {/* Module Image Preview */}
                       <div className="module-img-container">
                         <img 
-                          src={item.image || (item.images && item.images[0]) || currentImage} 
+                          src={displayImg} 
                           alt={item.name} 
                           loading="lazy" 
                         />
