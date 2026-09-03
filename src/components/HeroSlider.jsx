@@ -5,7 +5,6 @@ import initialSliders from '../../data/sliders.json';
 export function HeroSlider({ setActivePage, setSelectedCategory }) {
   const [slides, setSlides] = useState(initialSliders || []);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
 
   // Fetch updated sliders.json from public if available
@@ -20,14 +19,14 @@ export function HeroSlider({ setActivePage, setSelectedCategory }) {
       .catch(() => {});
   }, []);
 
-  // Auto-play interval
+  // Continuous automatic sliding every 4 seconds
   useEffect(() => {
-    if (isPaused || slides.length <= 1) return;
-    const interval = setInterval(() => {
+    if (slides.length <= 1) return;
+    const timer = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % slides.length);
-    }, 5500);
-    return () => clearInterval(interval);
-  }, [isPaused, slides.length]);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
 
   const nextSlide = () => {
     setCurrentSlide(prev => (prev + 1) % slides.length);
@@ -68,23 +67,22 @@ export function HeroSlider({ setActivePage, setSelectedCategory }) {
   return (
     <div 
       className="hero-slider-container"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Visual Banners Carousel - Direct from İstikbal (No text overlay) */}
-      <div className="hero-slider-track">
-        {slides.map((slide, idx) => {
-          const isActive = idx === currentSlide;
-          return (
+      {/* Viewport for horizontal sliding */}
+      <div className="hero-slider-viewport">
+        <div 
+          className="hero-slider-track"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {slides.map((slide, idx) => (
             <div
               key={slide.id || idx}
-              className={`hero-slide-item ${isActive ? 'active' : ''}`}
+              className="hero-slide-item"
               onClick={() => handleSlideClick(slide)}
               role="button"
               tabIndex={0}
-              title={slide.alt || 'İstikbal Kampanyaları'}
             >
               <picture>
                 {slide.mobile && (
@@ -98,8 +96,8 @@ export function HeroSlider({ setActivePage, setSelectedCategory }) {
                 />
               </picture>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
 
       {/* Navigation Arrow Left */}
@@ -148,30 +146,32 @@ export function HeroSlider({ setActivePage, setSelectedCategory }) {
           user-select: none;
         }
 
-        .hero-slider-track {
+        .hero-slider-viewport {
           position: relative;
           width: 100%;
-          /* 1920 / 700 banner ratio ~ 36.45% */
+          /* Official 1920 / 700 banner ratio */
           aspect-ratio: 1920 / 700;
           overflow: hidden;
         }
 
+        .hero-slider-track {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+        }
+
         .hero-slide-item {
-          position: absolute;
-          inset: 0;
-          opacity: 0;
-          pointer-events: none;
-          transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          min-width: 100%;
+          width: 100%;
+          height: 100%;
+          flex-shrink: 0;
           cursor: pointer;
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .hero-slide-item.active {
-          opacity: 1;
-          pointer-events: auto;
-          z-index: 2;
         }
 
         .hero-slide-img {
@@ -179,11 +179,6 @@ export function HeroSlider({ setActivePage, setSelectedCategory }) {
           height: 100%;
           object-fit: cover;
           display: block;
-          transition: transform 0.4s ease;
-        }
-
-        .hero-slide-item:hover .hero-slide-img {
-          transform: scale(1.012);
         }
 
         .hero-slider-btn {
@@ -194,7 +189,7 @@ export function HeroSlider({ setActivePage, setSelectedCategory }) {
           width: 48px;
           height: 48px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.85);
+          background: rgba(255, 255, 255, 0.88);
           backdrop-filter: blur(8px);
           border: 1px solid rgba(0, 0, 0, 0.08);
           color: #2C2420;
@@ -262,8 +257,7 @@ export function HeroSlider({ setActivePage, setSelectedCategory }) {
             margin-bottom: 2rem;
           }
 
-          .hero-slider-track {
-            /* Keep responsive aspect ratio on mobile */
+          .hero-slider-viewport {
             aspect-ratio: 16 / 9;
           }
 
