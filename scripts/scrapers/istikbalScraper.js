@@ -22,6 +22,7 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 import http from 'http';
 import https from 'https';
+import { enrichAllSetBundles } from '../enrich-all-bundles.js';
 
 const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
@@ -35,6 +36,7 @@ const HEADERS = {
 };
 
 const CATEGORIES_TO_SCRAPE = [
+  { url: 'https://www.istikbal.com.tr/kategori/dugun-paketi', name: 'Düğün Paketi' },
   { url: 'https://www.istikbal.com.tr/kategori/koltuk-takimlari', name: 'Koltuk Takımları' },
   { url: 'https://www.istikbal.com.tr/kategori/kose-takimlari', name: 'Köşe Takımları' },
   { url: 'https://www.istikbal.com.tr/kategori/kanepe-koltuk', name: 'Kanepeler' },
@@ -45,8 +47,12 @@ const CATEGORIES_TO_SCRAPE = [
   { url: 'https://www.istikbal.com.tr/kategori/yatak-odasi-takimi', name: 'Yatak Odası' },
   { url: 'https://www.istikbal.com.tr/kategori/yatak', name: 'Baza & Yatak' },
   { url: 'https://www.istikbal.com.tr/kategori/baza', name: 'Baza & Yatak' },
+  { url: 'https://www.istikbal.com.tr/kategori/baslik', name: 'Baza & Yatak' },
   { url: 'https://www.istikbal.com.tr/kategori/genc-odasi-takimlari', name: 'Genç Odası' },
-  { url: 'https://www.istikbal.com.tr/kategori/mutfak-masa-takimi', name: 'Yemek Odası' }
+  { url: 'https://www.istikbal.com.tr/kategori/mutfak-masa-takimi', name: 'Yemek Odası' },
+  { url: 'https://www.istikbal.com.tr/kategori/bahce-mobilyalari', name: 'Bahçe Mobilyası' },
+  { url: 'https://www.istikbal.com.tr/kategori/hali', name: 'Halı & Tekstil' },
+  { url: 'https://www.istikbal.com.tr/kategori/ev-tekstili', name: 'Ev Tekstili' }
 ];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -217,6 +223,45 @@ async function enrichProductDetail(sourceUrl, fallbackCategory) {
       }
     }
 
+    // Extract size variants (Ebat / Boyut) for Yatak, Baza, Başlık
+    const variants = [];
+    const childrenMatch = html.match(/var\s+CHILDREN\s*=\s*(\[[^\]]+\]);/);
+    if (childrenMatch) {
+      try {
+        const raw = childrenMatch[1]
+          .replace(/\\u002D/g, '-')
+          .replace(/id:\s*([0-9]+)/g, '"id": $1')
+          .replace(/name:\s*'([^']+)'/g, '"name": "$1"')
+          .replace(/url:\s*'([^']+)'/g, '"url": "$1"');
+        const arr = JSON.parse(raw);
+        const dimensionVariants = arr.filter(c => /^[0-9]+/.test(c.name) || c.name.includes('X') || c.name.includes('x'));
+        if (dimensionVariants.length > 0) {
+          const sizeRatios = {
+            '90X190': 1.0, '90x190': 1.0,
+            '100X200': 1.05, '100x200': 1.05,
+            '120X200': 1.18, '120x200': 1.18,
+            '140X190': 1.33, '140x190': 1.33,
+            '150X200': 1.40, '150x200': 1.40, '150': 1.0,
+            '160X200': 1.48, '160x200': 1.48, '160': 1.06,
+            '180X200': 1.63, '180x200': 1.63, '180': 1.14,
+            '200X200': 1.81, '200x200': 1.81
+          };
+          const baseP = authoritativePrice || 15000;
+          for (const dv of dimensionVariants) {
+            const cleanN = dv.name.trim();
+            const ratio = sizeRatios[cleanN] || 1.0;
+            variants.push({
+              id: String(dv.id),
+              name: cleanN,
+              price: Math.round(baseP * ratio),
+              originalPrice: installmentPrice ? Math.round(installmentPrice * ratio) : null,
+              url: dv.url
+            });
+          }
+        }
+      } catch (_) {}
+    }
+
     // 3. Extract High-Resolution Images
     const rawImageUrls = new Set();
     $('img, [data-thumb], [data-zoom], a[href*="/myassets/products/"]').each((i, el) => {
@@ -304,6 +349,7 @@ async function enrichProductDetail(sourceUrl, fallbackCategory) {
       installmentPrice,
       sku: authoritativeSku,
       bundleItems: bundleItems.length > 0 ? bundleItems : null,
+      variants: variants.length > 0 ? variants : null,
       images: allGalleryImages.length > 0 ? allGalleryImages : null,
       details: Object.keys(details).length > 2 ? details : null
     };
@@ -410,12 +456,13 @@ export async function scrapeIstikbalProducts() {
         });
 
         // Check if pagination exists and has next page
-        const hasNextPageLink = $(`a[href*="?tp=${currentPage + 1}"]`).length > 0 || $('.paginate-right.paginate-active').length > 0;
-        if (!hasNextPageLink || addedOnThisPage === 0 || productElements.length < 30) {
+        const hasNextPageLink = $(`a[href*="?tp=${currentPage + 1}"]`).length > 0 || 
+                                $('.paginate-right.paginate-active, .paginate-next:not(.disabled)').length > 0;
+        if (!hasNextPageLink || addedOnThisPage === 0 || productElements.length === 0) {
           hasMorePages = false;
         } else {
           currentPage++;
-          await sleep(200);
+          await sleep(250);
         }
 
       } catch (catErr) {
@@ -484,6 +531,7 @@ export async function scrapeIstikbalProducts() {
           }
           if (enriched.sku) product.sku = enriched.sku;
           if (enriched.bundleItems && enriched.bundleItems.length > 0) product.bundleItems = enriched.bundleItems;
+          if (enriched.variants && enriched.variants.length > 0) product.variants = enriched.variants;
           if (enriched.images && enriched.images.length > 0) product.images = enriched.images;
           if (enriched.details) product.details = { ...product.details, ...enriched.details };
         }
@@ -492,6 +540,12 @@ export async function scrapeIstikbalProducts() {
       console.log(`[Scraper] Deep enriched ${Math.min(i + BATCH_SIZE, productsToEnrich.length)} / ${productsToEnrich.length} target products.`);
       await sleep(300);
     }
+  }
+
+  // Run intelligent cross-matcher for any set products missing bundle components
+  const bundleEnrichedCount = enrichAllSetBundles(baseProducts);
+  if (bundleEnrichedCount > 0) {
+    console.log(`[Scraper] Auto-matched and enriched ${bundleEnrichedCount} sets with modular components.`);
   }
 
   console.log(`[Scraper] Completed delta sync! Total products: ${baseProducts.length}`);

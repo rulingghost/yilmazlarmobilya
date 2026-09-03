@@ -1,44 +1,72 @@
 [
   {
-    "id": "slide-dugun",
-    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_1.jpg?revision=8.4.3.2-2-1788443940",
-    "alt": "İstikbal'den Evlenenlere Büyük Jest - Düğün Paketleri 134.000 TL'den Başlayan Cazip Fiyatlarla",
-    "category": "Düğün Paketi"
-  },
-  {
-    "id": "slide-graphene",
-    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_17.jpg?revision=8.4.3.2-2-1788443940",
-    "alt": "Graphene Premium ve Dream Yataklarda %10 İndirim",
-    "category": "Baza & Yatak"
-  },
-  {
-    "id": "slide-yatak-baza",
-    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_11.jpg?revision=8.4.3.2-2-1788443940",
-    "alt": "Evlenen Gençlere Büyük Jest! Yatak Baza Başlık Alışverişlerinde %10 İndirim",
-    "category": "Baza & Yatak"
-  },
-  {
-    "id": "slide-tetra",
-    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_2.jpg?revision=8.4.3.2-2-1788443940",
-    "alt": "Tetra Koltuk Takımı - İstikbal Yetkili Bayi",
-    "category": "Koltuk Takımları"
-  },
-  {
-    "id": "slide-shine",
-    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_12.jpg?revision=8.4.3.2-2-1788443940",
-    "alt": "Shine Koltuk Takımı - İstikbal Yetkili Bayi",
-    "category": "Koltuk Takımları"
-  },
-  {
-    "id": "slide-dreamwell",
-    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_18.jpg?revision=8.4.3.2-2-1788443940",
-    "alt": "Dreamwell S ve Optimal S Yatak %10 İndirim",
-    "category": "Baza & Yatak"
-  },
-  {
-    "id": "slide-genc",
+    "id": "slide-1",
     "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_3.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_3.jpg?revision=8.4.3.2-2-1788443940",
     "alt": "Okula Dönüş Başladı! Genç Odalarında %10 İndirim",
     "category": "Genç Odası"
+  },
+  {
+    "id": "slide-2",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_1.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_1.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "İstikbal'den Evlenenlere Büyük Jest!",
+    "category": null
+  },
+  {
+    "id": "slide-3",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_17.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_17.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Okula Dönüş Başladı! Graphene Yatak %10 İndirim",
+    "category": "Baza & Yatak"
+  },
+  {
+    "id": "slide-4",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_18.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_18.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Okula Dönüş Başladı! Dreamwell S ve Optimal S Yatak Yatak %10 İndirim",
+    "category": "Baza & Yatak"
+  },
+  {
+    "id": "slide-5",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_11.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_11.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Evlenen Gençlere Büyük Jest! Yatak Baza Başlık Alışverişlerinde %10 İnd.",
+    "category": "Baza & Yatak"
+  },
+  {
+    "id": "slide-6",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_4.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_4.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Evlenenlere Büyük Jest! William Köşe Takımı",
+    "category": "Koltuk Takımları"
+  },
+  {
+    "id": "slide-7",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_5.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_5.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Evlenenlere Büyük Jest! Monreo Köşe Takımı",
+    "category": "Koltuk Takımları"
+  },
+  {
+    "id": "slide-8",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_12.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_12.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Evlenen Gençlere Büyük Jest! Shine Koltuk Takımı",
+    "category": "Koltuk Takımları"
+  },
+  {
+    "id": "slide-9",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_2.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_2.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Tetra Koltuk Takımı",
+    "category": "Koltuk Takımları"
+  },
+  {
+    "id": "slide-10",
+    "image": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_13.jpg?revision=8.4.3.2-2-1788443940",
+    "mobile": "https://www.istikbal.com.tr/idea/kc/80/themes/selftpl_66558fe4d0d9d/assets/uploads/entry_slider_image_13.jpg?revision=8.4.3.2-2-1788443940",
+    "alt": "Evlenen Gençlere Büyük Jest! Linus Koltuk Takımı",
+    "category": "Koltuk Takımları"
   }
 ]

@@ -150,12 +150,17 @@ async function runUpdate() {
                         JSON.stringify(oldProd.bundleItems) !== JSON.stringify(mergedBundleItems) ||
                         oldProd.name !== newProd.name;
 
+      const mergedVariants = (newProd.variants && newProd.variants.length > 0)
+        ? newProd.variants
+        : (oldProd.variants || null);
+
       if (isChanged) {
         updatedCount++;
       }
       return {
         ...newProd,
         bundleItems: mergedBundleItems,
+        variants: mergedVariants,
         sku: mergedSku,
         details: mergedDetails,
         images: mergedImages,
