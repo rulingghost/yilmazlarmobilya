@@ -28,15 +28,30 @@ export function Footer({ setActivePage, lastUpdateInfo, onOpenAdminSync }) {
         {/* Brand Badges Bar */}
         <div className="footer-badges">
           {siteConfig.brandBadges.map((badge, idx) => (
-            <div key={idx} className="footer-badge-item">
+            <a 
+              key={idx} 
+              href={badge.link || '#'} 
+              target={badge.link ? "_blank" : "_self"}
+              rel="noopener noreferrer"
+              className="footer-badge-item"
+              title={`${badge.name} - ${badge.subtitle}`}
+            >
               <div className="footer-badge-icon">
-                <Award size={20} />
+                {badge.logo ? (
+                  <img 
+                    src={badge.logo} 
+                    alt={`${badge.name} Logo`} 
+                    className="footer-badge-logo-img" 
+                  />
+                ) : (
+                  <Award size={20} />
+                )}
               </div>
-              <div>
+              <div className="footer-badge-text-box">
                 <div className="footer-badge-name">{badge.name}</div>
                 <div className="footer-badge-sub">{badge.subtitle}</div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
@@ -197,28 +212,52 @@ export function Footer({ setActivePage, lastUpdateInfo, onOpenAdminSync }) {
         .footer-badge-item {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
-          opacity: 0.9;
+          gap: 1rem;
+          text-decoration: none;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(212, 175, 55, 0.22);
+          padding: 0.65rem 1.25rem;
+          border-radius: var(--radius-md, 10px);
+          transition: all 0.25s ease;
+        }
+        .footer-badge-item:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(212, 175, 55, 0.5);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
         }
         .footer-badge-icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: rgba(212, 175, 55, 0.15);
-          border: 1px solid var(--accent-gold);
+          height: 42px;
+          min-width: 90px;
+          max-width: 120px;
+          background: #FFFFFF;
+          border-radius: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--accent-gold);
+          padding: 4px 10px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+          overflow: hidden;
+          flex-shrink: 0;
+        }
+        .footer-badge-logo-img {
+          max-width: 100%;
+          max-height: 28px;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          display: block;
         }
         .footer-badge-name {
           color: #FFF;
           font-weight: 700;
           font-size: 0.95rem;
+          letter-spacing: 0.2px;
         }
         .footer-badge-sub {
-          color: #A89E94;
+          color: #B8ADA2;
           font-size: 0.78rem;
+          margin-top: 1px;
         }
 
         /* Grid */

@@ -13,9 +13,24 @@ export const siteConfig = {
   logoUrl: "/images/logo.png",
 
   brandBadges: [
-    { name: "İstikbal", subtitle: "Yetkili Bayi" },
-    { name: "Gümüşsuyu", subtitle: "Halı & Tekstil" },
-    { name: "Doqu Home", subtitle: "Ev Tekstili" }
+    { 
+      name: "İstikbal", 
+      subtitle: "Yetkili Bayi",
+      logo: "/images/brand-istikbal.svg",
+      link: "https://www.istikbal.com.tr"
+    },
+    { 
+      name: "Gümüşsuyu", 
+      subtitle: "Halı & Tekstil",
+      logo: "/images/brand-gumussuyu.png",
+      link: "https://www.gumussuyu.com.tr"
+    },
+    { 
+      name: "Doqu Home", 
+      subtitle: "Ev Tekstili",
+      logo: "/images/brand-doquhome.webp",
+      link: "https://www.doquhome.com.tr"
+    }
   ],
   
   // Contact details
@@ -48,8 +63,8 @@ export const siteConfig = {
   instagram: "https://instagram.com/yilmazlar.istikbal.mobilya",
   facebook: "https://facebook.com/yilmazlaristikbalmobilya",
 
-  // Special campaigns extracted from Wix site & İstikbal
-  campaignBanner: "3'lü Düğün Paketi 141.372 TL'den Başlayan Fiyatlarla!",
+  // Special campaigns
+  campaignBanner: "",
 
   // Business Working Hours
   workingHours: {

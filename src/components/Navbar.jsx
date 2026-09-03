@@ -40,19 +40,16 @@ export function Navbar({ activePage, setActivePage, searchQuery, setSearchQuery,
 
   return (
     <header className="glass-header">
-      {/* Top Special Campaign & Info Ribbon */}
+      {/* Top Special Info Ribbon */}
       <div className="top-ribbon">
         <div className="container top-ribbon-inner">
           <div className="ribbon-left">
-            <Tag size={13} className="ribbon-icon-gold" />
-            <span>{siteConfig.campaignBanner}</span>
+            <span className="ribbon-badge">
+              <Award size={13} style={{ color: 'var(--accent-gold)' }} /> İstikbal Yetkili Bayi & Showroom
+            </span>
           </div>
 
           <div className="ribbon-right desktop-only">
-            <span className="ribbon-badge">
-              <Award size={12} /> İstikbal Yetkili Bayi
-            </span>
-            <span className="ribbon-separator">|</span>
             <span className="ribbon-info">
               <MapPin size={12} className="ribbon-icon-amber" />
               {siteConfig.address}
