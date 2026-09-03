@@ -22,8 +22,31 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const [products] = useState(initialProductsData || []);
-  const [lastUpdateInfo] = useState(lastUpdateData || null);
+  const [products, setProducts] = useState(initialProductsData || []);
+  const [lastUpdateInfo, setLastUpdateInfo] = useState(lastUpdateData || null);
+
+  // Background live catalog check for freshest prices
+  useEffect(() => {
+    fetch(`/data/products.json?v=${Date.now()}`)
+      .then(res => res.ok ? res.json() : null)
+      .then(freshProducts => {
+        if (Array.isArray(freshProducts) && freshProducts.length > 0) {
+          setProducts(freshProducts);
+          setSelectedProduct(prev => {
+            if (!prev) return null;
+            return freshProducts.find(p => String(p.id) === String(prev.id)) || prev;
+          });
+        }
+      })
+      .catch(() => {});
+
+    fetch(`/data/last_update.json?v=${Date.now()}`)
+      .then(res => res.ok ? res.json() : null)
+      .then(meta => {
+        if (meta) setLastUpdateInfo(meta);
+      })
+      .catch(() => {});
+  }, []);
 
   // Helper to parse current hash into state
   const syncStateFromHash = () => {

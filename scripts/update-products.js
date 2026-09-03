@@ -4,9 +4,10 @@
  * 
  * Features:
  * - Atomic JSON updates (writes to temporary file first).
- * - Preservation of existing data if scraper fails.
+ * - Copies fresh catalog to both data/ and public/data/ (instant runtime sync on Vercel/web).
  * - Timezone: Europe/Istanbul timestamp formatting.
  * - Detailed audit logging to logs/product-update.log.
+ * - Robust error handling preserving existing catalog on network outage.
  */
 
 import fs from 'fs';
@@ -19,6 +20,8 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
 const DATA_DIR = path.join(ROOT_DIR, 'data');
+const PUBLIC_DATA_DIR = path.join(ROOT_DIR, 'public', 'data');
+const DIST_DATA_DIR = path.join(ROOT_DIR, 'dist', 'data');
 const LOGS_DIR = path.join(ROOT_DIR, 'logs');
 
 const PRODUCTS_JSON = path.join(DATA_DIR, 'products.json');
@@ -53,17 +56,14 @@ function getTurkeyFormattedDate(date = new Date()) {
   return `${day}.${month}.${year} ${hour}:${minute}`;
 }
 
-// Ensure necessary directories exist
 function ensureDirectories() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(LOGS_DIR)) {
-    fs.mkdirSync(LOGS_DIR, { recursive: true });
-  }
+  [DATA_DIR, PUBLIC_DATA_DIR, LOGS_DIR].forEach(dir => {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+  });
 }
 
-// Read current products JSON if it exists
 function readExistingProducts() {
   if (fs.existsSync(PRODUCTS_JSON)) {
     try {
@@ -76,7 +76,6 @@ function readExistingProducts() {
   return [];
 }
 
-// Main execution function
 async function runUpdate() {
   ensureDirectories();
 
@@ -97,15 +96,13 @@ async function runUpdate() {
     errors.push(errorMsg);
   }
 
-  // Safety check: Never overwrite with empty dataset or if scraper threw unhandled error
+  // Safety check: Never overwrite with empty dataset
   if (!scrapedProducts || scrapedProducts.length === 0) {
     const criticalError = "Veri çekme işlemi başarısız veya 0 ürün döndü. Mevcut ürün dosyası korundu.";
     errors.push(criticalError);
     console.warn(`[Update Engine] WARNING: ${criticalError}`);
 
-    const endTimeObj = new Date();
-    const endTimeStr = getTurkeyFormattedDate(endTimeObj);
-
+    const endTimeStr = getTurkeyFormattedDate(new Date());
     writeLog({
       startTimeStr,
       endTimeStr,
@@ -115,8 +112,6 @@ async function runUpdate() {
       removedCount: 0,
       errors
     });
-
-    console.log(`[Update Engine] Sync completed with warnings. Existing JSON intact.`);
     return;
   }
 
@@ -137,16 +132,33 @@ async function runUpdate() {
       };
     } else {
       const oldProd = existingMap.get(newProd.id);
+
+      // Safe merge: Never discard existing enriched specs/bundleItems if newProd had a transient network drop
+      const mergedBundleItems = (newProd.bundleItems && newProd.bundleItems.length > 0)
+        ? newProd.bundleItems
+        : (oldProd.bundleItems || null);
+
+      const mergedSku = newProd.sku || oldProd.sku || null;
+      const mergedDetails = { ...(oldProd.details || {}), ...(newProd.details || {}) };
+      const mergedImages = (newProd.images && newProd.images.length > 0) ? newProd.images : oldProd.images;
+
       const isChanged = oldProd.price !== newProd.price || 
-                        oldProd.name !== newProd.name || 
-                        oldProd.category !== newProd.category;
+                        oldProd.originalPrice !== newProd.originalPrice ||
+                        oldProd.sku !== mergedSku ||
+                        JSON.stringify(oldProd.bundleItems) !== JSON.stringify(mergedBundleItems) ||
+                        oldProd.name !== newProd.name;
+
       if (isChanged) {
         updatedCount++;
       }
       return {
         ...newProd,
+        bundleItems: mergedBundleItems,
+        sku: mergedSku,
+        details: mergedDetails,
+        images: mergedImages,
         createdAt: oldProd.createdAt || nowISO,
-        updatedAt: nowISO
+        updatedAt: isChanged ? nowISO : (oldProd.updatedAt || nowISO)
       };
     }
   });
@@ -154,17 +166,24 @@ async function runUpdate() {
   const scrapedIds = new Set(scrapedProducts.map(p => p.id));
   const removedCount = existingProducts.filter(p => !scrapedIds.has(p.id)).length;
 
-  // Step 1: Atomic File Writing - Write to temporary file first
   try {
     const jsonOutput = JSON.stringify(finalProducts, null, 2);
     fs.writeFileSync(PRODUCTS_TMP_JSON, jsonOutput, 'utf-8');
 
-    // Step 2: Validate temporary file was written properly and is non-empty
     const tmpStats = fs.statSync(PRODUCTS_TMP_JSON);
-    if (tmpStats.size > 10) {
-      // Atomic Replace: Rename temp file to target products.json
+    if (tmpStats.size > 100) {
+      // 1. Target data/products.json
       fs.renameSync(PRODUCTS_TMP_JSON, PRODUCTS_JSON);
-      console.log(`[Update Engine] Atomic write successful. Saved ${finalProducts.length} items to data/products.json.`);
+      console.log(`[Update Engine] Saved ${finalProducts.length} items to data/products.json.`);
+
+      // 2. Mirror to public/data/products.json for runtime dynamic fetch
+      fs.writeFileSync(path.join(PUBLIC_DATA_DIR, 'products.json'), jsonOutput, 'utf-8');
+
+      // 3. If dist exists, mirror to dist/data/products.json
+      if (fs.existsSync(path.join(ROOT_DIR, 'dist'))) {
+        if (!fs.existsSync(DIST_DATA_DIR)) fs.mkdirSync(DIST_DATA_DIR, { recursive: true });
+        fs.writeFileSync(path.join(DIST_DATA_DIR, 'products.json'), jsonOutput, 'utf-8');
+      }
     } else {
       throw new Error("Temporary JSON file size is suspiciously small.");
     }
@@ -172,7 +191,7 @@ async function runUpdate() {
     const endTimeObj = new Date();
     const endTimeStr = getTurkeyFormattedDate(endTimeObj);
 
-    // Save Last Update Timestamp Metadata
+    // Save Last Update Metadata
     const updateMeta = {
       lastUpdate: endTimeStr,
       formattedText: `Son güncelleme: ${endTimeStr}`,
@@ -185,9 +204,14 @@ async function runUpdate() {
         removed: removedCount
       }
     };
-    fs.writeFileSync(LAST_UPDATE_JSON, JSON.stringify(updateMeta, null, 2), 'utf-8');
+    const updateMetaJson = JSON.stringify(updateMeta, null, 2);
 
-    // Write Log entry
+    fs.writeFileSync(LAST_UPDATE_JSON, updateMetaJson, 'utf-8');
+    fs.writeFileSync(path.join(PUBLIC_DATA_DIR, 'last_update.json'), updateMetaJson, 'utf-8');
+    if (fs.existsSync(DIST_DATA_DIR)) {
+      fs.writeFileSync(path.join(DIST_DATA_DIR, 'last_update.json'), updateMetaJson, 'utf-8');
+    }
+
     writeLog({
       startTimeStr,
       endTimeStr,
@@ -198,7 +222,7 @@ async function runUpdate() {
       errors
     });
 
-    console.log(`[Update Engine] Process finished successfully at ${endTimeStr}.`);
+    console.log(`[Update Engine] Sync complete at ${endTimeStr}. Added: ${addedCount}, Updated: ${updatedCount}, Total: ${finalProducts.length}`);
     console.log(`==================================================`);
 
   } catch (writeErr) {
@@ -206,7 +230,6 @@ async function runUpdate() {
     console.error(`[Update Engine] ${errStr}`);
     errors.push(errStr);
 
-    // Clean up temporary file if leftover
     if (fs.existsSync(PRODUCTS_TMP_JSON)) {
       try { fs.unlinkSync(PRODUCTS_TMP_JSON); } catch (_) {}
     }
@@ -224,7 +247,6 @@ async function runUpdate() {
   }
 }
 
-// Append formatted log entry to logs/product-update.log
 function writeLog({ startTimeStr, endTimeStr, totalCount, addedCount, updatedCount, removedCount, errors }) {
   const logLines = [
     `--------------------------------------------------`,

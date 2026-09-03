@@ -1,0 +1,42 @@
+name: Saatlik İstikbal Fiyat & Ürün Senkronizasyonu
+
+on:
+  schedule:
+    # Her saat başı otomatik çalışır (0 * * * *)
+    - cron: '0 * * * *'
+  workflow_dispatch: # GitHub arayüzünden tek tıkla manuel çalıştırma imkanı
+
+jobs:
+  sync-catalog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Repoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Node.js Ortamını Hazırla
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Bağımlılıkları Yükle
+        run: npm ci || npm install
+
+      - name: İstikbal Canlı Veri ve Fiyat Güncellemesini Çalıştır
+        run: npm run update-products
+
+      - name: Değişiklikleri Git'e Commit ve Push Yap (Vercel Otomatik Dağıtımı Tetikler)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ public/data/ logs/
+          if git diff --staged --quiet; then
+            echo "Herhangi bir fiyat veya ürün değişikliği bulunamadı, katalog güncel."
+          else
+            git commit -m "chore: saatlik İstikbal fiyat ve ürün güncellemesi [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]"
+            git push
+            echo "Yeni fiyat ve ürünler GitHub'a gönderildi. Vercel otomatik yeni yayını başlatıyor."
+          fi
